@@ -1,3 +1,7 @@
 <p>
-  area-selection works!
+  area-selection works!!!!
+  <area-detail [area]="selectedArea"></area-detail>
+  <li *ngFor="let area of areas" (click)="onSelect(area)">
+    {{area.nr}} {{area.desc}}
+  </li>
 </p>

@@ -1,3 +1,8 @@
-<p>
-  area-detail works!
-</p>
+<div *ngIf="area">
+  <h2>{{area.desc}} details!</h2>
+  <div><label>id: </label>{{area.nr}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="area.desc" placeholder="name"/>
+  </div>
+</div>
