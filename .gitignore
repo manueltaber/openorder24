@@ -1,0 +1,29 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/openorder/dist
+/openorder/tmp
+
+# dependencies
+/openorder/node_modules
+/openorder/bower_components
+
+# IDEs and editors
+/openorder/.idea
+
+# misc
+/openorder/.sass-cache
+/openorder/connect.lock
+/openorder/coverage/*
+/openorder/libpeerconnection.log
+npm-debug.log
+testem.log
+/openorder/typings
+
+# e2e
+/openorder/e2e/*.js
+/openorder/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
