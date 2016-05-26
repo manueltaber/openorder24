@@ -3,10 +3,14 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  '@angular2-material/core': 'vendor/@angular2-material/core',
+  '@angular2-material/button': 'vendor/@angular2-material/button'
 };
 
 /** User packages configuration. */
 const packages: any = {
+  '@angular2-material/core': { main: 'core.js', defaultExtension: 'js'},
+  '@angular2-material/button': { main: 'button.js', defaultExtension: 'js'}
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
