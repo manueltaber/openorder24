@@ -1,0 +1,6 @@
+{
+  "name": "openorder",
+  "tagline": "",
+  "body": "# openorder\r\nThis is THE amazing Angular2 port of the famous \"OpenOrder\" - App.\r\n\r\n## Getting started\r\n\r\nFirst of all you have to install the angular cli\r\n````\r\n> npm install -g angular-cli\r\n````\r\nOpen /openorder afterwards and execute these commands\r\n\r\n````\r\n> npm install\r\n````\r\n````\r\n> ng build\r\n````\r\n````\r\n> ng serve\r\n````\r\n\r\nEverything should work fine now (probably)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
