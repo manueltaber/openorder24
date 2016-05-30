@@ -1,4 +1,30 @@
-<h1>
-  {{title}}
-</h1>
-<area-selection></area-selection>
+<!-- <md-sidenav-layout>
+  <md-sidenav>
+    Drawer panel
+  </md-sidenav>
+  <md-sidenav align="end">
+    Right-side panel along the left-side sidenav.
+  </md-sidenav>
+  
+  Main content panel
+</md-sidenav-layout>-->
+
+  
+  <md-toolbar color="primary">
+    <span>Application Title</span>
+    
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    
+    <span>Right Aligned Text</span>
+  </md-toolbar>
+  
+
+
+  <h1>{{title}}</h1>
+  <nav>
+    <a [routerLink]="['/area-selection']">AreaSelection</a>
+    <a [routerLink]="['/area-detail']">AreaDetail</a>
+    <a [routerLink]="['/category-selection']">CategorySelection</a>
+  </nav>
+  <router-outlet></router-outlet>

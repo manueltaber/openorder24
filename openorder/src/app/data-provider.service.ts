@@ -8,6 +8,11 @@ export class DataProviderService {
   getAreas() {
     return Promise.resolve(AREAS);
   }
+  
+  getArea(nr: number | string) {
+    return Promise.resolve(AREAS)
+      .then(areas => areas.filter(a => a.nr === +nr)[0]);
+  }
 
 }
 
