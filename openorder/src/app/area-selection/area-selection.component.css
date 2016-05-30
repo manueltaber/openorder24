@@ -1,0 +1,18 @@
+md-card {
+    margin: 0 16px 16px 0;
+    width: 350px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.blue {
+    background-color: #B0BECC;
+}
+
+.blue md-card-actions {
+    display: flex;
+    flex-direction: column;
+}
