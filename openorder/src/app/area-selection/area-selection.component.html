@@ -1,5 +1,25 @@
-<p>
-  <li *ngFor="let area of areas" (click)="onSelect(area)">
-    {{area.nr}} {{area.desc}}
-  </li>
-</p>
+<md-card>
+   <md-card-subtitle>Subtitle first</md-card-subtitle>
+   <md-card-title>Card with title</md-card-title>   
+   <md-card-content>
+        <p>This is supporting text.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+        
+        <md-list>
+          <h3 md-subheader>Folders</h3>
+          <md-list-item *ngFor="let area of areas" (click)="onSelect(area)">
+            <h3 md-line> {{area.desc}} </h3>
+            <p md-line>
+              <span> {{area.nr}} </span>
+              <span class="demo-2"> -- {{area.desc}} </span>
+            </p>
+            <md-divider></md-divider>
+          </md-list-item>
+        </md-list>
+   </md-card-content>
+   <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+   </md-card-actions>
+</md-card>

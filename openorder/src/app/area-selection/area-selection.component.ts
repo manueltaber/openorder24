@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MD_BUTTON_DIRECTIVES } from '@angular2-material/button';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 
 import { DataProviderService, Area } from '../data-provider.service';
 
@@ -8,6 +11,7 @@ import { DataProviderService, Area } from '../data-provider.service';
   selector: 'area-selection',
   templateUrl: 'area-selection.component.html',
   styleUrls: ['area-selection.component.css'],
+  directives: [MD_BUTTON_DIRECTIVES, MD_CARD_DIRECTIVES, MD_LIST_DIRECTIVES],
   providers: [DataProviderService]
 })
 export class AreaSelectionComponent implements OnInit {

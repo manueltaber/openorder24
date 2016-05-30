@@ -1,14 +1,16 @@
-<!-- <md-sidenav-layout>
-  <md-sidenav>
-    Drawer panel
-  </md-sidenav>
-  <md-sidenav align="end">
-    Right-side panel along the left-side sidenav.
-  </md-sidenav>
-  
-  Main content panel
-</md-sidenav-layout>-->
-
+<md-sidenav-layout>
+    <md-sidenav #start (open)="mybutton.focus()" md-is-locked-open="$mdMedia('min-width: 1000px'">
+      Start Sidenav.
+      <br>
+      <button md-button #mybutton (click)="start.close()">Close</button>
+    </md-sidenav>
+    <md-sidenav #end align="end">
+      End Sidenav.
+      <button md-button (click)="end.close()">Close</button>
+    </md-sidenav>
+ 
+    
+  <button md-button (click)="start.open()">Open</button>
   
   <md-toolbar color="primary">
     <span>Application Title</span>
@@ -19,12 +21,12 @@
     <span>Right Aligned Text</span>
   </md-toolbar>
   
-
-
-  <h1>{{title}}</h1>
   <nav>
     <a [routerLink]="['/area-selection']">AreaSelection</a>
     <a [routerLink]="['/area-detail']">AreaDetail</a>
     <a [routerLink]="['/category-selection']">CategorySelection</a>
   </nav>
   <router-outlet></router-outlet>
+
+My regular content. This will be moved into the proper DOM at runtime.
+  </md-sidenav-layout>
