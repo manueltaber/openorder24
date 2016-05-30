@@ -1,25 +1,46 @@
 <md-sidenav-layout>
-    <md-sidenav #start (open)="mybutton.focus()" md-is-locked-open="$mdMedia('min-width: 1000px'">
+    <md-sidenav #start mode="side" md-is-open="true">
       Start Sidenav.
       <br>
+      
+      
+      <md-list>
+        <h3 md-subheader>Folders</h3>
+        <md-list-item>
+          <h3 md-line>Titel</h3>
+          <p md-line>
+            <span>Text</span>
+            <span class="demo-2">Hallo Hallo Hallo</span>
+          </p>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item>
+          <h3 md-line>Titel</h3>
+          <p md-line>
+            <span>Text</span>
+            <span class="demo-2">Hallo</span>
+          </p>
+          <md-divider></md-divider>
+        </md-list-item>
+      </md-list>
+      
+      
       <button md-button #mybutton (click)="start.close()">Close</button>
     </md-sidenav>
     <md-sidenav #end align="end">
       End Sidenav.
       <button md-button (click)="end.close()">Close</button>
     </md-sidenav>
- 
-    
-  <button md-button (click)="start.open()">Open</button>
   
   <md-toolbar color="primary">
-    <span>Application Title</span>
+    <span (click)="start.open()">openorder</span>
     
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
     
     <span>Right Aligned Text</span>
   </md-toolbar>
+ 
   
   <nav>
     <a [routerLink]="['/area-selection']">AreaSelection</a>
@@ -28,5 +49,5 @@
   </nav>
   <router-outlet></router-outlet>
 
-My regular content. This will be moved into the proper DOM at runtime.
-  </md-sidenav-layout>
+  My regular content. This will be moved into the proper DOM at runtime.
+</md-sidenav-layout>

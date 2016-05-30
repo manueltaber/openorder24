@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Routes, ROUTER_DIRECTIVES } from '@angular/router';
 import { MdButton } from '@angular2-material/button';
-import { MdToolbar } from '@angular2-material/toolbar';
+import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
+import { MD_TOOLBAR_DIRECTIVES } from '@angular2-material/toolbar';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 
 import { AreaSelectionComponent } from './area-selection/area-selection.component';
@@ -13,7 +14,7 @@ import { CategorySelectionComponent } from './category-selection/category-select
   selector: 'openorder-app',
   templateUrl: 'openorder.component.html',
   styleUrls: ['openorder.component.css'],
-  directives: [ROUTER_DIRECTIVES, MdButton, MdToolbar, MD_SIDENAV_DIRECTIVES]
+  directives: [ROUTER_DIRECTIVES, MdButton, MD_LIST_DIRECTIVES, MD_TOOLBAR_DIRECTIVES, MD_SIDENAV_DIRECTIVES]
 })
 @Routes([
   {path: '/area-selection', component: AreaSelectionComponent},
