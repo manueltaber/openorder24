@@ -1,4 +1,6 @@
 # openorder
+
+[![Join the chat at https://gitter.im/manueltaber/openorder](https://badges.gitter.im/manueltaber/openorder.svg)](https://gitter.im/manueltaber/openorder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 This is THE amazing Angular2 port of the famous "OpenOrder" - App.
 
 ## Build status
