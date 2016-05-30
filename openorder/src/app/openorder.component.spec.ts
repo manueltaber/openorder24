@@ -15,8 +15,8 @@ describe('App: Openorder', () => {
     expect(app).toBeTruthy();
   }));
 
-  it('should have as title \'openorder works!\'',
+  it('should have as title \'openorder.component works!\'',
       inject([OpenorderAppComponent], (app: OpenorderAppComponent) => {
-    expect(app.title).toEqual('openorder works!');
+    expect(app.title).toEqual('openorder.component works!');
   }));
 });
