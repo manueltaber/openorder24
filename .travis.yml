@@ -1,6 +1,6 @@
 env:
   global:
-    - REPO="openorder"
+    - REPO="webapp"
     - CI_HOME=`pwd`/$REPO
 
 language: node_js
