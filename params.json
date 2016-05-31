@@ -1,6 +1,6 @@
 {
   "name": "openorder",
   "tagline": "",
-  "body": "# openorder\r\nThis is THE amazing Angular2 port of the famous \"OpenOrder\" - App.\r\n\r\n## Getting started\r\n\r\nFirst of all you have to install the angular cli\r\n````\r\n> npm install -g angular-cli\r\n````\r\nOpen /openorder afterwards and execute these commands\r\n\r\n````\r\n> npm install\r\n````\r\n````\r\n> ng build\r\n````\r\n````\r\n> ng serve\r\n````\r\n\r\nEverything should work fine now (probably)\r\n",
+  "body": "# openorder\r\n\r\nThis is THE amazing Angular2 port of the famous \"OpenOrder\" - App.\r\n\r\n## Build status\r\n[![Build Status](https://travis-ci.org/manueltaber/openorder.svg?branch=master)](https://travis-ci.org/manueltaber/openorder)\r\n\r\n[![Join the chat at https://gitter.im/manueltaber/openorder](https://badges.gitter.im/manueltaber/openorder.svg)](https://gitter.im/manueltaber/openorder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)\r\n\r\n## Getting started with the Web-App\r\n\r\nFirst of all you have to install the angular cli\r\n````\r\n> npm install -g angular-cli\r\n````\r\nOpen /webapp afterwards and execute these commands\r\n\r\n````\r\n> npm install\r\n````\r\n````\r\n> ng build\r\n````\r\n````\r\n> ng serve\r\n````\r\n\r\nEverything should work fine now (probably)\r\n\r\n## Getting started with the Ionic-App\r\n\r\nComming soon! Stay tuned ;)",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
