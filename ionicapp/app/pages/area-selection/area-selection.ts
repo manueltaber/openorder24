@@ -1,35 +1,64 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
-import {ItemDetailsPage} from '../item-details/item-details';
+import {Page, NavController} from 'ionic-angular';
+import {AreaDetailPage} from '../area-detail/area-detail';
 
+import {Area} from '../../../../common/classes/area';
 
 @Page({
   templateUrl: 'build/pages/area-selection/area-selection.html'
 })
-export class AreaSelection {
-  selectedItem: any;
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+export class AreaSelectionPage {
+  
+  areas: Area[];
+  searching: boolean;
 
-  constructor(private nav: NavController, navParams: NavParams) {
-    // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
-
-    this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-    'american-football', 'boat', 'bluetooth', 'build'];
-
-    this.items = [];
-    for(let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Item ' + i,
-        note: 'This is item #' + i,
-        icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-      });
-    }
+  constructor(private nav: NavController) {
+    this.areas = AREAS;
+    this.searching = false;
   }
 
-  itemTapped(event, item) {
-    this.nav.push(ItemDetailsPage, {
-      item: item
+  itemTapped(event, area) {
+    this.nav.push(AreaDetailPage, {
+      area: area
     });
   }
 }
+
+/*export class Area {
+  nr: number;
+  desc: string;
+  x: number;
+  y: number;
+  z: number;
+  width: number;
+  height: number;
+}*/
+
+export var AREAS: Area[] = [
+  { 'nr': 1,  'desc': 'Tisch 1',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 2,  'desc': 'Tisch 2',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 3,  'desc': 'Tisch 3',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 4,  'desc': 'Tisch 4',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 5,  'desc': 'Tisch 5',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 6,  'desc': 'Tisch 6',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 7,  'desc': 'Tisch 7',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 8,  'desc': 'Tisch 8',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 9,  'desc': 'Tisch 9',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 10, 'desc': 'Tisch 10', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 11, 'desc': 'Tisch 11', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 12, 'desc': 'Tisch 12', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 13, 'desc': 'Tisch 13', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 14, 'desc': 'Tisch 14', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 15, 'desc': 'Tisch 15', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 16, 'desc': 'Tisch 16', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 17, 'desc': 'Tisch 17', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 18, 'desc': 'Tisch 18', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 19, 'desc': 'Tisch 19', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 20, 'desc': 'Tisch 20', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 21, 'desc': 'Tisch 21', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 22, 'desc': 'Tisch 22', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 23, 'desc': 'Tisch 23', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 24, 'desc': 'Tisch 24', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 25, 'desc': 'Tisch 25', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 26, 'desc': 'Tisch 26', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+  { 'nr': 27, 'desc': 'Tisch 27', 'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
+];

@@ -1,12 +1,19 @@
 <ion-menu [content]="content">
 
   <ion-toolbar>
-    <ion-title>Pages</ion-title>
+    <ion-title>openorder</ion-title>
   </ion-toolbar>
 
   <ion-content>
-    <ion-list>
+    <ion-list no-lines>
+      <ion-item-divider>Produktion</ion-item-divider>
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>
+        {{p.title}}
+      </button>
+      <ion-item-divider>Settings</ion-item-divider>
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>
         {{p.title}}
       </button>
     </ion-list>

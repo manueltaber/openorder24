@@ -1,9 +1,8 @@
 import {ViewChild} from '@angular/core';
 import {App, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
-import {AreaSelection} from './pages/area-selection/area-selection';
+import {DashboardPage} from './pages/dashboard/dashboard';
+import {AreaSelectionPage} from './pages/area-selection/area-selection';
 
 
 @App({
@@ -13,9 +12,9 @@ import {AreaSelection} from './pages/area-selection/area-selection';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
-  pages: Array<{title: string, component: any}>;
+  // make DashboardPage the root (or first) page
+  rootPage: any = DashboardPage;
+  pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(
     private platform: Platform,
@@ -25,9 +24,10 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'AreaSelection', component: AreaSelection },
+      { title: 'Dashboard', component: DashboardPage, icon: 'apps' },
+      { title: 'Ordering', component: AreaSelectionPage, icon: 'beer' },
+      { title: 'Main data', component: AreaSelectionPage, icon: 'create' },
+      { title: 'Settings', component: AreaSelectionPage, icon: 'construct' },
     ];
   }
 

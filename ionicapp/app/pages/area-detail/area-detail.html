@@ -1,0 +1,46 @@
+<ion-navbar primary *navbar>
+  <button menuToggle *ngIf="!selectedItem">
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>{{area.desc}}</ion-title>
+</ion-navbar>
+
+<ion-content>
+ <!--<div *ngIf="selectedItem" class="selection">
+    <b>{{selectedItem.title}}</b>
+    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
+    <div>
+      You navigated here from <b>{{selectedItem.nr}}</b>
+    </div>
+  </div>-->
+  
+  <ion-card>
+    <ion-card-header>
+      Area statistics
+    </ion-card-header>
+
+    <ion-list>
+      <button ion-item>
+        <ion-icon name="cart" item-left></ion-icon>
+        Open orders: 3
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        Open amount: 6€
+      </button>
+
+      <button ion-item>
+        <ion-icon name="cafe" item-left></ion-icon>
+        Last order: --
+      </button>
+
+    </ion-list>
+    
+  </ion-card>
+  
+  <p>
+  <button primary>New order</button>
+  <button secondary>Accounting</button>
+  </p>
+</ion-content>
