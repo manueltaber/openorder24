@@ -6,15 +6,19 @@
 
   <ion-content>
     <ion-list no-lines>
-      <ion-item-divider>Produktion</ion-item-divider>
+      <ion-item-divider>Production</ion-item-divider>
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
         <ion-icon name="{{p.icon}}" item-left></ion-icon>
         {{p.title}}
       </button>
-      <ion-item-divider>Settings</ion-item-divider>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        <ion-icon name="{{p.icon}}" item-left></ion-icon>
-        {{p.title}}
+      <ion-item-divider>General</ion-item-divider>
+      <button ion-item (click)="openPage(p)">
+        <ion-icon name="construct" item-left></ion-icon>
+        Settings
+      </button>
+      <button ion-item (click)="openPage(p)">
+        <ion-icon name="construct" item-left></ion-icon>
+        Help
       </button>
     </ion-list>
   </ion-content>

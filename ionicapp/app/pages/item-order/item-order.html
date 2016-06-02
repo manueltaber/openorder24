@@ -2,18 +2,10 @@
   <button menuToggle *ngIf="!selectedItem">
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>{{area.desc}}</ion-title>
+  <ion-title>{{item.desc}}</ion-title>
 </ion-navbar>
 
-<ion-content>
- <!--<div *ngIf="selectedItem" class="selection">
-    <b>{{selectedItem.title}}</b>
-    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedItem.nr}}</b>
-    </div>
-  </div>-->
-  
+<ion-content>  
   <ion-card>
     <ion-card-header>
       Area statistics
@@ -40,7 +32,7 @@
   </ion-card>
   
   <p>
-  <button primary (click)="onNewOrder($event)">New order</button>
-  <button>Accounting</button>
+  <button primary (click)="onConfirmItem($event)">Confirm</button>
+  <button secondary>Accounting</button>
   </p>
 </ion-content>

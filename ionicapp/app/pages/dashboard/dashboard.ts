@@ -1,11 +1,16 @@
-import {Page} from 'ionic-angular';
+import {Page, NavController} from 'ionic-angular';
+import {AreaSelectionPage} from '../area-selection/area-selection';
 
 
 @Page({
   templateUrl: 'build/pages/dashboard/dashboard.html'
 })
 export class DashboardPage {
-  constructor() {
+  constructor(private nav: NavController) {
 
+  }
+  
+  startOrdering(event) {
+    this.nav.push(AreaSelectionPage);
   }
 }

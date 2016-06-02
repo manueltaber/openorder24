@@ -1,4 +1,3 @@
-
 <ion-navbar *navbar primary>
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
@@ -18,7 +17,7 @@
   </p>
   <p>
     <button primary menuToggle>Toggle Menu</button>
-    <button primary>Start ordering</button>
+    <button primary (click)="startOrdering($event)">Start ordering</button>
   </p>
   
   

@@ -25,8 +25,10 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Dashboard', component: DashboardPage, icon: 'apps' },
+      { title: 'Login', component: AreaSelectionPage, icon: 'beer' },
       { title: 'Ordering', component: AreaSelectionPage, icon: 'beer' },
       { title: 'Main data', component: AreaSelectionPage, icon: 'create' },
+      { title: 'Statistics', component: AreaSelectionPage, icon: 'pie' },
       { title: 'Settings', component: AreaSelectionPage, icon: 'construct' },
     ];
   }
