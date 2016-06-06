@@ -2,9 +2,11 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title *ngIf="!searching">Items</ion-title>
+  <ion-title *ngIf="!searching">{{category.desc}}</ion-title>
   <ion-buttons end>
-    <ion-icon name="search"></ion-icon>
+    <button>
+      <ion-icon name="search"></ion-icon>
+    </button>
   </ion-buttons>
   <ion-searchbar *ngIf="searching"></ion-searchbar>
 </ion-navbar>
@@ -17,7 +19,6 @@
         {{area.desc}}
       </div>-->
       <h3>Verfügbar | Preis: {{item.price}}€</h3>
-      <ion-icon name="arrow-forward" item-right></ion-icon>
     </button>
   </ion-list>
 </ion-content>

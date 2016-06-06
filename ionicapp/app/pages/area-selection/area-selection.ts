@@ -1,29 +1,55 @@
 import {Page, NavController} from 'ionic-angular';
 import {AreaDetailPage} from '../area-detail/area-detail';
-
 import {Area} from '../../classes/area';
 import {AreaService} from '../../services/area.service';
 import {OrderService} from '../../services/order.service';
 
 @Page({
-  templateUrl: 'build/pages/area-selection/area-selection.html',
-  providers: [AreaService, OrderService]
+  templateUrl: 'build/pages/area-selection/area-selection.html'
 })
 export class AreaSelectionPage {
   
   areas: Area[];
-  searching: boolean;
+  searchbarVisible: boolean;
+  searchbarText: string='';
 
-  constructor(private nav: NavController, areaService: AreaService,
-              orderService: OrderService) {
+  constructor(private nav: NavController, private areaService: AreaService,
+              private orderService: OrderService) {
     //this.areas = AREAS;
     this.areas = areaService.getAreas();
-    this.searching = false;
+    this.searchbarVisible = false;
+  }
+  
+  getAreas() {
+    /*return this.areas.filter(area => area.desc == this.searchbarText)
+    return this.areas.then(categories => categories.filter(c => c.nr === +nr)[0])*/
+  }
+  
+  showSearchbar(event) {
+    this.searchbarVisible = true;
+  }
+  
+  onSearchbarInput(event) {
+    //alert('input');
+  }
+  
+  onSearchbarBlur(event) {
+    //alert('blur');
+    if (this.searchbarText.length == 0) {
+      this.searchbarVisible = false;
+    }
+  }
+  
+  onSearchbarCancel(event) {
+    alert('cancel');
+    this.searchbarVisible = false;
+  }
+  
+  getOpenOrderCount(area: Area) {
+    return this.orderService.getOpenOrdersByArea(area).length;
   }
 
-  itemTapped(event, area) {
-    this.nav.push(AreaDetailPage, {
-      area: area
-    });
+  onAreaSelected(event, area) {
+    this.nav.push(AreaDetailPage, {area: area});
   }
 }

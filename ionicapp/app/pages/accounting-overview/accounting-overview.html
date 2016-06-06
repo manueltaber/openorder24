@@ -2,7 +2,7 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title *ngIf="!searching">Categories</ion-title>
+  <ion-title *ngIf="!searching">Accounting</ion-title>
   
   <ion-buttons end>
     <button>
@@ -18,15 +18,15 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let category of categories" (click)="onCategorySelected($event, category)">
-      <ion-icon name="{{category.icon}}" item-left></ion-icon>
-      <h2>{{category.nr}} - {{category.desc}}</h2>
+    <button ion-item *ngFor="let order of orders" (click)="onOrderSelected($event, order)">
+      <ion-icon name="restaurant" item-left></ion-icon>
+      <h2>{{order.nr}} - {{order.desc}}</h2>
     </button>
   </ion-list>
 </ion-content>
 
 <ion-toolbar position="bottom">
-  <ion-title>Bestellungen: {{getTempOrders().length}} / {{getTempOrdersAmount()}}€</ion-title>
+  <ion-title>Bestellungen: 0 / 0€</ion-title>
   <ion-buttons end>
     <button outline>
       <ion-icon name="checkmark"></ion-icon> 

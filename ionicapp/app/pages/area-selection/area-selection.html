@@ -2,23 +2,35 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title *ngIf="!searching">Areas</ion-title>
+  
+  <ion-title *ngIf="!searchbarVisible">Areas</ion-title>
+
   <ion-buttons end>
-    <ion-icon name="search"></ion-icon>
+    <button (click)="showSearchbar($event)">
+      <ion-icon name="search"></ion-icon>
+    </button>
   </ion-buttons>
-  <ion-searchbar *ngIf="searching"></ion-searchbar>
+  
+  <ion-searchbar 
+    *ngIf="searchbarVisible"
+    [(ngModel)]="searchbarText"
+    [hideCancelButton]="true"
+    placeholder="Haaaalllloooo"
+    (blur)="onSearchbarBlur($event)"
+    (input)="onSearchbarInput($event)"
+    (cancel)="onSearchbarCancel($event)">
+   </ion-searchbar>
 </ion-navbar>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let area of areas" (click)="itemTapped($event, area)">
-      <ion-icon name="wifi" item-left></ion-icon>
+    <ion-item-divider>Main</ion-item-divider>
+    <button ion-item *ngFor="let area of areas" (click)="onAreaSelected($event, area)">
       <h2>{{area.nr}} - {{area.desc}}</h2>
       <!--<div class="item-note" item-right>
         {{area.desc}}
       </div>-->
-      <h3>Open orders: 6</h3>
-      <ion-icon name="arrow-forward" item-right></ion-icon>
+      <h3>Open orders: {{getOpenOrderCount(area)}}</h3>
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>

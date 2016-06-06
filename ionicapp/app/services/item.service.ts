@@ -6,23 +6,30 @@ import {ITEMS} from '../mockups/items';
 @Injectable()
 export class ItemService {
 
-  constructor() {}
-  
-  getItems(category: Category) {
-    //return Promise.resolve(ITEMS);
-    let res_items = [];
-    let item: Item;
-    for (item of ITEMS) {
-      if (item.category_nr == category.nr) {
-        res_items.push(item);
-      }
-    }
-    return res_items;
+  items: Item[];
+
+  constructor() {
+    this.items = ITEMS;
   }
   
-  getItem(nr: number) {
-    return Promise.resolve(ITEMS)
-      .then(items => items.filter(i => i.nr === +nr)[0]);
+  getItemsByCategory(category: Category) {
+    let items = [];
+    let item: Item;
+    for (item of this.items) {
+      if (item.category_nr == category.nr) {
+        items.push(item);
+      }
+    }
+    return items;
+  }
+  
+  getItemByNr(nr: number) {
+    let item: Item;
+    for (item of this.items) {
+      if (item.nr == nr) {
+        return item;
+      }
+    }
   }
 
 }

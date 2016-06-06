@@ -6,14 +6,6 @@
 </ion-navbar>
 
 <ion-content>
- <!--<div *ngIf="selectedItem" class="selection">
-    <b>{{selectedItem.title}}</b>
-    <ion-icon name="{{selectedItem.icon}}"></ion-icon>
-    <div>
-      You navigated here from <b>{{selectedItem.nr}}</b>
-    </div>
-  </div>-->
-  
   <ion-card>
     <ion-card-header>
       Area statistics
@@ -21,26 +13,30 @@
 
     <ion-list>
       <button ion-item>
-        <ion-icon name="cart" item-left></ion-icon>
-        Open orders: 3
+        <ion-icon name="clipboard" item-left></ion-icon>
+        Open orders: {{getOpenOrderCount()}}
       </button>
 
       <button ion-item>
-        <ion-icon name="medical" item-left></ion-icon>
-        Open amount: 6€
+        <ion-icon name="card" item-left></ion-icon>
+        Open amount: {{getOpenOrderAmount()}}€
       </button>
 
       <button ion-item>
-        <ion-icon name="cafe" item-left></ion-icon>
+        <ion-icon name="walk" item-left></ion-icon>
         Last order: --
       </button>
 
+      <p padding>
+        <button clear primary (click)="onNewOrder($event)">
+          <ion-icon name="clipboard"></ion-icon> 
+          New order
+        </button>
+        <button clear danger (click)="onAccounting($event)">
+          <ion-icon name="card"></ion-icon> 
+          Accounting
+        </button>
+      </p>
     </ion-list>
-    
   </ion-card>
-  
-  <p>
-  <button primary (click)="onNewOrder($event)">New order</button>
-  <button>Accounting</button>
-  </p>
 </ion-content>
