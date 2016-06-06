@@ -1,6 +1,6 @@
 env:
   global:
-    - REPO="webapp"
+    - REPO="ionicapp"
     - CI_HOME=`pwd`/$REPO
 
 language: node_js
