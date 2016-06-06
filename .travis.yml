@@ -12,4 +12,3 @@ install:
   - npm install -g firebase-tools
 after_success:
   - firebase login:ci
-  - firebase deploy --email ${FIREBASE_USERNAME} --password ${FIREBASE_PASSWORD}
