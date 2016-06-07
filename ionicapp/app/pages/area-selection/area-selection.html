@@ -24,16 +24,9 @@
 
 <ion-content>
   <ion-list>
-    <ion-item-divider>Main</ion-item-divider>
     <button ion-item *ngFor="let area of areas" (click)="onAreaSelected($event, area)">
       <h2>{{area.nr}} - {{area.desc}}</h2>
-      <!--<div class="item-note" item-right>
-        {{area.desc}}
-      </div>-->
       <h3>Open orders: {{getOpenOrderCount(area)}}</h3>
     </button>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>
