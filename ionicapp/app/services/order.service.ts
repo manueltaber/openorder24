@@ -60,6 +60,18 @@ export class OrderService {
     return sum;
   }
 
+  getOpenOrdersItems() {
+    let items: Item[] = [];
+    let order: Order;
+    for (order of this.openOrders) {
+      let item = this.itemService.getItemByNr(order.item_nr);
+      if (item) {
+        items.push(item);
+      }
+    }
+    return items;
+  }
+
   getOpenOrdersItemsByArea(area: Area) {
     let items: Item[] = [];
     let order: Order;

@@ -3,6 +3,7 @@ import {App, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {DashboardPage} from './pages/dashboard/dashboard';
 import {AreaSelectionPage} from './pages/area-selection/area-selection';
+import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
 import {AreaService} from './services/area.service';
 import {CategoryService} from './services/category.service';
 import {ItemService} from './services/item.service';
@@ -32,7 +33,7 @@ class MyApp {
       { title: 'Dashboard', component: DashboardPage, icon: 'apps' },
       { title: 'Login', component: AreaSelectionPage, icon: 'log-in' },
       { title: 'Ordering', component: AreaSelectionPage, icon: 'clipboard' },
-      { title: 'Live monitor', component: AreaSelectionPage, icon: 'desktop' },
+      { title: 'Live monitor', component: LiveMonitorPage, icon: 'desktop' },
       { title: 'Main data', component: AreaSelectionPage, icon: 'create' },
       { title: 'Statistics', component: AreaSelectionPage, icon: 'pie' },
     ];

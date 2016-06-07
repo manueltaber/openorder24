@@ -1,5 +1,6 @@
 import {Page, NavController} from 'ionic-angular';
 import {AreaSelectionPage} from '../area-selection/area-selection';
+import {LiveMonitorPage} from '../live-monitor/live-monitor';
 import {AreaService} from '../../services/area.service';
 import {OrderService} from '../../services/order.service';
 
@@ -21,5 +22,9 @@ export class DashboardPage {
   
   startOrdering(event) {
     this.nav.push(AreaSelectionPage);
+  }
+
+  liveMonitor(event) {
+    this.nav.push(LiveMonitorPage);
   }
 }

@@ -1,0 +1,15 @@
+<ion-navbar primary *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Live monitor</ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-list>
+    <button ion-item *ngFor="let item of getOpenOrdersItems()">
+      <h2>{{item.nr}} - {{item.desc}}</h2>
+      <h3>Schnell</h3>
+    </button>
+  </ion-list>
+</ion-content>
