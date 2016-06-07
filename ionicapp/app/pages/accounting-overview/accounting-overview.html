@@ -18,7 +18,7 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="onOrderSelected($event, order)">
+    <button ion-item *ngFor="let item of items">
       <h2>{{item.nr}} - {{item.desc}}</h2>
       <h3>Preis: {{item.price}}€</h3>
     </button>

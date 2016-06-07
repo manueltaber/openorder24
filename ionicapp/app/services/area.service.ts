@@ -8,7 +8,6 @@ export class AreaService {
   constructor() {}
   
   getAreas() {
-    //return Promise.resolve(AREAS);
     return AREAS;
   }
   

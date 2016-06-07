@@ -15,15 +15,9 @@ export class AccountingOverviewPage {
 
   constructor(private nav: NavController, private navParams: NavParams,
               private orderService: OrderService) {
-    //this.areas = AREAS;
     this.area = navParams.get('area');
     this.items = orderService.getOpenOrdersItemsByArea(this.area);
     this.searching = false;
   }
-  
-  onOrderSelected(event, order: Order) {
-    /*this.nav.push(ItemSelectionPage, {
-      category: category
-    });*/
-  }
+
 }

@@ -8,7 +8,6 @@ export class CategoryService {
   constructor() {}
   
   getCategories() {
-    //return Promise.resolve(AREAS);
     return CATEGORIES;
   }
   

@@ -11,28 +11,26 @@
       Area statistics
     </ion-card-header>
     <ion-list>
-      <button ion-item>
+      <ion-item>
         <ion-icon name="clipboard" item-left></ion-icon>
         Open orders: {{getOpenOrderCount()}}
-      </button>
-      <button ion-item>
+      </ion-item>
+      <ion-item>
         <ion-icon name="card" item-left></ion-icon>
         Open amount: {{getOpenOrderAmount()}}€
-      </button>
-      <button ion-item>
-        <ion-icon name="walk" item-left></ion-icon>
-        Last order: --
-      </button>
+      </ion-item>
     </ion-list>
-  </ion-card>
-  <p class="card-margin">
-    <button primary (click)="onNewOrder($event)">
+    <button clear primary (click)="onNewOrder($event)">
       <ion-icon name="clipboard"></ion-icon> 
-      New order
+      Order
     </button>
-    <button danger (click)="onAccounting($event)">
+    <button clear primary>
+      <ion-icon name="flash"></ion-icon> 
+      Quickorder
+    </button>
+    <button clear danger (click)="onAccounting($event)">
       <ion-icon name="card"></ion-icon> 
       Accounting
     </button>
-  </p>
+  </ion-card>
 </ion-content>
