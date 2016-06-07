@@ -4,9 +4,11 @@ import {Category} from '../../classes/category';
 import {CategoryService} from '../../services/category.service';
 import {OrderService} from '../../services/order.service';
 import {ItemSelectionPage} from '../item-selection/item-selection';
+import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
 @Page({
-  templateUrl: 'build/pages/category-selection/category-selection.html'
+  templateUrl: 'build/pages/category-selection/category-selection.html',
+  directives: [OrderingFooterComponent]
 })
 export class CategorySelectionPage {
   
@@ -20,14 +22,6 @@ export class CategorySelectionPage {
     this.area = navParams.get('area');
     this.categories = categoryService.getCategories();
     this.searching = false;
-  }
-  
-  getTempOrders() {
-    return this.orderService.getTempOrdersByArea(this.area);
-  }
-  
-  getTempOrdersAmount() {
-    return this.orderService.getTempOrdersAmountByArea(this.area);
   }
   
   onCategorySelected(event, category: Category) {

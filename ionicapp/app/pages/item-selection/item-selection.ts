@@ -4,9 +4,11 @@ import {Category} from '../../classes/category';
 import {Item} from '../../classes/item';
 import {ItemService} from '../../services/item.service';
 import {ItemOrderPage} from '../item-order/item-order';
+import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
 @Page({
-  templateUrl: 'build/pages/item-selection/item-selection.html'
+  templateUrl: 'build/pages/item-selection/item-selection.html',
+  directives: [OrderingFooterComponent]
 })
 export class ItemSelectionPage {
   
