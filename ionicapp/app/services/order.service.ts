@@ -33,6 +33,18 @@ export class OrderService {
     }
     return orders;
   }
+
+  getOpenOrdersAmount() {
+    let sum: number = 0;
+    let order: Order;
+    for (order of this.openOrders) {
+      let item = this.itemService.getItemByNr(order.item_nr);
+      if (item) {
+        sum = sum + item.price;
+      }
+    }
+    return sum;
+  }
   
   getOpenOrdersAmountByArea(area: Area) {
     let sum: number = 0;

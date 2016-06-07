@@ -5,82 +5,25 @@
   <ion-title>Dashboard</ion-title>
 </ion-navbar>
 
-<ion-content padding class="getting-started">
-
-  <h3>Welcome to the openorder dashboard!</h3>
-
-  <p>
-    This starter project is our way of helping you get a functional app running in record time.
-  </p>
-  <p>
-    <button primary (click)="startOrdering($event)">Start ordering</button>
-    <button primary menuToggle>Settings</button>
-  </p>
-  
+<ion-content class="getting-started">
   <ion-card>
     <ion-card-header>
       Statistics
     </ion-card-header>
-
     <ion-list>
       <button ion-item>
-        <ion-icon name="cart" item-left></ion-icon>
-        Open orders
+        <ion-icon name="clipboard" item-left></ion-icon>
+        Open orders: {{openOrders}}
       </button>
-
       <button ion-item>
-        <ion-icon name="medical" item-left></ion-icon>
-        Total areas
+        <ion-icon name="card" item-left></ion-icon>
+        Open amount: {{openAmount}}€
       </button>
-
       <button ion-item>
-        <ion-icon name="cafe" item-left></ion-icon>
-        Earned today
+        <ion-icon name="albums" item-left></ion-icon>
+        Total areas: {{totalAreas}}
       </button>
     </ion-list>
   </ion-card>
-  
-  <ion-card>
-    <ion-card-header>
-      Explore Nearby
-    </ion-card-header>
-
-    <ion-list>
-      <button ion-item>
-        <ion-icon name="cart" item-left></ion-icon>
-        Shopping
-      </button>
-
-      <button ion-item>
-        <ion-icon name="medical" item-left></ion-icon>
-        Hospital
-      </button>
-
-      <button ion-item>
-        <ion-icon name="cafe" item-left></ion-icon>
-        Cafe
-      </button>
-
-      <button ion-item>
-        <ion-icon name="paw" item-left></ion-icon>
-        Dog Park
-      </button>
-
-      <button ion-item>
-        <ion-icon name="beer" item-left></ion-icon>
-        Pub
-      </button>
-
-      <button ion-item>
-        <ion-icon name="planet" item-left></ion-icon>
-        Space
-      </button>
-
-    </ion-list>
-  </ion-card>
-  
-  
-  
-
-
+  <button primary full (click)="startOrdering($event)">Start ordering</button>
 </ion-content>
