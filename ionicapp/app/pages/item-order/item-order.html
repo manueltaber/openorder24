@@ -15,10 +15,54 @@
         <ion-label fixed>Anzahl</ion-label>
         <ion-input type="number" value="1"></ion-input>
       </ion-item>
+      <ion-item>
+        <ion-label fixed>Optional</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Zutat 1</ion-label>
+        <ion-checkbox checked="true"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zutat 2</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zutat 3</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zutat 4</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zutat 5</ion-label>
+        <ion-checkbox checked="true"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zutat 6</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Zutat 7</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </ion-item>
+      
+      
     </ion-list>
+    <button clear primary (click)="onConfirmItem($event, 0)">Confirm (Categories)</button>
+    <button clear primary (click)="onConfirmItem($event, 1)">Confirm (Items)</button>
   </ion-card>
-  <p>
-    <button primary (click)="onConfirmItem($event, 0)">Confirm (Categories)</button>
-    <button primary (click)="onConfirmItem($event, 1)">Confirm (Items)</button>
-  </p>
 </ion-content>
+
+<ion-toolbar position="bottom">
+    <button outline (click)="onConfirmItem($event, 0)">
+      <ion-icon name="checkmark"></ion-icon> 
+      Confirm (Categories)
+    </button>
+    <button outline (click)="onConfirmItem($event, 1)">
+      <ion-icon name="checkmark"></ion-icon> 
+      Confirm (Items)
+    </button>
+</ion-toolbar>
