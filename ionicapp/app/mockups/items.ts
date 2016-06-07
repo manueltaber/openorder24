@@ -5,7 +5,7 @@ export var ITEMS: Item[] = [
   { 'nr': 2, 'desc': 'Suppe', 'price': 5, 'category_nr': 1 },
   { 'nr': 3, 'desc': 'Reis', 'price': 6, 'category_nr': 1 },
   { 'nr': 4, 'desc': 'Lasagne', 'price': 7.5, 'category_nr': 1 },
-  { 'nr': 5, 'desc': 'Kn\u00fcdel', 'price': 6.2, 'category_nr': 1 },
+  { 'nr': 5, 'desc': 'Knödel', 'price': 6.2, 'category_nr': 1 },
 
   { 'nr': 6, 'desc': 'Fleisch', 'price': 12.5, 'category_nr': 2 },
   { 'nr': 7, 'desc': 'Fisch', 'price': 21, 'category_nr': 2 },
