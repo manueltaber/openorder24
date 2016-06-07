@@ -59,6 +59,20 @@ export class OrderService {
     }
     return sum;
   }
+
+  getOpenOrdersItemsByArea(area: Area) {
+    let items: Item[] = [];
+    let order: Order;
+    for (order of this.openOrders) {
+      if (order.area_nr == area.nr) {
+        let item = this.itemService.getItemByNr(order.item_nr);
+        if (item) {
+          items.push(item);
+        }
+      }
+    }
+    return items;
+  }
   
   // temp orders
   

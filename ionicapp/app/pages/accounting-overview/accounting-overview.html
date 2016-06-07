@@ -18,23 +18,16 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let order of orders" (click)="onOrderSelected($event, order)">
-      <ion-icon name="restaurant" item-left></ion-icon>
-      <h2>{{order.nr}} - {{order.desc}}</h2>
+    <button ion-item *ngFor="let item of items" (click)="onOrderSelected($event, order)">
+      <h2>{{item.nr}} - {{item.desc}}</h2>
+      <h3>Preis: {{item.price}}€</h3>
     </button>
   </ion-list>
 </ion-content>
 
 <ion-toolbar position="bottom">
-  <ion-title>Bestellungen: 0 / 0€</ion-title>
-  <ion-buttons end>
     <button outline>
       <ion-icon name="checkmark"></ion-icon> 
-      Confirm
+      Abschließen
     </button>
-    <button outline>
-      <ion-icon name="close"></ion-icon> 
-      Cancel
-    </button>
-  </ion-buttons>
 </ion-toolbar>
