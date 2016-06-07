@@ -113,4 +113,8 @@ export class OrderService {
     this.tempOrders = [];
   }
 
+  cancelTempOrders() {
+    this.tempOrders = [];
+  }
+
 }

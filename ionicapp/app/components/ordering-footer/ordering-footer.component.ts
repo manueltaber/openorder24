@@ -8,17 +8,17 @@ import {OrderService} from '../../services/order.service'
   inputs: ['area'],
   template: `
     <ion-toolbar position="bottom">
-        <ion-title>Bestellungen: {{getTempOrders().length}} / {{getTempOrdersAmount()}}€</ion-title>
-        <ion-buttons end>
-            <button outline>
-            <ion-icon name="checkmark"></ion-icon> 
-            Confirm
-            </button>
-            <button outline>
-            <ion-icon name="close"></ion-icon> 
-            Cancel
-            </button>
-        </ion-buttons>
+      <ion-title>Bestellungen: {{getTempOrders().length}} / {{getTempOrdersAmount()}}€</ion-title>
+      <ion-buttons end>
+        <button outline (click)="onConfirmTempOrders($event)">
+          <ion-icon name="checkmark"></ion-icon> 
+          Confirm
+        </button>
+        <button outline (click)="onCancelTempOrders($event)">
+          <ion-icon name="close"></ion-icon> 
+          Cancel
+        </button>
+      </ion-buttons>
     </ion-toolbar>`
 })
 export class OrderingFooterComponent implements OnInit {
@@ -36,6 +36,14 @@ export class OrderingFooterComponent implements OnInit {
   
   getTempOrdersAmount() {
     return this.orderService.getTempOrdersAmountByArea(this.area);
+  }
+
+  onConfirmTempOrders(event) {
+    this.orderService.confirmTempOrders();
+  }
+
+  onCancelTempOrders(event) {
+    this.orderService.cancelTempOrders();
   }
 
 }
