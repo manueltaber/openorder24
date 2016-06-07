@@ -6,12 +6,12 @@ env:
 language: node_js
 
 install:
-  - npm install -g ionic@beta
-  - npm install -g cordova
-  - npm install -g firebase-tools
+  - sudo npm install -g ionic@beta
+  - sudo npm install -g cordova
+  - sudo npm install -g firebase-tools
 script:
   - cd ionicapp
   - npm install
-  - ionic build web
+  - ionic build browser
 after_success:
   - firebase deploy --token ${FIREBASE_TOKEN}
