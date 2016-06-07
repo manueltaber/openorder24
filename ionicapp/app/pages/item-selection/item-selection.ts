@@ -30,4 +30,12 @@ export class ItemSelectionPage {
       area: this.area, category: this.category, item: item
     });
   }
+
+  onTempOrdersConfirmed() {
+    this.nav.popToRoot();
+  }
+
+  onTempOrdersCanceled() {
+    this.nav.popToRoot();
+  }
 }

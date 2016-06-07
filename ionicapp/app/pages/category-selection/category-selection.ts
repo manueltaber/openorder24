@@ -23,6 +23,14 @@ export class CategorySelectionPage {
     this.categories = categoryService.getCategories();
     this.searching = false;
   }
+
+  onTempOrdersConfirmed() {
+    this.nav.popToRoot();
+  }
+
+  onTempOrdersCanceled() {
+    this.nav.popToRoot();
+  }
   
   onCategorySelected(event, category: Category) {
     /*let confirm = Alert.create({

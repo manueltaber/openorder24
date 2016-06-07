@@ -20,4 +20,7 @@
   </ion-list>
 </ion-content>
 
-<ordering-footer [area]="area"></ordering-footer>
+<ordering-footer [area]="area" 
+  (tempOrdersConfirmed)="onTempOrdersConfirmed()" 
+  (tempOrdersCanceled)="onTempOrdersCanceled()">
+</ordering-footer>

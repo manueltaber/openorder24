@@ -1,11 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Area} from '../../classes/area';
 import {OrderService} from '../../services/order.service'
 
 @Component({
   moduleId: module.id,
   selector: 'ordering-footer',
-  inputs: ['area'],
   template: `
     <ion-toolbar position="bottom">
       <ion-title>Bestellungen: {{getTempOrders().length}} / {{getTempOrdersAmount()}}€</ion-title>
@@ -23,7 +22,9 @@ import {OrderService} from '../../services/order.service'
 })
 export class OrderingFooterComponent implements OnInit {
 
-  public area: Area;
+  @Input() area: Area;
+  @Output() tempOrdersConfirmed = new EventEmitter();
+  @Output() tempOrdersCanceled = new EventEmitter();
 
   constructor(private orderService: OrderService) {}
 
@@ -40,10 +41,12 @@ export class OrderingFooterComponent implements OnInit {
 
   onConfirmTempOrders(event) {
     this.orderService.confirmTempOrders();
+    this.tempOrdersConfirmed.emit("event");
   }
 
   onCancelTempOrders(event) {
     this.orderService.cancelTempOrders();
+    this.tempOrdersCanceled.emit("event");
   }
 
 }
