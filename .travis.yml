@@ -10,6 +10,7 @@ install:
   - npm install -g cordova
 script:
   - cd ionicapp
+  - npm install
   - ionic build web
 after_success:
   - firebase deploy --token ${FIREBASE_TOKEN}
