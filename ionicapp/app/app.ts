@@ -31,7 +31,6 @@ class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'Dashboard', component: DashboardPage, icon: 'apps' },
-      { title: 'Login', component: AreaSelectionPage, icon: 'log-in' },
       { title: 'Ordering', component: AreaSelectionPage, icon: 'clipboard' },
       { title: 'Live monitor', component: LiveMonitorPage, icon: 'desktop' },
       { title: 'Main data', component: AreaSelectionPage, icon: 'create' },

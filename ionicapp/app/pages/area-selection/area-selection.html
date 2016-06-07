@@ -26,7 +26,10 @@
   <ion-list>
     <button ion-item *ngFor="let area of areas" (click)="onAreaSelected($event, area)">
       <h2>{{area.nr}} - {{area.desc}}</h2>
-      <h3>Open orders: {{getOpenOrderCount(area)}}</h3>
+      <h3 item-right *ngIf="getOpenOrderCount(area)>0">
+        <ion-icon name="clipboard" item-left></ion-icon>
+        {{getOpenOrderCount(area)}}
+      </h3>
     </button>
   </ion-list>
 </ion-content>
