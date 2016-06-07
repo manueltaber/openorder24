@@ -8,22 +8,36 @@
 <ion-content class="getting-started">
   <ion-card>
     <ion-card-header>
-      Statistics
+      Area statistics:
     </ion-card-header>
     <ion-list>
-      <button ion-item>
-        <ion-icon name="clipboard" item-left></ion-icon>
-        Open orders: {{openOrders}}
-      </button>
-      <button ion-item>
-        <ion-icon name="card" item-left></ion-icon>
-        Open amount: {{openAmount}}€
-      </button>
-      <button ion-item>
+      <ion-item>
         <ion-icon name="albums" item-left></ion-icon>
         Total areas: {{totalAreas}}
-      </button>
+      </ion-item>
     </ion-list>
+    <button clear (click)="startOrdering($event)">
+      <ion-icon name="clipboard" item-left></ion-icon>
+      Start ordering
+    </button>
   </ion-card>
-  <button primary full (click)="startOrdering($event)">Start ordering</button>
+  <ion-card>
+    <ion-card-header>
+      Order statistics:
+    </ion-card-header>
+    <ion-list>
+      <ion-item>
+        <ion-icon name="clipboard" item-left></ion-icon>
+        Open orders: {{openOrders}}
+      </ion-item>
+      <ion-item>
+        <ion-icon name="card" item-left></ion-icon>
+        Open amount: {{openAmount}}€
+      </ion-item>
+    </ion-list>
+    <button clear>
+      <ion-icon name="desktop" item-left></ion-icon>
+      Live monitor
+    </button>
+  </ion-card>
 </ion-content>
