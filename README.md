@@ -1,11 +1,9 @@
 # openorder
 
+[![Build Status](https://travis-ci.org/manueltaber/openorder.svg?branch=master)](https://travis-ci.org/manueltaber/openorder) [![Join the chat at https://gitter.im/manueltaber/openorder](https://badges.gitter.im/manueltaber/openorder.svg)](https://gitter.im/manueltaber/openorder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This is the Angular2 port of the "OpenOrder" - App.
-
-## Build status
-[![Build Status](https://travis-ci.org/manueltaber/openorder.svg?branch=master)](https://travis-ci.org/manueltaber/openorder)
-
-[![Join the chat at https://gitter.im/manueltaber/openorder](https://badges.gitter.im/manueltaber/openorder.svg)](https://gitter.im/manueltaber/openorder?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+Try out the hosted DEMO version of the Ionic-App: [DEMO](https://project-5410628368334979052.firebaseapp.com/)
 
 ## Getting started with the Ionic-App
 
