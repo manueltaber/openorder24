@@ -7,13 +7,13 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let item of getOpenOrdersItems()">
+  <ion-card *ngFor="let item of items">
     <ion-card-header>
       {{item.nr}} - {{item.desc}}
     </ion-card-header>
-    <ion-card-content>
-      <!--Hallo hallo-->
-    </ion-card-content>
+    <!--<ion-card-content>
+      Hallo hallo
+    </ion-card-content>-->
     <!--<ion-list>
       <button ion-item>
         <ion-icon name="cart" item-left></ion-icon>
@@ -27,7 +27,7 @@
 
     </ion-list>-->
 
-    <button clear primary>
+    <button clear primary (click)="itemDone($event, item)">
       <ion-icon name="checkmark"></ion-icon> 
       Done
     </button>
