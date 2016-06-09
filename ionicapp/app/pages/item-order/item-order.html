@@ -7,9 +7,6 @@
 
 <ion-content>  
   <ion-card>
-    <ion-card-header>
-      Item data:
-    </ion-card-header>
     <ion-list>
       <ion-item>
         <ion-label fixed>Anzahl</ion-label>
@@ -42,18 +39,16 @@
       </ion-item>      
       
     </ion-list>
-    <button clear primary (click)="onConfirmItem($event, 0)">Confirm (Categories)</button>
-    <button clear primary (click)="onConfirmItem($event, 1)">Confirm (Items)</button>
   </ion-card>
 </ion-content>
 
 <ion-toolbar position="bottom">
     <button outline (click)="onConfirmItem($event, 0)">
       <ion-icon name="checkmark"></ion-icon> 
-      Confirm (Categories)
+      Categories
     </button>
     <button outline (click)="onConfirmItem($event, 1)">
       <ion-icon name="checkmark"></ion-icon> 
-      Confirm (Items)
+      Items
     </button>
 </ion-toolbar>
