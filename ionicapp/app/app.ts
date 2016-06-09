@@ -1,6 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
+import {ComingSoonPage} from './pages/coming-soon/coming-soon';
 import {DashboardPage} from './pages/dashboard/dashboard';
 import {AreaSelectionPage} from './pages/area-selection/area-selection';
 import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
@@ -44,22 +45,22 @@ class MyApp {
         icon: 'desktop' },
       { 
         title: this.translationService.getTranslation('MAIN_DATA'), 
-        component: AreaSelectionPage, 
+        component: ComingSoonPage, 
         icon: 'create' },
       { 
         title: this.translationService.getTranslation('STATISTICS'), 
-        component: AreaSelectionPage, 
+        component: ComingSoonPage, 
         icon: 'pie' },
     ];
 
     this.general_pages = [
       { 
         title: this.translationService.getTranslation('SETTINGS'), 
-        component: DashboardPage, 
+        component: ComingSoonPage, 
         icon: 'settings' },
       { 
         title: this.translationService.getTranslation('HELP'), 
-        component: DashboardPage, 
+        component: ComingSoonPage, 
         icon: 'help' },
     ];
   }
