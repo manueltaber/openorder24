@@ -8,16 +8,16 @@
 <ion-content>
   <ion-card>
     <ion-card-header>
-      Area statistics
+      {{translationService.getTranslation('AREA_STATISTICS')}}
     </ion-card-header>
     <ion-list>
       <ion-item>
         <ion-icon name="clipboard" item-left></ion-icon>
-        Open orders: {{getOpenOrderCount()}}
+        {{translationService.getTranslation('OPEN_ORDERS')}}: {{getOpenOrderCount()}}
       </ion-item>
       <ion-item>
         <ion-icon name="card" item-left></ion-icon>
-        Open amount: {{getOpenOrderAmount()}}€
+        {{translationService.getTranslation('OPEN_AMOUNT')}}: {{getOpenOrderAmount()}}€
       </ion-item>
     </ion-list>
     <button clear primary (click)="onNewOrder($event)">

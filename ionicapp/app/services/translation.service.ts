@@ -88,4 +88,8 @@ export var TRANSLATIONS = {
         'DEU': 'Bestellung aufgeben',
         'ITA': '',
         'ENG': 'Start ordering'},
+    'AREAS': {
+        'DEU': 'Bereiche',
+        'ITA': '',
+        'ENG': 'Areas'},
 }

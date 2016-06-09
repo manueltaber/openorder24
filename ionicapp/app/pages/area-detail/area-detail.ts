@@ -3,6 +3,7 @@ import {NavController, NavParams} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Order} from '../../classes/order';
 import {OrderService} from '../../services/order.service';
+import {TranslationService} from '../../services/translation.service';
 import {CategorySelectionPage} from '../category-selection/category-selection';
 import {AccountingOverviewPage} from '../accounting-overview/accounting-overview';
 
@@ -14,8 +15,10 @@ export class AreaDetailPage {
   area: Area;
   openOrders: Order[];
 
-  constructor(private nav: NavController, private navParams: NavParams,
-              private orderService: OrderService) {
+  constructor(private nav: NavController, 
+              private navParams: NavParams,
+              private orderService: OrderService,
+              private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.openOrders = orderService.getOpenOrdersByArea(this.area);
   }

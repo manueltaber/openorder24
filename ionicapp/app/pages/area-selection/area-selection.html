@@ -3,7 +3,9 @@
     <ion-icon name="menu"></ion-icon>
   </button>
   
-  <ion-title *ngIf="!searchbarVisible">Areas</ion-title>
+  <ion-title *ngIf="!searchbarVisible">
+    {{translationService.getTranslation('AREAS')}}
+  </ion-title>
 
   <ion-buttons end>
     <button (click)="showSearchbar($event)">
