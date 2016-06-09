@@ -6,10 +6,31 @@
 </ion-navbar>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of getOpenOrdersItems()">
-      <h2>{{item.nr}} - {{item.desc}}</h2>
-      <h3>Schnell</h3>
+
+  <ion-card *ngFor="let item of getOpenOrdersItems()">
+    <ion-card-header>
+      {{item.nr}} - {{item.desc}}
+    </ion-card-header>
+    <ion-card-content>
+      <!--Hallo hallo-->
+    </ion-card-content>
+    <!--<ion-list>
+      <button ion-item>
+        <ion-icon name="cart" item-left></ion-icon>
+        Shopping
+      </button>
+
+      <button ion-item>
+        <ion-icon name="medical" item-left></ion-icon>
+        Hospital
+      </button>
+
+    </ion-list>-->
+
+    <button clear primary>
+      <ion-icon name="checkmark"></ion-icon> 
+      Done
     </button>
-  </ion-list>
+
+  </ion-card>
 </ion-content>
