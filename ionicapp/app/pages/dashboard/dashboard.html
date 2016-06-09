@@ -2,46 +2,46 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title>Dashboard</ion-title>
+  <ion-title>{{translationService.getTranslation('DASHBOARD')}}</ion-title>
 </ion-navbar>
 
 <ion-content class="getting-started">
   <ion-card>
     <ion-card-header>
-      Area statistics:
+      {{translationService.getTranslation('AREA_STATISTICS')}}:
     </ion-card-header>
     <ion-list>
       <ion-item>
         <ion-icon name="albums" item-left></ion-icon>
-        Total areas: {{totalAreas}}
+        {{translationService.getTranslation('TOTAL_AREAS')}}: {{totalAreas}}
       </ion-item>
       <ion-item>
         <ion-icon name="clipboard" item-left></ion-icon>
-        Open orders: {{openOrders}}
+        {{translationService.getTranslation('OPEN_ORDERS')}}: {{openOrders}}
       </ion-item>
     </ion-list>
     <button clear (click)="startOrdering($event)">
       <ion-icon name="clipboard" item-left></ion-icon>
-      Start ordering
+      {{translationService.getTranslation('START_ORDERING')}}
     </button>
   </ion-card>
   <ion-card>
     <ion-card-header>
-      Order statistics:
+      {{translationService.getTranslation('ORDER_STATISTICS')}}:
     </ion-card-header>
     <ion-list>
       <ion-item>
         <ion-icon name="clipboard" item-left></ion-icon>
-        Open orders: {{openOrders}}
+        {{translationService.getTranslation('OPEN_ORDERS')}}: {{openOrders}}
       </ion-item>
       <ion-item>
         <ion-icon name="card" item-left></ion-icon>
-        Open amount: {{openAmount}}€
+        {{translationService.getTranslation('OPEN_AMOUNT')}}: {{openAmount}}€
       </ion-item>
     </ion-list>
     <button clear (click)="liveMonitor($event)">
       <ion-icon name="desktop" item-left></ion-icon>
-      Live monitor
+      {{translationService.getTranslation('LIVE_MONITOR')}}
     </button>
   </ion-card>
 </ion-content>

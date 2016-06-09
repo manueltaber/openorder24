@@ -1,28 +1,20 @@
 <ion-menu [content]="content">
-
   <ion-toolbar>
     <ion-title>openorder</ion-title>
   </ion-toolbar>
-
   <ion-content>
     <ion-list no-lines>
-      <ion-item-divider>Production</ion-item-divider>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <ion-item-divider>{{translationService.getTranslation('PRODUCTION')}}</ion-item-divider>
+      <button ion-item *ngFor="let p of production_pages" (click)="openPage(p)">
         <ion-icon name="{{p.icon}}" item-left></ion-icon>
         {{p.title}}
       </button>
-      <ion-item-divider>General</ion-item-divider>
-      <button ion-item (click)="openPage(p)">
-        <ion-icon name="settings" item-left></ion-icon>
-        Settings
-      </button>
-      <button ion-item (click)="openPage(p)">
-        <ion-icon name="help" item-left></ion-icon>
-        Help
+      <ion-item-divider>{{translationService.getTranslation('GENERAL')}}</ion-item-divider>
+      <button ion-item *ngFor="let p of general_pages" (click)="openPage(p)">
+        <ion-icon name="{{p.icon}}" item-left></ion-icon>
+        {{p.title}}
       </button>
     </ion-list>
   </ion-content>
-
 </ion-menu>
-
 <ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

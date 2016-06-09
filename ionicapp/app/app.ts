@@ -18,21 +18,49 @@ class MyApp {
 
   // make DashboardPage the root (or first) page
   rootPage: any = DashboardPage;
-  pages: Array<{title: string, component: any, icon: string}>;
+  production_pages: Array<{title: string, component: any, icon: string}>;
+  general_pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(
     private platform: Platform,
-    private menu: MenuController
+    private menu: MenuController,
+    private translationService: TranslationService
   ) {
     this.initializeApp();
 
     // set our app's pages
-    this.pages = [
-      { title: 'Dashboard', component: DashboardPage, icon: 'apps' },
-      { title: 'Ordering', component: AreaSelectionPage, icon: 'clipboard' },
-      { title: 'Live monitor', component: LiveMonitorPage, icon: 'desktop' },
-      { title: 'Main data', component: AreaSelectionPage, icon: 'create' },
-      { title: 'Statistics', component: AreaSelectionPage, icon: 'pie' },
+    this.production_pages = [
+      { 
+        title: this.translationService.getTranslation('DASHBOARD'), 
+        component: DashboardPage, 
+        icon: 'apps' },
+      { 
+        title: this.translationService.getTranslation('ORDERING'), 
+        component: AreaSelectionPage, 
+        icon: 'clipboard' },
+      { 
+        title: this.translationService.getTranslation('LIVE_MONITOR'), 
+        component: LiveMonitorPage, 
+        icon: 'desktop' },
+      { 
+        title: this.translationService.getTranslation('MAIN_DATA'), 
+        component: AreaSelectionPage, 
+        icon: 'create' },
+      { 
+        title: this.translationService.getTranslation('STATISTICS'), 
+        component: AreaSelectionPage, 
+        icon: 'pie' },
+    ];
+
+    this.general_pages = [
+      { 
+        title: this.translationService.getTranslation('SETTINGS'), 
+        component: DashboardPage, 
+        icon: 'settings' },
+      { 
+        title: this.translationService.getTranslation('HELP'), 
+        component: DashboardPage, 
+        icon: 'help' },
     ];
   }
 

@@ -9,6 +9,8 @@ import {OrderService} from '../../services/order.service';
 })
 export class LiveMonitorPage {
 
+  items: Item[];
+
   constructor(private nav: NavController, private orderService: OrderService) {}
   
   getOpenOrdersItems() {
