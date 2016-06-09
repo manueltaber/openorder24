@@ -3,7 +3,6 @@ import {Area} from '../../classes/area';
 import {OrderService} from '../../services/order.service'
 
 @Component({
-  moduleId: module.id,
   selector: 'ordering-footer',
   template: `
     <ion-toolbar position="bottom">

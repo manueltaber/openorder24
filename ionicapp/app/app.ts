@@ -1,5 +1,5 @@
-import {ViewChild} from '@angular/core';
-import {App, Platform, MenuController, Nav} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {DashboardPage} from './pages/dashboard/dashboard';
 import {AreaSelectionPage} from './pages/area-selection/area-selection';
@@ -10,10 +10,8 @@ import {ItemService} from './services/item.service';
 import {OrderService} from './services/order.service';
 import {TranslationService} from './services/translation.service';
 
-@App({
+@Component({
   templateUrl: 'build/app.html',
-  config: {}, // http://ionicframework.com/docs/v2/api/config/Config/
-  providers: [AreaService, CategoryService, ItemService, OrderService, TranslationService]
 })
 class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -53,3 +51,12 @@ class MyApp {
     this.nav.setRoot(page.component);
   }
 }
+
+// Pass the main app component as the first argument
+// Pass any providers for your app in the second argument
+// Set any config for your app as the third argument:
+// http://ionicframework.com/docs/v2/api/config/Config/
+
+ionicBootstrap(MyApp, [AreaService, CategoryService, ItemService, OrderService, TranslationService], {
+  //tabbarPlacement: 'bottom'
+});

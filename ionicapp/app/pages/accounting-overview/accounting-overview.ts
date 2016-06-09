@@ -1,10 +1,11 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Item} from '../../classes/item';
 import {Order} from '../../classes/order';
 import {OrderService} from '../../services/order.service';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/accounting-overview/accounting-overview.html'
 })
 export class AccountingOverviewPage {

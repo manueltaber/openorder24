@@ -1,9 +1,10 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Item} from '../../classes/item';
 import {OrderService} from '../../services/order.service';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/item-order/item-order.html'
 })
 export class ItemOrderPage {

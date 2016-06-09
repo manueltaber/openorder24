@@ -1,10 +1,11 @@
-import {Page, NavController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
 import {AreaDetailPage} from '../area-detail/area-detail';
 import {Area} from '../../classes/area';
 import {AreaService} from '../../services/area.service';
 import {OrderService} from '../../services/order.service';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/area-selection/area-selection.html'
 })
 export class AreaSelectionPage {

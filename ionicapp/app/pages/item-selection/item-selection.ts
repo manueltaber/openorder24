@@ -1,4 +1,5 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Category} from '../../classes/category';
 import {Item} from '../../classes/item';
@@ -6,7 +7,7 @@ import {ItemService} from '../../services/item.service';
 import {ItemOrderPage} from '../item-order/item-order';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/item-selection/item-selection.html',
   directives: [OrderingFooterComponent]
 })

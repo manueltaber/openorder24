@@ -1,10 +1,11 @@
-import {Page, NavController} from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController} from 'ionic-angular';
 import {AreaSelectionPage} from '../area-selection/area-selection';
 import {LiveMonitorPage} from '../live-monitor/live-monitor';
 import {AreaService} from '../../services/area.service';
 import {OrderService} from '../../services/order.service';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/dashboard/dashboard.html'
 })
 export class DashboardPage {
