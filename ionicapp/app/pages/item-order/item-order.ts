@@ -3,6 +3,7 @@ import {NavController, NavParams} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Item} from '../../classes/item';
 import {OrderService} from '../../services/order.service';
+import {TranslationService} from '../../services/translation.service';
 
 @Component({
   templateUrl: 'build/pages/item-order/item-order.html'
@@ -13,7 +14,8 @@ export class ItemOrderPage {
   item: Item;
 
   constructor(private nav: NavController, private navParams: NavParams,
-              private orderService: OrderService) {
+              private orderService: OrderService,
+              private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.item = navParams.get('item');
   }

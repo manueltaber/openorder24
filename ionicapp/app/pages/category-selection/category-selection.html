@@ -2,7 +2,7 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title *ngIf="!searching">Categories</ion-title>
+  <ion-title *ngIf="!searching">{{translationService.getTranslation('CATEGORIES')}}</ion-title>
   
   <ion-buttons end>
     <button>

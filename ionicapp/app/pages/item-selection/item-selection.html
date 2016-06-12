@@ -15,7 +15,10 @@
   <ion-list>
     <button ion-item *ngFor="let item of items" (click)="onItemSelected($event, item)">
       <h2>{{item.nr}} - {{item.desc}}</h2>
-      <h3>Verfügbar | Preis: {{item.price}}€</h3>
+      <h3>
+        {{translationService.getTranslation('AVAILABLE')}} | 
+        {{translationService.getTranslation('PRICE')}}: {{item.price}}€
+      </h3>
     </button>
   </ion-list>
 </ion-content>

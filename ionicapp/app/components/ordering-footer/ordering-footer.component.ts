@@ -1,20 +1,24 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Area} from '../../classes/area';
 import {OrderService} from '../../services/order.service'
+import {TranslationService} from '../../services/translation.service';
 
 @Component({
   selector: 'ordering-footer',
   template: `
     <ion-toolbar position="bottom">
-      <ion-title>Bestellungen: {{getTempOrders().length}} / {{getTempOrdersAmount()}}€</ion-title>
+      <ion-title>
+        {{translationService.getTranslation('ORDERS')}}: 
+        {{getTempOrders().length}} / {{getTempOrdersAmount()}}€
+      </ion-title>
       <ion-buttons end>
         <button outline (click)="onConfirmTempOrders($event)">
           <ion-icon name="checkmark"></ion-icon> 
-          Confirm
+          {{translationService.getTranslation('CONFIRM')}}
         </button>
         <button outline (click)="onCancelTempOrders($event)">
           <ion-icon name="close"></ion-icon> 
-          Cancel
+          {{translationService.getTranslation('CANCEL')}}
         </button>
       </ion-buttons>
     </ion-toolbar>`
@@ -25,7 +29,8 @@ export class OrderingFooterComponent implements OnInit {
   @Output() tempOrdersConfirmed = new EventEmitter();
   @Output() tempOrdersCanceled = new EventEmitter();
 
-  constructor(private orderService: OrderService) {}
+  constructor(private orderService: OrderService,
+              private translationService: TranslationService) {}
 
   ngOnInit() {
   }

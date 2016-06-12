@@ -22,11 +22,11 @@
     </ion-list>
     <button clear primary (click)="onNewOrder($event)">
       <ion-icon name="clipboard"></ion-icon> 
-      Order
+      {{translationService.getTranslation('DO_ORDER')}}
     </button>
     <button clear danger [disabled]="getOpenOrderCount()<=0" (click)="onAccounting($event)">
       <ion-icon name="card"></ion-icon> 
-      Accounting
+      {{translationService.getTranslation('ACCOUNTING')}}
     </button>
   </ion-card>
 </ion-content>

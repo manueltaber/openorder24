@@ -4,6 +4,7 @@ import {Area} from '../../classes/area';
 import {Category} from '../../classes/category';
 import {Item} from '../../classes/item';
 import {ItemService} from '../../services/item.service';
+import {TranslationService} from '../../services/translation.service';
 import {ItemOrderPage} from '../item-order/item-order';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
@@ -18,8 +19,10 @@ export class ItemSelectionPage {
   items: Item[];
   searching: boolean;
 
-  constructor(private nav: NavController, private navParams: NavParams, 
-              private itemService: ItemService) {
+  constructor(private nav: NavController, 
+              private navParams: NavParams, 
+              private itemService: ItemService,
+              private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.category = navParams.get('category');
     this.items = itemService.getItemsByCategory(this.category);

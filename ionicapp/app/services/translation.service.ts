@@ -11,7 +11,7 @@ export class TranslationService {
   }
   
   getTranslation(name: string) {
-    return this.translations[name]['ENG']
+    return this.translations[name]['DEU']
   }
   
   loadTranslations() {
@@ -92,4 +92,48 @@ export var TRANSLATIONS = {
         'DEU': 'Bereiche',
         'ITA': '',
         'ENG': 'Areas'},
+    'DO_ORDER': {
+        'DEU': 'Bestellen',
+        'ITA': '',
+        'ENG': 'Order'},
+    'ACCOUNTING': {
+        'DEU': 'Abrechnung',
+        'ITA': '',
+        'ENG': 'Accounting'},
+    'CATEGORIES': {
+        'DEU': 'Kategorien',
+        'ITA': '',
+        'ENG': 'Categories'},
+    'ITEMS': {
+        'DEU': 'Items',
+        'ITA': '',
+        'ENG': 'Items'},
+    'AVAILABLE': {
+        'DEU': 'Verfügbar',
+        'ITA': '',
+        'ENG': 'Available'},
+    'PRICE': {
+        'DEU': 'Preis',
+        'ITA': '',
+        'ENG': 'Price'},
+    'COUNT': {
+        'DEU': 'Anzahl',
+        'ITA': '',
+        'ENG': 'Count'},
+    'OPTIONAL': {
+        'DEU': 'Optional',
+        'ITA': '',
+        'ENG': 'Optional'},
+    'ORDERS': {
+        'DEU': 'Bestellungen',
+        'ITA': '',
+        'ENG': 'Orders'},
+    'CONFIRM': {
+        'DEU': 'Bestätigen',
+        'ITA': '',
+        'ENG': 'Confirm'},
+    'CANCEL': {
+        'DEU': 'Abbrechen',
+        'ITA': '',
+        'ENG': 'Cancel'},
 }
