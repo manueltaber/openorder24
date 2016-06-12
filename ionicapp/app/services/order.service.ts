@@ -121,7 +121,7 @@ export class OrderService {
   }
   
   confirmTempOrders() {
-    this.openOrders.concat(this.tempOrders);
+    this.openOrders = this.openOrders.concat(this.tempOrders);
     this.tempOrders = [];
   }
 

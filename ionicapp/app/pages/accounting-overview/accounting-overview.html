@@ -2,7 +2,7 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title *ngIf="!searching">Accounting</ion-title>
+  <ion-title *ngIf="!searching">{{translationService.getTranslation('ACCOUNTING')}}</ion-title>
   
   <ion-buttons end>
     <button>
@@ -20,7 +20,7 @@
   <ion-list>
     <button ion-item *ngFor="let item of items">
       <h2>{{item.nr}} - {{item.desc}}</h2>
-      <h3>Preis: {{item.price}}€</h3>
+      <h3>{{translationService.getTranslation('PRICE')}}: {{item.price}}€</h3>
     </button>
   </ion-list>
 </ion-content>
