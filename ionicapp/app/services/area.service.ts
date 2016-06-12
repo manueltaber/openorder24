@@ -5,15 +5,23 @@ import {AREAS} from '../mockups/areas';
 @Injectable()
 export class AreaService {
 
-  constructor() {}
-  
-  getAreas() {
-    return AREAS;
+  areas: Area[];
+
+  constructor() {
+    this.areas = AREAS;
   }
   
-  getArea(nr: number) {
-    return Promise.resolve(AREAS)
-      .then(areas => areas.filter(a => a.nr === +nr)[0]);
+  getAreas() {
+    return this.areas;
+  }
+  
+  getAreaByNr(nr: number) {
+    let area: Area;
+    for (area of this.areas) {
+      if (area.nr == nr) {
+        return area;
+      }
+    }
   }
 
 }

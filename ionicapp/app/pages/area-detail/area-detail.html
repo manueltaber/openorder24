@@ -24,10 +24,6 @@
       <ion-icon name="clipboard"></ion-icon> 
       Order
     </button>
-    <button clear primary>
-      <ion-icon name="flash"></ion-icon> 
-      Quick
-    </button>
     <button clear danger [disabled]="getOpenOrderCount()<=0" (click)="onAccounting($event)">
       <ion-icon name="card"></ion-icon> 
       Accounting
