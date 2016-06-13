@@ -6,7 +6,6 @@ language: node_js
 install:
 - nvm install stable
 - npm install -g ionic@beta
-- npm install -g cordova
 - npm install -g firebase-tools
 script:
 - cd ionicapp
@@ -15,9 +14,7 @@ script:
 after_success:
 - firebase deploy --token ${FIREBASE_TOKEN}
 before_deploy:
-- ls
-- cd www
-- zip bundle.zip
+- zip bundle.zip /www
 deploy:
   provider: releases
   api_key:
