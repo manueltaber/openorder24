@@ -14,8 +14,8 @@ script:
 - ionic build browser
 after_success:
 - firebase deploy --token ${FIREBASE_TOKEN}
-before_deploy: 
-- cd ionicapp
+before_deploy:
+- ls
 - cd www
 - zip bundle.zip
 deploy:
