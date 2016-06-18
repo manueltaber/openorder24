@@ -7,9 +7,9 @@
 
 <ion-content>
 
-  <ion-card *ngFor="let order of orders">
+  <ion-card *ngFor="let liveMonitorItem of liveMonitorItems">
     <ion-card-header>
-      {{getItem(order.item_nr).nr}} - {{getItem(order.item_nr).desc}}
+      {{liveMonitorItem.item.nr}} - {{liveMonitorItem.item.desc}}
     </ion-card-header>
     <!--<ion-card-content>
       Hallo hallo
@@ -29,11 +29,11 @@
 
     <ion-list>
       <ion-item>
-        {{getArea(order.area_nr).desc}}
+        {{liveMonitorItem.area.desc}}
       </ion-item>
     </ion-list>
 
-    <button clear primary (click)="itemDone($event, order)">
+    <button clear primary (click)="itemDone($event, liveMonitorItem)">
       <ion-icon name="checkmark"></ion-icon> 
       Done
     </button>

@@ -12,27 +12,30 @@ import {OrderService} from '../../services/order.service';
 })
 export class LiveMonitorPage {
 
-  orders: Order[];
+  liveMonitorItems: LiveMonitorItem[] = [];
 
   constructor(private nav: NavController, 
               private areaService: AreaService,
               private itemService: ItemService,
               private orderService: OrderService) {
-    this.orders = this.orderService.getOpenOrders();
-  }
-
-  getArea(area_nr: number) {
-    return this.areaService.getAreaByNr(area_nr);
-  }
-
-  getItem(item_nr: number) {
-    return this.itemService.getItemByNr(item_nr);
-  }
-
-  itemDone(event, order: Order) {
-    let index = this.orders.indexOf(order, 0);
-    if (index > -1) {
-      this.orders.splice(index, 1)
+    let orders = this.orderService.getOpenOrders();
+    for (let order of orders) {
+      let liveMonitorItem = new LiveMonitorItem();
+      liveMonitorItem.area = areaService.getAreaByNr(order.area_nr);
+      liveMonitorItem.item = itemService.getItemByNr(order.item_nr);
+      this.liveMonitorItems.push(liveMonitorItem);
     }
   }
+
+  itemDone(event, liveMonitorItem: LiveMonitorItem) {
+    let index = this.liveMonitorItems.indexOf(liveMonitorItem, 0);
+    if (index > -1) {
+      this.liveMonitorItems.splice(index, 1)
+    }
+  }
+}
+
+export class LiveMonitorItem {
+  area: Area;
+  item: Item;
 }
