@@ -21,8 +21,8 @@ export class LiveMonitorPage {
     let orders = this.orderService.getOpenOrders();
     for (let order of orders) {
       let liveMonitorItem = new LiveMonitorItem();
-      liveMonitorItem.area = areaService.getAreaByNr(order.area_nr);
-      liveMonitorItem.item = itemService.getItemByNr(order.item_nr);
+      liveMonitorItem.area = areaService.getAreaByNr(order.area.nr);
+      liveMonitorItem.item = itemService.getItemByNr(order.item.nr);
       this.liveMonitorItems.push(liveMonitorItem);
     }
   }

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Category} from '../classes/category';
 import {Item} from '../classes/item';
-import {ITEMS} from '../mockups/items';
+import {getMockItems} from '../mockups/items';
 
 @Injectable()
 export class ItemService {
@@ -9,14 +9,14 @@ export class ItemService {
   items: Item[];
 
   constructor() {
-    this.items = ITEMS;
+    this.items = getMockItems();
   }
   
   getItemsByCategory(category: Category) {
     let items = [];
     let item: Item;
     for (item of this.items) {
-      if (item.category_nr == category.nr) {
+      if (item.category.nr == category.nr) {
         items.push(item);
       }
     }

@@ -1,6 +1,20 @@
 import {Category} from '../classes/category';
 
-export var CATEGORIES: Category[] = [
+export {getMockCategories};
+
+function getMockCategories() {
+  let mockCategories: Category[] = [];
+  for (let mockCategory of MOCKCATEGORIES) {
+    let category: Category = new Category();
+    category.nr = mockCategory['nr'];
+    category.desc = mockCategory['desc'];
+    category.icon = mockCategory['icon'];
+    mockCategories.push(category);
+  }
+  return mockCategories;
+}
+
+var MOCKCATEGORIES = [
   { 'nr': 1, 'desc': 'Vorspeißen', 'icon': 'restaurant' },
   { 'nr': 2, 'desc': 'Hauptspeißen', 'icon': 'restaurant' },
   { 'nr': 3, 'desc': 'Nachspeißen', 'icon': 'ice-cream' },

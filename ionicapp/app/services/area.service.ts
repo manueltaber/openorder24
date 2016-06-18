@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Area} from '../classes/area'
-import {AREAS} from '../mockups/areas';
+import {getMockAreas} from '../mockups/areas';
 
 @Injectable()
 export class AreaService {
@@ -8,7 +8,7 @@ export class AreaService {
   areas: Area[];
 
   constructor() {
-    this.areas = AREAS;
+    this.areas = getMockAreas();
   }
   
   getAreas() {

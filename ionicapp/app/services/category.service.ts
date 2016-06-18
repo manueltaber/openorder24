@@ -1,18 +1,22 @@
 import {Injectable} from '@angular/core';
 import {Category} from '../classes/category'
-import {CATEGORIES} from '../mockups/categories';
+import {getMockCategories} from '../mockups/categories';
 
 @Injectable()
 export class CategoryService {
 
-  constructor() {}
+  categories: Category[];
+
+  constructor() {
+    this.categories = getMockCategories();
+  }
   
   getCategories() {
-    return CATEGORIES;
+    return this.categories;
   }
   
   getCategory(nr: number) {
-    return Promise.resolve(CATEGORIES)
+    return Promise.resolve(this.categories)
       .then(categories => categories.filter(c => c.nr === +nr)[0]);
   }
 

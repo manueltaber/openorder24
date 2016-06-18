@@ -1,4 +1,7 @@
+import {Area} from './area';
+import {Item} from './item';
+
 export class Order {
-  area_nr: number;
-  item_nr: number;
+  area: Area;
+  item: Item;
 }

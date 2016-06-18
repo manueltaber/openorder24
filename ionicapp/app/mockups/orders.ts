@@ -1,6 +1,33 @@
+import {Area} from '../classes/area';
+import {Item} from '../classes/item';
 import {Order} from '../classes/order';
+import {getMockAreas} from './areas';
+import {getMockItems} from './items';
 
-export var ORDERS: Order[] = [
+export {getMockOrders};
+
+function getMockOrders() {
+  let mockAreas = getMockAreas();
+  let mockItems = getMockItems();
+  let mockOrders: Order[] = [];
+  for (let mockOrder of MOCKORDERS) {
+    let order = new Order();
+    for (let area of mockAreas) {
+      if (area.nr == mockOrder['area_nr']) {
+        order.area = area;
+      }
+    }
+    for (let item of mockItems) {
+      if (item.nr == mockOrder['item_nr']) {
+        order.item = item;
+      }
+    }
+    mockOrders.push(order);
+  }
+  return mockOrders;
+}
+
+var MOCKORDERS = [
   { 'area_nr': 2, 'item_nr': 1 },
   { 'area_nr': 2, 'item_nr': 2 },
 

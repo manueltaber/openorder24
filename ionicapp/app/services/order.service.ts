@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Area} from '../classes/area';
 import {Order} from '../classes/order'
 import {Item} from '../classes/item'
-import {ORDERS} from '../mockups/orders';
+import {getMockOrders} from '../mockups/orders';
 import {ItemService} from './item.service';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class OrderService {
   tempOrders: Order[];
 
   constructor(private itemService: ItemService) {
-    this.openOrders = ORDERS;
+    this.openOrders = getMockOrders();
     this.tempOrders = new Array<Order>();
   }
   
@@ -27,7 +27,7 @@ export class OrderService {
     let orders: Order[] = [];
     let order: Order;
     for (order of this.openOrders) {
-      if (order.area_nr == area.nr) {
+      if (order.area.nr == area.nr) {
         orders.push(order);
       }
     }
@@ -38,7 +38,7 @@ export class OrderService {
     let sum: number = 0;
     let order: Order;
     for (order of this.openOrders) {
-      let item = this.itemService.getItemByNr(order.item_nr);
+      let item = this.itemService.getItemByNr(order.item.nr);
       if (item) {
         sum = sum + item.price;
       }
@@ -50,8 +50,8 @@ export class OrderService {
     let sum: number = 0;
     let order: Order;
     for (order of this.openOrders) {
-      if (order.area_nr == area.nr) {
-        let item = this.itemService.getItemByNr(order.item_nr);
+      if (order.area.nr == area.nr) {
+        let item = this.itemService.getItemByNr(order.item.nr);
         if (item) {
           sum = sum + item.price;
         }
@@ -64,7 +64,7 @@ export class OrderService {
     let items: Item[] = [];
     let order: Order;
     for (order of this.openOrders) {
-      let item = this.itemService.getItemByNr(order.item_nr);
+      let item = this.itemService.getItemByNr(order.item.nr);
       if (item) {
         items.push(item);
       }
@@ -76,8 +76,8 @@ export class OrderService {
     let items: Item[] = [];
     let order: Order;
     for (order of this.openOrders) {
-      if (order.area_nr == area.nr) {
-        let item = this.itemService.getItemByNr(order.item_nr);
+      if (order.area.nr == area.nr) {
+        let item = this.itemService.getItemByNr(order.item.nr);
         if (item) {
           items.push(item);
         }
@@ -92,7 +92,7 @@ export class OrderService {
     let orders: Order[] = [];
     let order: Order;
     for (order of this.tempOrders) {
-      if (order.area_nr == area.nr) {
+      if (order.area.nr == area.nr) {
         orders.push(order);
       }
     }
@@ -103,8 +103,8 @@ export class OrderService {
     let sum: number = 0;
     let order: Order;
     for (order of this.tempOrders) {
-      if (order.area_nr == area.nr) {
-        let item = this.itemService.getItemByNr(order.item_nr);
+      if (order.area.nr == area.nr) {
+        let item = this.itemService.getItemByNr(order.item.nr);
         if (item) {
           sum = sum + item.price;
         }
@@ -115,8 +115,8 @@ export class OrderService {
   
   addNewTempOrder(area: Area, item: Item) {
     let order = new Order();
-    order.area_nr = area.nr;
-    order.item_nr = item.nr;
+    order.area = area;
+    order.item = item;
     this.tempOrders.push(order);
   }
   

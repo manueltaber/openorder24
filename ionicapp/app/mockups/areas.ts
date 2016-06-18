@@ -1,6 +1,24 @@
 import {Area} from '../classes/area';
 
-export var AREAS: Area[] = [
+export {getMockAreas};
+
+function getMockAreas() {
+  let mockAreas: Area[] = [];
+  for (let mockArea of MOCKAREAS) {
+    let area: Area = new Area();
+    area.nr = mockArea['nr'];
+    area.desc = mockArea['desc'];
+    area.x = mockArea['x'];
+    area.y = mockArea['y'];
+    area.z = mockArea['z'];
+    area.width = mockArea['width'];
+    area.height = mockArea['height'];
+    mockAreas.push(area);
+  }
+  return mockAreas;
+}
+
+var MOCKAREAS = [
   { 'nr': 1,  'desc': 'Tisch 1',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
   { 'nr': 2,  'desc': 'Tisch 2',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },
   { 'nr': 3,  'desc': 'Tisch 3',  'x': 0, 'y': 0, 'z': 0, 'width': 0, 'height': 0 },

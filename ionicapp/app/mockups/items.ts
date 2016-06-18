@@ -1,6 +1,28 @@
+import {Category} from '../classes/category';
 import {Item} from '../classes/item';
+import {getMockCategories} from './categories';
 
-export var ITEMS: Item[] = [
+export {getMockItems};
+
+function getMockItems() {
+  let mockCategories = getMockCategories();
+  let mockItems: Item[] = [];
+  for (let mockItem of MOCKITEMS) {
+    let item = new Item();
+    item.nr = mockItem['nr'];
+    item.desc = mockItem['desc'];
+    item.price = mockItem['price'];
+    for (let category of mockCategories) {
+      if (category.nr == mockItem['category_nr']) {
+        item.category = category;
+      }
+    }
+    mockItems.push(item);
+  }
+  return mockItems;
+}
+
+var MOCKITEMS = [
   { 'nr': 1, 'desc': 'Nudel', 'price': 8, 'category_nr': 1 },
   { 'nr': 2, 'desc': 'Suppe', 'price': 5, 'category_nr': 1 },
   { 'nr': 3, 'desc': 'Reis', 'price': 6, 'category_nr': 1 },
