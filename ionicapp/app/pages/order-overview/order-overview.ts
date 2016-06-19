@@ -9,10 +9,10 @@ import {ItemSelectionPage} from '../item-selection/item-selection';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
 @Component({
-  templateUrl: 'build/pages/category-selection/category-selection.html',
+  templateUrl: 'build/pages/order-overview/order-overview.html',
   directives: [OrderingFooterComponent]
 })
-export class CategorySelectionPage {
+export class OrderOverviewPage {
   
   area: Area;
   categories: Category[];
