@@ -2,7 +2,7 @@ import {Area} from '../classes/area';
 
 export {getMockAreas};
 
-function getMockAreas() {
+function getMockAreas(): Area[] {
   let mockAreas: Area[] = [];
   for (let mockArea of MOCKAREAS) {
     let area: Area = new Area();

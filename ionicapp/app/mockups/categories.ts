@@ -2,7 +2,7 @@ import {Category} from '../classes/category';
 
 export {getMockCategories};
 
-function getMockCategories() {
+function getMockCategories(): Category[] {
   let mockCategories: Category[] = [];
   for (let mockCategory of MOCKCATEGORIES) {
     let category: Category = new Category();

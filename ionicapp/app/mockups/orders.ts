@@ -6,7 +6,7 @@ import {getMockItems} from './items';
 
 export {getMockOrders};
 
-function getMockOrders() {
+function getMockOrders(): Order[] {
   let mockAreas = getMockAreas();
   let mockItems = getMockItems();
   let mockOrders: Order[] = [];
@@ -22,23 +22,25 @@ function getMockOrders() {
         order.item = item;
       }
     }
+    order.count = mockOrder['nr'];
+    order.desc = mockOrder['desc'];
     mockOrders.push(order);
   }
   return mockOrders;
 }
 
 var MOCKORDERS = [
-  { 'area_nr': 2, 'item_nr': 1 },
-  { 'area_nr': 2, 'item_nr': 2 },
+  { 'area_nr': 2, 'item_nr': 1, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 2, 'count': 1, 'desc': '' },
 
-  { 'area_nr': 3, 'item_nr': 4 },
-  { 'area_nr': 3, 'item_nr': 5 },
-  { 'area_nr': 3, 'item_nr': 6 },
-  { 'area_nr': 3, 'item_nr': 7 },
-  { 'area_nr': 3, 'item_nr': 8 },
-  { 'area_nr': 3, 'item_nr': 9 },
+  { 'area_nr': 3, 'item_nr': 4, 'count': 1, 'desc': '' },
+  { 'area_nr': 3, 'item_nr': 5, 'count': 1, 'desc': '' },
+  { 'area_nr': 3, 'item_nr': 6, 'count': 1, 'desc': '' },
+  { 'area_nr': 3, 'item_nr': 7, 'count': 1, 'desc': '' },
+  { 'area_nr': 3, 'item_nr': 8, 'count': 1, 'desc': '' },
+  { 'area_nr': 3, 'item_nr': 9, 'count': 1, 'desc': '' },
 
-  { 'area_nr': 5, 'item_nr': 1 },
-  { 'area_nr': 5, 'item_nr': 2 },
-  { 'area_nr': 5, 'item_nr': 3 },
+  { 'area_nr': 5, 'item_nr': 1, 'count': 1, 'desc': '' },
+  { 'area_nr': 5, 'item_nr': 2, 'count': 1, 'desc': '' },
+  { 'area_nr': 5, 'item_nr': 3, 'count': 1, 'desc': '' },
 ];

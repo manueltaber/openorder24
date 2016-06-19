@@ -10,11 +10,11 @@
     <ion-list>
       <ion-item>
         <ion-label fixed>{{translationService.getTranslation('COUNT')}}</ion-label>
-        <ion-input type="number" value="1"></ion-input>
+        <ion-input type="number" [(ngModel)]="count"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label fixed>{{translationService.getTranslation('OPTIONAL')}}</ion-label>
-        <ion-input type="text"></ion-input>
+        <ion-input type="text" [(ngModel)]="desc"></ion-input>
       </ion-item>
 
       <ion-item>

@@ -25,10 +25,12 @@ export class DashboardPage {
   }
   
   startOrdering(event) {
-    this.nav.push(AreaSelectionPage);
+    this.nav.setRoot(AreaSelectionPage);
+    //this.nav.push(AreaSelectionPage);
   }
 
   liveMonitor(event) {
-    this.nav.push(LiveMonitorPage);
+    this.nav.setRoot(LiveMonitorPage);
+    //this.nav.push(LiveMonitorPage);
   }
 }

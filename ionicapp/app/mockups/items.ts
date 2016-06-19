@@ -4,7 +4,7 @@ import {getMockCategories} from './categories';
 
 export {getMockItems};
 
-function getMockItems() {
+function getMockItems(): Item[] {
   let mockCategories = getMockCategories();
   let mockItems: Item[] = [];
   for (let mockItem of MOCKITEMS) {

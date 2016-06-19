@@ -12,12 +12,16 @@ export class ItemOrderPage {
   
   area: Area;
   item: Item;
+  count: number;
+  desc: string;
 
   constructor(private nav: NavController, private navParams: NavParams,
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.item = navParams.get('item');
+    this.count = 1;
+    this.desc = '';
   }
   
   onConfirmItem(event, mode) {
