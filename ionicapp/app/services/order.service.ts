@@ -34,6 +34,20 @@ export class OrderService {
     return orders;
   }
 
+  getOpenOrdersCount(): number {
+    return this.openOrders.length;
+  }
+
+  getOpenOrdersCountByArea(area: Area): number {
+    let count: number = 0;
+    for (let order of this.openOrders) {
+      if (order.area.nr == area.nr) {
+        count = count + 1;
+      }
+    }
+    return count;
+  }
+
   getOpenOrdersAmount() {
     let sum: number = 0;
     for (let order of this.openOrders) {
@@ -41,7 +55,7 @@ export class OrderService {
     }
     return sum;
   }
-  
+
   getOpenOrdersAmountByArea(area: Area) {
     let sum: number = 0;
     for (let order of this.openOrders) {
@@ -52,7 +66,7 @@ export class OrderService {
     return sum;
   }
 
-  getOpenOrdersItems() {
+  /*getOpenOrdersItems() {
     let items: Item[] = [];
     for (let order of this.openOrders) {
       if (order.item) {
@@ -72,7 +86,7 @@ export class OrderService {
       }
     }
     return items;
-  }
+  }*/
   
   // temp orders
   
@@ -91,10 +105,7 @@ export class OrderService {
     let order: Order;
     for (order of this.tempOrders) {
       if (order.area.nr == area.nr) {
-        let item = this.itemService.getItemByNr(order.item.nr);
-        if (item) {
-          sum = sum + item.price;
-        }
+        sum = sum + order.item.price;
       }
     }
     return sum;
@@ -114,6 +125,16 @@ export class OrderService {
 
   cancelTempOrders() {
     this.tempOrders = [];
+  }
+
+  closeOrder(order: Order): boolean {
+    let res: boolean = false;
+    let index = this.openOrders.indexOf(order, 0);
+    if (index > -1) {
+      this.openOrders.splice(index, 1)
+      res = true;
+    }
+    return res;
   }
 
 }

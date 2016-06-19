@@ -13,18 +13,16 @@ import {AccountingOverviewPage} from '../accounting-overview/accounting-overview
 export class AreaDetailPage {
   
   area: Area;
-  openOrders: Order[];
 
   constructor(private nav: NavController, 
               private navParams: NavParams,
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
-    this.openOrders = orderService.getOpenOrdersByArea(this.area);
   }
   
   getOpenOrderCount() {
-    return this.openOrders.length;
+    return this.orderService.getOpenOrdersCountByArea(this.area);
   }
   
   getOpenOrderAmount() {

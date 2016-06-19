@@ -100,6 +100,10 @@ export var TRANSLATIONS = {
         'DEU': 'Abrechnung',
         'ITA': '',
         'ENG': 'Accounting'},
+    'BILL': {
+        'DEU': 'Abrechnen',
+        'ITA': '',
+        'ENG': 'Bill'},
     'CATEGORIES': {
         'DEU': 'Kategorien',
         'ITA': '',

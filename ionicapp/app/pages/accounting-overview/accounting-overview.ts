@@ -19,14 +19,19 @@ export class AccountingOverviewPage {
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
-    let items = this.orderService.getOpenOrdersItemsByArea(this.area);
-    for (let item of items) {
+    this.loadOpenAccountingItems();
+    this.searching = false;
+  }
+
+  loadOpenAccountingItems() {
+    this.accountingItems = [];
+    let orders = this.orderService.getOpenOrdersByArea(this.area);
+    for (let order of orders) {
       let accountingItem = new AccountingItem();
-      accountingItem.item = item;
+      accountingItem.order = order;
       accountingItem.selected = false;
       this.accountingItems.push(accountingItem);
     }
-    this.searching = false;
   }
 
   getSelectedItemCount() {
@@ -43,21 +48,30 @@ export class AccountingOverviewPage {
     let amount: number = 0;
     for (let accountingItem of this.accountingItems) {
       if (accountingItem.selected) {
-        amount = amount + accountingItem.item.price;
+        amount = amount + accountingItem.order.item.price;
       }
     }
     return amount;
   }
 
-  onCloseOrders(event) {
+  closeSelectedOrders() {
+    for (let accountingItem of this.accountingItems) {
+      if (accountingItem.selected) {
+        this.orderService.closeOrder(accountingItem.order)
+      }
+    }
+    this.loadOpenAccountingItems();
+  }
+
+  onBill(event) {
     let confirm = Alert.create({
       title: 'Achtung',
-      message: 'Sicher?',
+      message: 'Sicher?' + this.getSelectedItemAmount().toString(),
       buttons: [
         {
           text: 'Ja',
           handler: () => {
-            //alert('Ja');
+            this.closeSelectedOrders();
           }
         },
         {
@@ -73,6 +87,6 @@ export class AccountingOverviewPage {
 }
 
 export class AccountingItem {
-  item: Item;
+  order: Order;
   selected: boolean;
 }
