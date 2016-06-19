@@ -36,25 +36,17 @@ export class OrderService {
 
   getOpenOrdersAmount() {
     let sum: number = 0;
-    let order: Order;
-    for (order of this.openOrders) {
-      let item = this.itemService.getItemByNr(order.item.nr);
-      if (item) {
-        sum = sum + item.price;
-      }
+    for (let order of this.openOrders) {
+      sum = sum + order.item.price;
     }
     return sum;
   }
   
   getOpenOrdersAmountByArea(area: Area) {
     let sum: number = 0;
-    let order: Order;
-    for (order of this.openOrders) {
+    for (let order of this.openOrders) {
       if (order.area.nr == area.nr) {
-        let item = this.itemService.getItemByNr(order.item.nr);
-        if (item) {
-          sum = sum + item.price;
-        }
+        sum = sum + order.item.price;
       }
     }
     return sum;
@@ -62,11 +54,9 @@ export class OrderService {
 
   getOpenOrdersItems() {
     let items: Item[] = [];
-    let order: Order;
-    for (order of this.openOrders) {
-      let item = this.itemService.getItemByNr(order.item.nr);
-      if (item) {
-        items.push(item);
+    for (let order of this.openOrders) {
+      if (order.item) {
+        items.push(order.item);
       }
     }
     return items;
@@ -74,12 +64,10 @@ export class OrderService {
 
   getOpenOrdersItemsByArea(area: Area) {
     let items: Item[] = [];
-    let order: Order;
-    for (order of this.openOrders) {
+    for (let order of this.openOrders) {
       if (order.area.nr == area.nr) {
-        let item = this.itemService.getItemByNr(order.item.nr);
-        if (item) {
-          items.push(item);
+        if (order.item) {
+          items.push(order.item);
         }
       }
     }
@@ -90,8 +78,7 @@ export class OrderService {
   
   getTempOrdersByArea(area: Area) {
     let orders: Order[] = [];
-    let order: Order;
-    for (order of this.tempOrders) {
+    for (let order of this.tempOrders) {
       if (order.area.nr == area.nr) {
         orders.push(order);
       }
