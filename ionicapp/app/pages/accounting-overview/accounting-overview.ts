@@ -13,14 +13,12 @@ export class AccountingOverviewPage {
   
   area: Area;
   accountingItems: AccountingItem[] = [];
-  searching: boolean;
 
   constructor(private nav: NavController, private navParams: NavParams,
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.loadOpenAccountingItems();
-    this.searching = false;
   }
 
   loadOpenAccountingItems() {
@@ -32,6 +30,10 @@ export class AccountingOverviewPage {
       accountingItem.selected = false;
       this.accountingItems.push(accountingItem);
     }
+  }
+
+  getSelectableItemCount() {
+    return this.accountingItems.length;
   }
 
   getSelectedItemCount() {
@@ -63,23 +65,36 @@ export class AccountingOverviewPage {
     this.loadOpenAccountingItems();
   }
 
+  closeAllOrders() {
+    for (let accountingItem of this.accountingItems) {
+      this.orderService.closeOrder(accountingItem.order)
+    }
+    this.loadOpenAccountingItems();
+  }
+
   onBill(event) {
     let confirm = Alert.create({
-      title: 'Achtung',
-      message: 'Sicher?' + this.getSelectedItemAmount().toString(),
+      title: this.getSelectedItemAmount().toString() + '€',
+      message: 'Soll der Betrag abgebucht werden?',
       buttons: [
-        {
-          text: 'Ja',
-          handler: () => {
-            this.closeSelectedOrders();
-          }
+        { text: this.translationService.getTranslation('YES'),
+          handler: () => { this.closeSelectedOrders(); }
         },
-        {
-          text: 'Nein',
-          handler: () => {
-            //alert('Nein');
-          }
-        }
+        { text: this.translationService.getTranslation('NO') }
+      ]
+    });
+    this.nav.present(confirm);
+  }
+
+  onBillAll(event) {
+    let confirm = Alert.create({
+      title: this.getSelectedItemAmount().toString() + '€',
+      message: 'Soll der Gesamtbetrag abgebucht werden?',
+      buttons: [
+        { text: this.translationService.getTranslation('YES'),
+          handler: () => { this.closeAllOrders(); }
+        },
+        { text: this.translationService.getTranslation('NO') }
       ]
     });
     this.nav.present(confirm);

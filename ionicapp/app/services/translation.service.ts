@@ -104,6 +104,10 @@ export var TRANSLATIONS = {
         'DEU': 'Abrechnen',
         'ITA': '',
         'ENG': 'Bill'},
+    'BILL_ALL': {
+        'DEU': 'Alles abrechnen',
+        'ITA': '',
+        'ENG': 'Bill all'},
     'CATEGORIES': {
         'DEU': 'Kategorien',
         'ITA': '',
@@ -140,4 +144,12 @@ export var TRANSLATIONS = {
         'DEU': 'Abbrechen',
         'ITA': '',
         'ENG': 'Cancel'},
+    'YES': {
+        'DEU': 'Ja',
+        'ITA': '',
+        'ENG': 'Yes'},
+    'NO': {
+        'DEU': 'Nein',
+        'ITA': '',
+        'ENG': 'No'},
 }
