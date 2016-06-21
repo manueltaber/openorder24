@@ -56,6 +56,14 @@ export class AccountingOverviewPage {
     return amount;
   }
 
+  getOverallItemAmount() {
+    let amount: number = 0;
+    for (let accountingItem of this.accountingItems) {
+      amount = amount + accountingItem.order.item.price;
+    }
+    return amount;
+  }
+
   closeSelectedOrders() {
     for (let accountingItem of this.accountingItems) {
       if (accountingItem.selected) {
@@ -88,7 +96,7 @@ export class AccountingOverviewPage {
 
   onBillAll(event) {
     let confirm = Alert.create({
-      title: this.getSelectedItemAmount().toString() + '€',
+      title: this.getOverallItemAmount().toString() + '€',
       message: 'Soll der Gesamtbetrag abgebucht werden?',
       buttons: [
         { text: this.translationService.getTranslation('YES'),
