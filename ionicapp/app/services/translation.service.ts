@@ -152,4 +152,8 @@ export var TRANSLATIONS = {
         'DEU': 'Nein',
         'ITA': '',
         'ENG': 'No'},
+    'ORDER_OVERVIEW': {
+        'DEU': 'Bestellübersicht',
+        'ITA': '',
+        'ENG': 'Order overview'},
 }

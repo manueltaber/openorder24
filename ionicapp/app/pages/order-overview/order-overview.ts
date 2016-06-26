@@ -1,11 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, Alert} from 'ionic-angular';
 import {Area} from '../../classes/area';
-import {Category} from '../../classes/category';
-import {CategoryService} from '../../services/category.service';
+import {Order} from '../../classes/order';
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
-import {ItemSelectionPage} from '../item-selection/item-selection';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
 @Component({
@@ -15,17 +13,14 @@ import {OrderingFooterComponent} from '../../components/ordering-footer/ordering
 export class OrderOverviewPage {
   
   area: Area;
-  categories: Category[];
-  searching: boolean;
+  orders: Order[];
 
   constructor(private nav: NavController, 
               private navParams: NavParams,
-              private categoryService: CategoryService, 
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
-    this.categories = categoryService.getCategories();
-    this.searching = false;
+    this.orders = orderService.getTempOrdersByArea(this.area);
   }
 
   onTempOrdersConfirmed() {
@@ -35,8 +30,5 @@ export class OrderOverviewPage {
   onTempOrdersCanceled() {
     this.nav.popToRoot();
   }
-  
-  onCategorySelected(event, category: Category) {
-    this.nav.push(ItemSelectionPage, {area: this.area, category: category});
-  }
+
 }

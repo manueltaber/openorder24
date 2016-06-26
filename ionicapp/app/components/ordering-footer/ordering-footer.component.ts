@@ -7,7 +7,7 @@ import {TranslationService} from '../../services/translation.service';
   selector: 'ordering-footer',
   template: `
     <ion-toolbar position="bottom">
-      <ion-title>
+      <ion-title (click)="onShowTempOrdersOverview($event)">
         {{translationService.getTranslation('ORDERS')}}: 
         {{getTempOrders().length}} / {{getTempOrdersAmount()}}€
       </ion-title>
@@ -26,6 +26,7 @@ import {TranslationService} from '../../services/translation.service';
 export class OrderingFooterComponent implements OnInit {
 
   @Input() area: Area;
+  @Output() showTempOrdersOverview = new EventEmitter();
   @Output() tempOrdersConfirmed = new EventEmitter();
   @Output() tempOrdersCanceled = new EventEmitter();
 
@@ -41,6 +42,10 @@ export class OrderingFooterComponent implements OnInit {
   
   getTempOrdersAmount() {
     return this.orderService.getTempOrdersAmountByArea(this.area);
+  }
+
+  onShowTempOrdersOverview(event) {
+    this.showTempOrdersOverview.emit("event");
   }
 
   onConfirmTempOrders(event) {

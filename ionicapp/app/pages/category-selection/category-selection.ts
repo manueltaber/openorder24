@@ -6,6 +6,7 @@ import {CategoryService} from '../../services/category.service';
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
 import {ItemSelectionPage} from '../item-selection/item-selection';
+import {OrderOverviewPage} from '../order-overview/order-overview';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
 @Component({
@@ -26,6 +27,10 @@ export class CategorySelectionPage {
     this.area = navParams.get('area');
     this.categories = categoryService.getCategories();
     this.searching = false;
+  }
+
+  onShowTempOrdersOverview() {
+    this.nav.push(OrderOverviewPage, {area: this.area});
   }
 
   onTempOrdersConfirmed() {

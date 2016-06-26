@@ -2,25 +2,13 @@
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
-  <ion-title *ngIf="!searching">{{translationService.getTranslation('CATEGORIES')}}</ion-title>
-  
-  <ion-buttons end>
-    <button>
-      <ion-icon name="search"></ion-icon>
-    </button>
-    <button>
-      <ion-icon name="more"></ion-icon>
-    </button>
-  </ion-buttons>
-  
-  <ion-searchbar *ngIf="searching"></ion-searchbar>
+  <ion-title>{{translationService.getTranslation('ORDER_OVERVIEW')}}</ion-title>
 </ion-navbar>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let category of categories" (click)="onCategorySelected($event, category)">
-      <ion-icon name="{{category.icon}}" item-left></ion-icon>
-      <h2>{{category.nr}} - {{category.desc}}</h2>
+    <button ion-item *ngFor="let order of orders" (click)="onCategorySelected($event, category)">
+      <h2>{{order.item.nr}} - {{order.item.desc}}</h2>
     </button>
   </ion-list>
 </ion-content>
