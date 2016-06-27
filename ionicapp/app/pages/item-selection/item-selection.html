@@ -23,7 +23,8 @@
   </ion-list>
 </ion-content>
 
-<ordering-footer [area]="area" 
+<ordering-footer [area]="area"
+  (showTempOrdersOverview)="onShowTempOrdersOverview()"
   (tempOrdersConfirmed)="onTempOrdersConfirmed()" 
   (tempOrdersCanceled)="onTempOrdersCanceled()">
 </ordering-footer>

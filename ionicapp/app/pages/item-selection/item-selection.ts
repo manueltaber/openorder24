@@ -6,6 +6,7 @@ import {Item} from '../../classes/item';
 import {ItemService} from '../../services/item.service';
 import {TranslationService} from '../../services/translation.service';
 import {ItemOrderPage} from '../item-order/item-order';
+import {OrderOverviewPage} from '../order-overview/order-overview';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
 
 @Component({
@@ -33,6 +34,10 @@ export class ItemSelectionPage {
     this.nav.push(ItemOrderPage, {
       area: this.area, category: this.category, item: item
     });
+  }
+
+  onShowTempOrdersOverview() {
+    this.nav.push(OrderOverviewPage, {area: this.area});
   }
 
   onTempOrdersConfirmed() {
