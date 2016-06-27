@@ -15,7 +15,13 @@
       </ion-label>
     </ion-item>
   </ion-list>
-  <h2 *ngIf="getSelectableItemCount()==0">Empty</h2>
+  <div class="finished" *ngIf="getSelectableItemCount()==0">
+    <b>Finished</b>
+    <ion-icon name="done-all"></ion-icon>
+    <div>
+      All <b>work</b> done!
+    </div>
+  </div>
 </ion-content>
 
 <ion-toolbar position="bottom" *ngIf="getSelectableItemCount()>0">
