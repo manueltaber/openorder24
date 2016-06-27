@@ -12,7 +12,7 @@ import {TranslationService} from '../../services/translation.service';
         {{getTempOrders().length}} / {{getTempOrdersAmount()}}€
       </ion-title>
       <ion-buttons end>
-        <button outline (click)="onConfirmTempOrders($event)">
+        <button outline [disabled]="getTempOrders().length<=0" (click)="onConfirmTempOrders($event)">
           <ion-icon name="checkmark"></ion-icon> 
           {{translationService.getTranslation('CONFIRM')}}
         </button>
