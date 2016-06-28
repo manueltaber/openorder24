@@ -45,7 +45,9 @@ export class OrderingFooterComponent implements OnInit {
   }
 
   onShowTempOrdersOverview(event) {
-    this.showTempOrdersOverview.emit("event");
+    if (this.getTempOrders().length > 0) {
+      this.showTempOrdersOverview.emit("event");
+    }
   }
 
   onConfirmTempOrders(event) {
