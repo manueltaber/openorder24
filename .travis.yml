@@ -19,7 +19,7 @@ before_deploy:
 - cp -r www/* zip/
 - cp config.xml zip/
 - cd zip
-- zip -r ionicapp.zip
+- zip -r ionicapp.zip *
 - cd ..
 deploy:
   provider: releases
