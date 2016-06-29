@@ -1,9 +1,11 @@
-<ion-navbar primary *navbar>
-  <button menuToggle *ngIf="!selectedItem">
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>{{item.desc}}</ion-title>
-</ion-navbar>
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{item.desc}}</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>  
   <ion-card>
@@ -42,13 +44,15 @@
   </ion-card>
 </ion-content>
 
-<ion-toolbar position="bottom">
-  <button outline (click)="onConfirmItem($event, 0)">
-    <ion-icon name="checkmark"></ion-icon> 
-    {{translationService.getTranslation('CATEGORIES')}}
-  </button>
-  <button outline (click)="onConfirmItem($event, 1)">
-    <ion-icon name="checkmark"></ion-icon> 
-    {{translationService.getTranslation('ITEMS')}}
-  </button>
-</ion-toolbar>
+<ion-footer>
+  <ion-toolbar>
+    <button outline (click)="onConfirmItem($event, 0)">
+      <ion-icon name="checkmark"></ion-icon> 
+      {{translationService.getTranslation('CATEGORIES')}}
+    </button>
+    <button outline (click)="onConfirmItem($event, 1)">
+      <ion-icon name="checkmark"></ion-icon> 
+      {{translationService.getTranslation('ITEMS')}}
+    </button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,28 +1,30 @@
-<ion-navbar primary *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  
-  <ion-title *ngIf="!searchbarVisible">
-    {{translationService.getTranslation('AREAS')}}
-  </ion-title>
-
-  <ion-buttons end>
-    <button (click)="showSearchbar($event)">
-      <ion-icon name="search"></ion-icon>
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
     </button>
-  </ion-buttons>
-  
-  <ion-searchbar 
-    *ngIf="searchbarVisible"
-    [(ngModel)]="searchbarText"
-    [hideCancelButton]="true"
-    placeholder="Haaaalllloooo"
-    (blur)="onSearchbarBlur($event)"
-    (input)="onSearchbarInput($event)"
-    (cancel)="onSearchbarCancel($event)">
-   </ion-searchbar>
-</ion-navbar>
+    
+    <ion-title *ngIf="!searchbarVisible">
+      {{translationService.getTranslation('AREAS')}}
+    </ion-title>
+
+    <ion-buttons end>
+      <button (click)="showSearchbar($event)">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    
+    <ion-searchbar 
+      *ngIf="searchbarVisible"
+      [(ngModel)]="searchbarText"
+      [hideCancelButton]="true"
+      placeholder="Haaaalllloooo"
+      (blur)="onSearchbarBlur($event)"
+      (input)="onSearchbarInput($event)"
+      (cancel)="onSearchbarCancel($event)">
+    </ion-searchbar>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
   <ion-list>

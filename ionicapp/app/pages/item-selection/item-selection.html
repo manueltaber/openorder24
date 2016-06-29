@@ -1,15 +1,17 @@
-<ion-navbar primary *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title *ngIf="!searching">{{category.desc}}</ion-title>
-  <ion-buttons end>
-    <button>
-      <ion-icon name="search"></ion-icon>
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
     </button>
-  </ion-buttons>
-  <ion-searchbar *ngIf="searching"></ion-searchbar>
-</ion-navbar>
+    <ion-title *ngIf="!searching">{{category.desc}}</ion-title>
+    <ion-buttons end>
+      <button>
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-searchbar *ngIf="searching"></ion-searchbar>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
   <ion-list>
@@ -23,8 +25,10 @@
   </ion-list>
 </ion-content>
 
-<ordering-footer [area]="area"
-  (showTempOrdersOverview)="onShowTempOrdersOverview()"
-  (tempOrdersConfirmed)="onTempOrdersConfirmed()" 
-  (tempOrdersCanceled)="onTempOrdersCanceled()">
-</ordering-footer>
+<ion-footer>
+  <ordering-footer [area]="area"
+    (showTempOrdersOverview)="onShowTempOrdersOverview()"
+    (tempOrdersConfirmed)="onTempOrdersConfirmed()" 
+    (tempOrdersCanceled)="onTempOrdersCanceled()">
+  </ordering-footer>
+</ion-footer>

@@ -1,9 +1,11 @@
-<ion-navbar primary *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title>{{translationService.getTranslation('ORDER_OVERVIEW')}}</ion-title>
-</ion-navbar>
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{translationService.getTranslation('ORDER_OVERVIEW')}}</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
   <ion-list>
@@ -13,7 +15,9 @@
   </ion-list>
 </ion-content>
 
-<ordering-footer [area]="area" 
-  (tempOrdersConfirmed)="onTempOrdersConfirmed()" 
-  (tempOrdersCanceled)="onTempOrdersCanceled()">
-</ordering-footer>
+<ion-footer>
+  <ordering-footer [area]="area" 
+    (tempOrdersConfirmed)="onTempOrdersConfirmed()" 
+    (tempOrdersCanceled)="onTempOrdersCanceled()">
+  </ordering-footer>
+</ion-footer>

@@ -1,9 +1,11 @@
-<ion-navbar primary *navbar>
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-title *ngIf="!searching">{{translationService.getTranslation('ACCOUNTING')}}</ion-title>
-</ion-navbar>
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{translationService.getTranslation('ACCOUNTING')}}</ion-title>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
   <ion-list>
@@ -24,21 +26,23 @@
   </div>
 </ion-content>
 
-<ion-toolbar position="bottom" *ngIf="getSelectableItemCount()>0">
-  <ion-title>
-    {{translationService.getTranslation('ITEMS')}}:
-    {{getSelectedItemCount()}} - {{getSelectedItemAmount()}}€
-  </ion-title>
-  <ion-buttons end *ngIf="getSelectedItemCount()>0">
-    <button outline (click)="onBill($event)">
-      <ion-icon name="card"></ion-icon> 
-      {{translationService.getTranslation('BILL')}}
-    </button>
-  </ion-buttons>
-  <ion-buttons end *ngIf="getSelectedItemCount()==0">
-    <button outline (click)="onBillAll($event)">
-      <ion-icon name="card"></ion-icon>
-      {{translationService.getTranslation('BILL_ALL')}}
-    </button>
-  </ion-buttons>
-</ion-toolbar>
+<ion-footer>
+  <ion-toolbar *ngIf="getSelectableItemCount()>0">
+    <ion-title>
+      {{translationService.getTranslation('ITEMS')}}:
+      {{getSelectedItemCount()}} - {{getSelectedItemAmount()}}€
+    </ion-title>
+    <ion-buttons end *ngIf="getSelectedItemCount()>0">
+      <button outline (click)="onBill($event)">
+        <ion-icon name="card"></ion-icon> 
+        {{translationService.getTranslation('BILL')}}
+      </button>
+    </ion-buttons>
+    <ion-buttons end *ngIf="getSelectedItemCount()==0">
+      <button outline (click)="onBillAll($event)">
+        <ion-icon name="card"></ion-icon>
+        {{translationService.getTranslation('BILL_ALL')}}
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
