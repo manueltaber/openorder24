@@ -7,6 +7,10 @@ export class BasePage {
               protected translationService: TranslationService) {
   }
 
+  getSetting(name: string, defaultValue: any) {
+      return this.settingService.getSetting(name, defaultValue);
+  }
+
   getTranslation(name: string): string {
       return this.translationService.getTranslation(name);
   }
