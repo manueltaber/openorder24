@@ -8,14 +8,11 @@
 </ion-header>
 
 <ion-content>
-  <b>Coming soon</b>
-  <!--<ion-list>
-    <button ion-item *ngFor="let area of areas" (click)="onAreaSelected($event, area)">
-      <h2>{{area.nr}} - {{area.desc}}</h2>
-      <h3 item-right *ngIf="getOpenOrderCount(area)>0">
-        <ion-icon name="clipboard" item-left></ion-icon>
-        {{getOpenOrderCount(area)}}
-      </h3>
+  <h1>{{getTranslation()}}</h1>
+  <ion-list>
+    <button ion-item *ngFor="let setting of settings" (click)="onEditSetting(setting)">
+      <h2>{{setting.name}}</h2>
+      <h2 item-right>{{setting.value}}</h2>
     </button>
-  </ion-list>-->
+  </ion-list>
 </ion-content>
