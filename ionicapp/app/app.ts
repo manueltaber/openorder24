@@ -1,14 +1,18 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
+
 import {ComingSoonPage} from './pages/coming-soon/coming-soon';
 import {DashboardPage} from './pages/dashboard/dashboard';
 import {AreaSelectionPage} from './pages/area-selection/area-selection';
 import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
+import {SettingsPage} from './pages/settings/settings';
+
 import {AreaService} from './services/area.service';
 import {CategoryService} from './services/category.service';
 import {ItemService} from './services/item.service';
 import {OrderService} from './services/order.service';
+import {SettingService} from './services/setting.service';
 import {TranslationService} from './services/translation.service';
 
 @Component({
@@ -56,7 +60,7 @@ class MyApp {
     this.general_pages = [
       { 
         title: this.translationService.getTranslation('SETTINGS'), 
-        component: ComingSoonPage, 
+        component: SettingsPage, 
         icon: 'settings' },
       { 
         title: this.translationService.getTranslation('HELP'), 
@@ -86,6 +90,6 @@ class MyApp {
 // Set any config for your app as the third argument:
 // http://ionicframework.com/docs/v2/api/config/Config/
 
-ionicBootstrap(MyApp, [AreaService, CategoryService, ItemService, OrderService, TranslationService], {
+ionicBootstrap(MyApp, [AreaService, CategoryService, ItemService, OrderService, SettingService, TranslationService], {
   //tabbarPlacement: 'bottom'
 });

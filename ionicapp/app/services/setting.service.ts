@@ -3,17 +3,35 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class SettingService {
 
+  settingPrefix: string = 'SETTING_SERVICE_';
+
   constructor() {}
 
-}
+  getSettingStorageName(settingKey: string) {
+    return this.settingPrefix + settingKey.toUpperCase();
+  }
 
-export enum SettingType {
-    stBoolean, stInteger, stString
-}
+  loadSettingFromStorage(settingKey: string) {
+    let storageName = this.getSettingStorageName(settingKey);
+    let value = localStorage.getItem(storageName);
+    if (value) {
+      return value;
+    }
+    return null;
+  }
 
-export class Setting {
-    settingType: SettingType;
-    settingValue: any;
-    settingValueMin: any;
-    settingValueMax: any;
+  saveSettingToStorage(settingKey: string, settingValue: any) {
+    let storageName = this.getSettingStorageName(settingKey);
+    localStorage.setItem(storageName, settingValue);
+  }
+
+  getSetting(settingKey: string, defaultValue: any) {
+    let value = this.loadSettingFromStorage(settingKey);
+    if (value) {
+      return value;
+    } else {
+      this.saveSettingToStorage(settingKey, defaultValue);
+      return defaultValue;
+    }
+  }
 }
