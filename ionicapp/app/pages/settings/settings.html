@@ -8,7 +8,6 @@
 </ion-header>
 
 <ion-content>
-  <h1>{{getTranslation()}}</h1>
   <ion-list>
     <button ion-item *ngFor="let setting of settings" (click)="onEditSetting(setting)">
       <h2>{{setting.name}}</h2>
