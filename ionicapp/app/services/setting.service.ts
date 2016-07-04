@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
 export class SettingService {
 
   settingPrefix: string = 'SETTING_SERVICE_';
+  settings: Setting[] = [];
 
   constructor() {}
 
@@ -34,4 +35,9 @@ export class SettingService {
       return defaultValue;
     }
   }
+}
+
+export class Setting {
+  name: string;
+  value: any;
 }
