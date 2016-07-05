@@ -10,19 +10,20 @@ function getMockCategories(): Category[] {
     category.desc = mockCategory['desc'];
     category.icon = mockCategory['icon'];
     category.optionals = mockCategory['optionals'];
+    category.ingredients = mockCategory['ingredients'];
     mockCategories.push(category);
   }
   return mockCategories;
 }
 
 var MOCKCATEGORIES = [
-  { 'nr': 1, 'desc': 'Vorspeißen', 'icon': 'restaurant', 'optionals': [] },
-  { 'nr': 2, 'desc': 'Hauptspeißen', 'icon': 'restaurant', 'optionals': [] },
-  { 'nr': 3, 'desc': 'Nachspeißen', 'icon': 'ice-cream', 'optionals': [] },
-  { 'nr': 4, 'desc': 'Beilagen', 'icon': 'cafe', 'optionals': [] },
+  { 'nr': 1, 'desc': 'Vorspeißen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 2, 'desc': 'Hauptspeißen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 3, 'desc': 'Nachspeißen', 'icon': 'ice-cream', 'optionals': [], 'ingredients': [] },
+  { 'nr': 4, 'desc': 'Beilagen', 'icon': 'cafe', 'optionals': [], 'ingredients': [] },
   { 'nr': 5, 'desc': 'Getränke', 'icon': 'beer', 
-    'optionals': ['Eiswürfel', 'Zitrone'] },
-  { 'nr': 6, 'desc': 'Sonstige', 'icon': 'restaurant', 'optionals': [] },
+    'optionals': ['Eiswürfel', 'Zitrone'], 'ingredients': [] },
+  { 'nr': 6, 'desc': 'Sonstige', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
   { 'nr': 7, 'desc': 'Pizza', 'icon': 'pizza', 
-    'optionals': ['Knoblauchsauce', 'Vollkorn'] }
+    'optionals': ['Knoblauchsauce', 'Vollkorn'], 'ingredients': [] }
 ];

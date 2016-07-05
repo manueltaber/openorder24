@@ -3,4 +3,5 @@ export class Category {
   desc: string;
   icon: string;
   optionals: string[] = [];
+  ingredients: string[] = [];
 }

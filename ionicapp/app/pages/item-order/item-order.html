@@ -11,28 +11,32 @@
   <ion-card>
     <ion-list>
       <ion-item>
-        <ion-label fixed>{{translationService.getTranslation('COUNT')}}</ion-label>
+        <ion-label fixed>{{getTranslation('COUNT')}}</ion-label>
         <ion-input type="number" [(ngModel)]="count"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label fixed>{{translationService.getTranslation('OPTIONAL')}}</ion-label>
+        <ion-label fixed>{{getTranslation('OPTIONAL')}}</ion-label>
         <ion-input type="text" [(ngModel)]="desc"></ion-input>
       </ion-item>
-      <ion-item *ngFor="let optional of category.optionals">
-        <ion-label>{{optional}}</ion-label>
-        <ion-checkbox checked="false"></ion-checkbox>
-      </ion-item> 
     </ion-list>
   </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      {{translationService.getTranslation('INGREDIENTS')}}
-    </ion-card-header>
+  <ion-card *ngIf="optionalsAvailable()">
+    <ion-card-header>{{getTranslation('OPTIONALS')}}</ion-card-header>
     <ion-list>
-      <ion-item *ngFor="let ingredient of item.ingredients">
-        <ion-label>{{ingredient}}</ion-label>
-        <ion-checkbox checked="true"></ion-checkbox>
+      <ion-item *ngFor="let optional of optionals">
+        <ion-label>{{optional.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="optional.selected"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card *ngIf="ingredientsAvailable()">
+    <ion-card-header>{{getTranslation('INGREDIENTS')}}</ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let ingredient of ingredients">
+        <ion-label>{{ingredient.name}}</ion-label>
+        <ion-checkbox [(ngModel)]="ingredient.selected"></ion-checkbox>
       </ion-item>
     </ion-list>
   </ion-card>
@@ -42,7 +46,7 @@
   <ion-toolbar>
     <button outline (click)="onConfirmItem($event)">
       <ion-icon name="checkmark"></ion-icon> 
-      {{translationService.getTranslation('CONFIRM')}}
+      {{getTranslation('CONFIRM')}}
     </button>
   </ion-toolbar>
 </ion-footer>
