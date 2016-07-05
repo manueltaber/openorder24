@@ -8,7 +8,7 @@ import {TranslationService} from '../../services/translation.service';
   template: `
     <ion-toolbar position="bottom">
       <ion-title (click)="onShowTempOrdersOverview($event)">
-        {{translationService.getTranslation('ORDERS')}}: 
+        <ion-icon name="clipboard"></ion-icon>
         {{getTempOrders().length}} / {{getTempOrdersAmount()}}€
       </ion-title>
       <ion-buttons end>
