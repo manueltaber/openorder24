@@ -38,3 +38,7 @@ Open /webapp afterwards and execute these commands:
 ````
 
 Everything should work fine now (probably)
+
+## How to contribute
+
+## License
