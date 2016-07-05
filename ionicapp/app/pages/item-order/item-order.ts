@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {Area} from '../../classes/area';
+import {Category} from '../../classes/category';
 import {Item} from '../../classes/item';
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
@@ -11,6 +12,7 @@ import {TranslationService} from '../../services/translation.service';
 export class ItemOrderPage {
   
   area: Area;
+  category: Category;
   item: Item;
   count: number;
   desc: string;
@@ -19,17 +21,14 @@ export class ItemOrderPage {
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
+    this.category = navParams.get('category');
     this.item = navParams.get('item');
     this.count = 1;
     this.desc = '';
   }
   
-  onConfirmItem(event, mode) {
+  onConfirmItem(event) {
     this.orderService.addNewTempOrder(this.area, this.item);
-    if (mode == 0) {
-      this.nav.pop().then(() => {this.nav.pop()});
-    } else {
-      this.nav.pop();
-    }
+    this.nav.pop().then(() => {this.nav.pop()});
   }
 }

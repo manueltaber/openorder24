@@ -132,6 +132,18 @@ export var TRANSLATIONS = {
         'DEU': 'Optional',
         'ITA': '',
         'ENG': 'Optional'},
+    'OPTIONALS': {
+        'DEU': 'Optionals',
+        'ITA': '',
+        'ENG': 'Optionals'},
+    'INGREDIENT': {
+        'DEU': 'Zutat',
+        'ITA': '',
+        'ENG': 'Ingredient'},
+    'INGREDIENTS': {
+        'DEU': 'Zutaten',
+        'ITA': '',
+        'ENG': 'Ingredients'},
     'ORDERS': {
         'DEU': 'Bestellungen',
         'ITA': '',

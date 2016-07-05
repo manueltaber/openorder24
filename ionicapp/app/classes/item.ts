@@ -5,4 +5,5 @@ export class Item {
   desc: string;
   price: number;
   category: Category;
+  ingredients: string[] = [];
 }

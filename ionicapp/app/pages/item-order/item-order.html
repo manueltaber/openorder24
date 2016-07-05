@@ -18,41 +18,31 @@
         <ion-label fixed>{{translationService.getTranslation('OPTIONAL')}}</ion-label>
         <ion-input type="text" [(ngModel)]="desc"></ion-input>
       </ion-item>
+      <ion-item *ngFor="let optional of category.optionals">
+        <ion-label>{{optional}}</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+      </ion-item> 
+    </ion-list>
+  </ion-card>
 
-      <ion-item>
-        <ion-label fixed>Zutat 1</ion-label>
+  <ion-card>
+    <ion-card-header>
+      {{translationService.getTranslation('INGREDIENTS')}}
+    </ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let ingredient of item.ingredients">
+        <ion-label>{{ingredient}}</ion-label>
         <ion-checkbox checked="true"></ion-checkbox>
       </ion-item>
-      <ion-item>
-        <ion-label fixed>Zutat 2</ion-label>
-        <ion-checkbox checked="false"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label fixed>Zutat 3</ion-label>
-        <ion-checkbox checked="false"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label fixed>Zutat 4</ion-label>
-        <ion-checkbox checked="false"></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label fixed>Zutat 5</ion-label>
-        <ion-checkbox checked="true"></ion-checkbox>
-      </ion-item>      
-      
     </ion-list>
   </ion-card>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <button outline (click)="onConfirmItem($event, 0)">
+    <button outline (click)="onConfirmItem($event)">
       <ion-icon name="checkmark"></ion-icon> 
-      {{translationService.getTranslation('CATEGORIES')}}
-    </button>
-    <button outline (click)="onConfirmItem($event, 1)">
-      <ion-icon name="checkmark"></ion-icon> 
-      {{translationService.getTranslation('ITEMS')}}
+      {{translationService.getTranslation('CONFIRM')}}
     </button>
   </ion-toolbar>
 </ion-footer>
