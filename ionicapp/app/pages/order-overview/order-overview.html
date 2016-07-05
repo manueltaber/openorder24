@@ -9,8 +9,9 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let order of orders" (click)="onCategorySelected($event, category)">
+    <button ion-item *ngFor="let order of orders" (click)="onOrderSelected($event, order)">
       <h2>{{order.item.nr}} - {{order.item.desc}}</h2>
+      <button item-right>Hallo</button>
     </button>
   </ion-list>
 </ion-content>

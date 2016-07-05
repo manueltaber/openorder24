@@ -1,10 +1,11 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams, Alert} from 'ionic-angular';
+import {NavController, NavParams, Modal} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Order} from '../../classes/order';
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
+import {ItemOrderPage} from '../item-order/item-order';
 
 @Component({
   templateUrl: 'build/pages/order-overview/order-overview.html',
@@ -21,6 +22,11 @@ export class OrderOverviewPage {
               private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.orders = orderService.getTempOrdersByArea(this.area);
+  }
+
+  onOrderSelected($event, order) {
+    let modal = Modal.create(ItemOrderPage);
+    this.nav.present(modal);
   }
 
   onTempOrdersConfirmed() {
