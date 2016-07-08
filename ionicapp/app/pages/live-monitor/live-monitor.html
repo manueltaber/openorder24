@@ -4,6 +4,11 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>{{getTranslation('LIVE_MONITOR')}}</ion-title>
+    <ion-buttons end>
+      <button (click)="changeFilter($event)">
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
