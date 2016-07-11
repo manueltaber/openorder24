@@ -14,11 +14,14 @@
         <ion-label fixed>{{getTranslation('COUNT')}}</ion-label>
         <ion-input type="number" [(ngModel)]="count"></ion-input>
       </ion-item>
-      <ion-item>
-        <ion-label fixed>{{getTranslation('OPTIONAL')}}</ion-label>
-        <ion-input type="text" placeholder="{{getTranslation('OPTIONAL')}}" [(ngModel)]="desc"></ion-input>
-      </ion-item>
     </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-item>
+      <ion-label fixed>{{getTranslation('OPTIONAL')}}</ion-label>
+      <ion-input type="text" placeholder="{{getTranslation('OPTIONAL')}}" [(ngModel)]="desc"></ion-input>
+    </ion-item>
   </ion-card>
 
   <ion-card *ngIf="optionalsAvailable()">

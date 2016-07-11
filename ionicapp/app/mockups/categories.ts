@@ -17,13 +17,12 @@ function getMockCategories(): Category[] {
 }
 
 var MOCKCATEGORIES = [
-  { 'nr': 1, 'desc': 'Vorspeißen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
-  { 'nr': 2, 'desc': 'Hauptspeißen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
-  { 'nr': 3, 'desc': 'Nachspeißen', 'icon': 'ice-cream', 'optionals': [], 'ingredients': [] },
-  { 'nr': 4, 'desc': 'Beilagen', 'icon': 'cafe', 'optionals': [], 'ingredients': [] },
-  { 'nr': 5, 'desc': 'Getränke', 'icon': 'beer', 
-    'optionals': ['Eiswürfel', 'Zitrone'], 'ingredients': [] },
-  { 'nr': 6, 'desc': 'Sonstige', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
-  { 'nr': 7, 'desc': 'Pizza', 'icon': 'pizza', 
-    'optionals': ['Knoblauchsauce', 'Vollkorn'], 'ingredients': [] }
+  { 'nr': 1, 'desc': 'Vorspeisen', 'icon': 'nutrition', 'optionals': [], 'ingredients': [] },
+  { 'nr': 2, 'desc': 'Salate', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 3, 'desc': 'Suppen', 'icon': 'cafe', 'optionals': [], 'ingredients': [] },
+  { 'nr': 4, 'desc': 'Hauptspeisen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 5, 'desc': 'Fisch', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 6, 'desc': 'Nachspeisen', 'icon': 'ice-cream', 'optionals': [], 'ingredients': [] },
+  { 'nr': 8, 'desc': 'Getränke', 'icon': 'beer', 'optionals': ['Eiswürfel', 'Zitrone'], 'ingredients': [] },
+  { 'nr': 10, 'desc': 'Pizza', 'icon': 'pizza', 'optionals': ['Vollkorn', 'Kamut', 'Glutenfrei', 'Knoblauchsauce'], 'ingredients': [] }
 ];

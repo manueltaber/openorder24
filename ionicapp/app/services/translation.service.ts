@@ -11,7 +11,7 @@ export class TranslationService {
   }
   
   getTranslation(name: string) {
-    return this.translations[name]['ENG']
+    return this.translations[name]['DEU']
   }
   
   loadTranslations() {
