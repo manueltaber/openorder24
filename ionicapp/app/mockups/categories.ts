@@ -17,8 +17,8 @@ function getMockCategories(): Category[] {
 }
 
 var MOCKCATEGORIES = [
-  { 'nr': 1, 'desc': 'Vorspeisen', 'icon': 'nutrition', 'optionals': [], 'ingredients': [] },
-  { 'nr': 2, 'desc': 'Salate', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 1, 'desc': 'Vorspeisen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
+  { 'nr': 2, 'desc': 'Salate', 'icon': 'nutrition', 'optionals': [], 'ingredients': [] },
   { 'nr': 3, 'desc': 'Suppen', 'icon': 'cafe', 'optionals': [], 'ingredients': [] },
   { 'nr': 4, 'desc': 'Hauptspeisen', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
   { 'nr': 5, 'desc': 'Fisch', 'icon': 'restaurant', 'optionals': [], 'ingredients': [] },
