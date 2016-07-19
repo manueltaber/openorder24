@@ -1,10 +1,12 @@
 import {Category} from './category';
+import {Extra} from './extra';
 
 export class Item {
   nr: number;
   desc: string;
   price: number;
   category: Category;
-  optionals: string[] = [];
   ingredients: string[] = [];
+  optionals: Extra[] = [];
+  variants: Extra[][] = [];
 }

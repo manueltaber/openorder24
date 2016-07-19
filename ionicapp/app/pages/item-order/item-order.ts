@@ -3,6 +3,7 @@ import {NavController, NavParams} from 'ionic-angular';
 
 import {Area} from '../../classes/area';
 import {Category} from '../../classes/category';
+import {Extra} from '../../classes/extra';
 import {Item} from '../../classes/item';
 
 import {BasePage} from '../base';
@@ -23,8 +24,9 @@ export class ItemOrderPage extends BasePage {
   count: number;
   desc: string;
 
-  optionals: Optional[] = [];
   ingredients: Ingredient[] = [];
+  optionals: Optional[] = [];
+  variants: Variant[] = [];
 
   constructor(protected nav: NavController, protected navParams: NavParams,
               protected orderService: OrderService,
@@ -39,36 +41,53 @@ export class ItemOrderPage extends BasePage {
     this.count = 1;
     this.desc = '';
 
-    this.pushOptionals(this.category.optionals, false);
-    this.pushOptionals(this.item.optionals, false);
     this.pushIngredients(this.category.ingredients, true);
     this.pushIngredients(this.item.ingredients, true);
-  }
-
-  pushOptionals(optionals: string[], selected: boolean) {
-    for (let opt of optionals) {
-      let optional = new Optional();
-      optional.name = opt;
-      optional.selected = selected;
-      this.optionals.push(optional);
-    }
+    this.pushOptionals(this.category.optionals, false);
+    this.pushOptionals(this.item.optionals, false);
+    this.pushVariants(this.category.variants, false);
+    this.pushVariants(this.item.variants, false);
   }
 
   pushIngredients(ingredients: string[], selected: boolean) {
     for (let ing of ingredients) {
       let ingredient = new Ingredient();
-      ingredient.name = ing;
+      ingredient.ingredient = ing;
       ingredient.selected = selected;
       this.ingredients.push(ingredient);
     }
+  }
+
+  pushOptionals(optionals: Extra[], selected: boolean) {
+    for (let opt of optionals) {
+      let optional = new Optional();
+      optional.optional = opt;
+      optional.selected = selected;
+      this.optionals.push(optional);
+    }
+  }
+
+  pushVariants(variants: Extra[][], selected: boolean) {
+    for (let variantgroup of variants) {
+      for (let vari of variantgroup) {
+        let variant = new Variant();
+        variant.variant = vari;
+        variant.selected = selected;
+        this.variants.push(variant);
+      }
+    }
+  }
+
+  ingredientsAvailable(): boolean {
+    return this.ingredients.length > 0;
   }
 
   optionalsAvailable(): boolean {
     return this.optionals.length > 0;
   }
 
-  ingredientsAvailable(): boolean {
-    return this.ingredients.length > 0;
+  variantsAvailable(): boolean {
+    return this.variants.length > 0;
   }
   
   onConfirmItem(event) {
@@ -77,12 +96,17 @@ export class ItemOrderPage extends BasePage {
   }
 }
 
-class Optional {
-  name: string;
+class Ingredient {
+  ingredient: string;
   selected: boolean;
 }
 
-class Ingredient {
-  name: string;
+class Optional {
+  optional: Extra;
+  selected: boolean;
+}
+
+class Variant {
+  variant: Extra;
   selected: boolean;
 }

@@ -24,11 +24,21 @@
     </ion-item>
   </ion-card>
 
+  <ion-card *ngIf="variantsAvailable()">
+    <ion-card-header>{{getTranslation('VARIANTS')}}</ion-card-header>
+    <ion-list>
+      <ion-item *ngFor="let variant of variants">
+        <ion-label>{{variant.variant.desc}}</ion-label>
+        <ion-radio></ion-radio>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
   <ion-card *ngIf="optionalsAvailable()">
     <ion-card-header>{{getTranslation('OPTIONALS')}}</ion-card-header>
     <ion-list>
       <ion-item *ngFor="let optional of optionals">
-        <ion-label>{{optional.name}}</ion-label>
+        <ion-label>{{optional.optional.desc}}</ion-label>
         <ion-checkbox [(ngModel)]="optional.selected"></ion-checkbox>
       </ion-item>
     </ion-list>
@@ -38,7 +48,7 @@
     <ion-card-header>{{getTranslation('INGREDIENTS')}}</ion-card-header>
     <ion-list>
       <ion-item *ngFor="let ingredient of ingredients">
-        <ion-label>{{ingredient.name}}</ion-label>
+        <ion-label>{{ingredient.ingredient}}</ion-label>
         <ion-checkbox [(ngModel)]="ingredient.selected"></ion-checkbox>
       </ion-item>
     </ion-list>

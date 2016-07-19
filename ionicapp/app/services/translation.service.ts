@@ -128,14 +128,6 @@ export var TRANSLATIONS = {
         'DEU': 'Anzahl',
         'ITA': '',
         'ENG': 'Count'},
-    'OPTIONAL': {
-        'DEU': 'Optional',
-        'ITA': '',
-        'ENG': 'Optional'},
-    'OPTIONALS': {
-        'DEU': 'Optionals',
-        'ITA': '',
-        'ENG': 'Optionals'},
     'INGREDIENT': {
         'DEU': 'Zutat',
         'ITA': '',
@@ -144,6 +136,24 @@ export var TRANSLATIONS = {
         'DEU': 'Zutaten',
         'ITA': '',
         'ENG': 'Ingredients'},
+    'OPTIONAL': {
+        'DEU': 'Optional',
+        'ITA': '',
+        'ENG': 'Optional'},
+    'OPTIONALS': {
+        'DEU': 'Optionals',
+        'ITA': '',
+        'ENG': 'Optionals'},
+
+    'VARIANT': {
+        'DEU': 'Variante',
+        'ITA': '',
+        'ENG': 'Variant'},
+    'VARIANTS': {
+        'DEU': 'Varianten',
+        'ITA': '',
+        'ENG': 'Variants'},
+
     'ORDERS': {
         'DEU': 'Bestellungen',
         'ITA': '',

@@ -1,7 +1,10 @@
+import {Extra} from './extra';
+
 export class Category {
   nr: number;
   desc: string;
   icon: string;
-  optionals: string[] = [];
   ingredients: string[] = [];
+  optionals: Extra[] = [];
+  variants: Extra[][] = [];
 }
