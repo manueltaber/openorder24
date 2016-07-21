@@ -144,7 +144,10 @@ export var TRANSLATIONS = {
         'DEU': 'Optionals',
         'ITA': '',
         'ENG': 'Optionals'},
-
+    'NOTE': {
+        'DEU': 'Notiz',
+        'ITA': '',
+        'ENG': 'Note'},
     'VARIANT': {
         'DEU': 'Variante',
         'ITA': '',
@@ -153,7 +156,6 @@ export var TRANSLATIONS = {
         'DEU': 'Varianten',
         'ITA': '',
         'ENG': 'Variants'},
-
     'ORDERS': {
         'DEU': 'Bestellungen',
         'ITA': '',
@@ -178,4 +180,8 @@ export var TRANSLATIONS = {
         'DEU': 'Bestellübersicht',
         'ITA': '',
         'ENG': 'Order overview'},
+    'DONE': {
+        'DEU': 'Erledigt',
+        'ITA': '',
+        'ENG': 'Done'},
 }

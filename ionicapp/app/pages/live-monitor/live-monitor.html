@@ -19,7 +19,7 @@
       <h3>{{liveMonitorItem.area.desc}}</h3>
       <button clear item-right (click)="itemDone($event, liveMonitorItem)">
         <ion-icon name="checkmark"></ion-icon> 
-        Done
+        {{getTranslation('DONE')}}
       </button>
     </ion-item>
   </ion-list>

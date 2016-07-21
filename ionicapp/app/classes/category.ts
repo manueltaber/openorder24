@@ -1,4 +1,4 @@
-import {Extra} from './extra';
+import {Extra, ExtraGroup} from './extra';
 
 export class Category {
   nr: number;
@@ -6,5 +6,5 @@ export class Category {
   icon: string;
   ingredients: string[] = [];
   optionals: Extra[] = [];
-  variants: Extra[][] = [];
+  variants: ExtraGroup[] = [];
 }

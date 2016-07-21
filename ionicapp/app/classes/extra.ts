@@ -6,5 +6,5 @@ export class Extra {
 
 export class ExtraGroup {
     desc: string;
-    extras: Extra[];
+    extras: Extra[] = [];
 }

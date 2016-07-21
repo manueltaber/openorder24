@@ -3,7 +3,7 @@ import {NavController, NavParams} from 'ionic-angular';
 
 import {Area} from '../../classes/area';
 import {Category} from '../../classes/category';
-import {Extra} from '../../classes/extra';
+import {Extra, ExtraGroup} from '../../classes/extra';
 import {Item} from '../../classes/item';
 
 import {BasePage} from '../base';
@@ -22,11 +22,11 @@ export class ItemOrderPage extends BasePage {
   item: Item;
 
   count: number;
-  desc: string;
+  note: string;
 
   ingredients: Ingredient[] = [];
   optionals: Optional[] = [];
-  variants: Variant[] = [];
+  variantGroups: ExtraGroup[] = [];
 
   constructor(protected nav: NavController, protected navParams: NavParams,
               protected orderService: OrderService,
@@ -39,14 +39,14 @@ export class ItemOrderPage extends BasePage {
     this.item = navParams.get('item');
 
     this.count = 1;
-    this.desc = '';
+    this.note = '';
 
     this.pushIngredients(this.category.ingredients, true);
     this.pushIngredients(this.item.ingredients, true);
     this.pushOptionals(this.category.optionals, false);
     this.pushOptionals(this.item.optionals, false);
     this.pushVariants(this.category.variants, false);
-    this.pushVariants(this.item.variants, false);
+    //this.pushVariants(this.item.variants, false);
   }
 
   pushIngredients(ingredients: string[], selected: boolean) {
@@ -67,15 +67,16 @@ export class ItemOrderPage extends BasePage {
     }
   }
 
-  pushVariants(variants: Extra[][], selected: boolean) {
-    for (let variantgroup of variants) {
-      for (let vari of variantgroup) {
+  pushVariants(variantGroups: ExtraGroup[], selected: boolean) {
+    /*for (let variantGroup of variantGroups) {
+      for (let vari of variantGroup.extras) {
         let variant = new Variant();
         variant.variant = vari;
         variant.selected = selected;
         this.variants.push(variant);
       }
-    }
+    }*/
+    this.variantGroups = variantGroups;
   }
 
   ingredientsAvailable(): boolean {
@@ -87,7 +88,7 @@ export class ItemOrderPage extends BasePage {
   }
 
   variantsAvailable(): boolean {
-    return this.variants.length > 0;
+    return this.variantGroups.length > 0;
   }
   
   onConfirmItem(event) {

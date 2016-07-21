@@ -19,17 +19,20 @@
 
   <ion-card>
     <ion-item>
-      <ion-label fixed>{{getTranslation('OPTIONAL')}}</ion-label>
-      <ion-input type="text" placeholder="{{getTranslation('OPTIONAL')}}" [(ngModel)]="desc"></ion-input>
+      <ion-label fixed>{{getTranslation('NOTE')}}</ion-label>
+      <ion-input type="text" placeholder="{{getTranslation('NOTE')}}" [(ngModel)]="note"></ion-input>
     </ion-item>
   </ion-card>
 
-  <ion-card *ngIf="variantsAvailable()">
-    <ion-card-header>{{getTranslation('VARIANTS')}}</ion-card-header>
-    <ion-list>
-      <ion-item *ngFor="let variant of variants">
-        <ion-label>{{variant.variant.desc}}</ion-label>
+  <ion-card *ngFor="let variantGroup of variantGroups">
+    <ion-card-header>{{variantGroup.desc}}</ion-card-header>
+    <ion-list radio-group>
+      <ion-item *ngFor="let variant of variantGroup.extras">
         <ion-radio></ion-radio>
+        <ion-label>
+          {{variant.desc}} ({{variant.price_diff_abs}}€)
+        </ion-label>
+        
       </ion-item>
     </ion-list>
   </ion-card>
@@ -38,7 +41,7 @@
     <ion-card-header>{{getTranslation('OPTIONALS')}}</ion-card-header>
     <ion-list>
       <ion-item *ngFor="let optional of optionals">
-        <ion-label>{{optional.optional.desc}}</ion-label>
+        <ion-label>{{optional.optional.desc}} ({{optional.optional.price_diff_abs}}€)</ion-label>
         <ion-checkbox [(ngModel)]="optional.selected"></ion-checkbox>
       </ion-item>
     </ion-list>

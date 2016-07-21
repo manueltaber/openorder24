@@ -1,5 +1,5 @@
 import {Category} from '../classes/category';
-import {Extra} from '../classes/extra';
+import {Extra, ExtraGroup} from '../classes/extra';
 
 export {getMockCategories};
 
@@ -10,7 +10,9 @@ function getMockCategories(): Category[] {
     category.nr = mockCategory['nr'];
     category.desc = mockCategory['desc'];
     category.icon = mockCategory['icon'];
+    // add ingredients
     category.ingredients = mockCategory['ingredients'];
+    // add optionals
     for (let mockOptional of mockCategory.optionals) {
       let extra: Extra = new Extra();
       extra.desc = mockOptional['desc'];
@@ -18,14 +20,16 @@ function getMockCategories(): Category[] {
       extra.price_diff_percent = mockOptional['price_diff_percent'];
       category.optionals.push(extra);
     }
-    for (let mockVariants of mockCategory.variants) {
-      let variantGroup: Extra[] = [];
-      for (let mockVariant of mockVariants) {
+    // add variants
+    for (let mockVariantGroup of mockCategory.variants) {
+      let variantGroup: ExtraGroup = new ExtraGroup();
+      variantGroup.desc = mockVariantGroup['desc'];
+      for (let mockVariant of mockVariantGroup.extras) {
         let extra: Extra = new Extra();
         extra.desc = mockVariant['desc']
         extra.price_diff_abs = mockVariant['price_diff_abs'];
         extra.price_diff_percent = mockVariant['price_diff_percent'];
-        variantGroup.push(extra);
+        variantGroup.extras.push(extra);
       }
       category.variants.push(variantGroup);
     }
@@ -73,16 +77,22 @@ var MOCKCATEGORIES = [
       { 'desc': 'Scharfes Öl', 'price_diff_abs': 0, 'price_diff_percent': 0 },
     ],
     'variants': [
-      [
-        { 'desc': 'Klein', 'price_diff_abs': -2, 'price_diff_percent': 0 },
-        { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-      ],
-      [
-        { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 }, 
-        { 'desc': 'Vollkorn', 'price_diff_abs': 2, 'price_diff_percent': 0 }, 
-        { 'desc': 'Kamut', 'price_diff_abs': 3, 'price_diff_percent': 0 },
-        { 'desc': 'Glutenfrei', 'price_diff_abs': 3, 'price_diff_percent': 0 },
-      ]
+      {
+        'desc': 'Größe',
+        'extras': [
+          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+          { 'desc': 'Klein', 'price_diff_abs': -2, 'price_diff_percent': 0 },
+        ]
+      },
+      {
+        'desc': 'Teig',
+        'extras': [
+          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 }, 
+          { 'desc': 'Vollkorn', 'price_diff_abs': 2, 'price_diff_percent': 0 }, 
+          { 'desc': 'Kamut', 'price_diff_abs': 3, 'price_diff_percent': 0 },
+          { 'desc': 'Glutenfrei', 'price_diff_abs': 3, 'price_diff_percent': 0 },
+        ]
+      },
     ]
   }
 ];
