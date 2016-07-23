@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, Alert} from 'ionic-angular';
+
 import {Area} from '../../classes/area';
 import {Item} from '../../classes/item';
 import {Order} from '../../classes/order';
+
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
 
