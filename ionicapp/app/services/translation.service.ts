@@ -184,4 +184,14 @@ export var TRANSLATIONS = {
         'DEU': 'Erledigt',
         'ITA': '',
         'ENG': 'Done'},
+    'ATTENTION': {
+        'DEU': 'Achtung',
+        'ITA': '',
+        'ENG': 'Attention'},
+
+    // long texts
+    'OPEN_TEMP_ORDERS_WARNING': {
+        'DEU': 'Es wurden noch nicht alle Bestellungen versendet. Sind Sie sicher dass Sie abbrechen möchten?',
+        'ITA': '',
+        'ENG': ''},
 }
