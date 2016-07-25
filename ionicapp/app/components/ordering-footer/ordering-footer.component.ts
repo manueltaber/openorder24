@@ -7,7 +7,7 @@ import {TranslationService} from '../../services/translation.service';
   selector: 'ordering-footer',
   template: `
     <ion-toolbar position="bottom">
-      <ion-title (click)="onShowTempOrdersOverview($event)">
+      <ion-title item-left (click)="onShowTempOrdersOverview($event)">
         <ion-icon name="clipboard"></ion-icon>
         {{getTempOrders().length}} / {{getTempOrdersAmount()}}€
       </ion-title>

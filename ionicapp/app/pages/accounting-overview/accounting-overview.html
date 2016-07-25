@@ -28,7 +28,7 @@
 
 <ion-footer>
   <ion-toolbar *ngIf="getSelectableItemCount()>0">
-    <ion-title>
+    <ion-title item-left>
       {{translationService.getTranslation('ITEMS')}}:
       {{getSelectedItemCount()}} - {{getSelectedItemAmount()}}€
     </ion-title>
