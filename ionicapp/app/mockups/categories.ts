@@ -40,7 +40,9 @@ function getMockCategories(): Category[] {
 
 var MOCKCATEGORIES = [
   { 'nr': 1,  'desc': 'Vorspeisen', 'icon': 'restaurant',
-    'ingredients': [], 'optionals': [], 'variants': []},
+    'ingredients': [], 'optionals': [
+      { 'desc': 'Als Hauptspeiße', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+    ], 'variants': []},
 
   { 'nr': 2,  'desc': 'Salate', 'icon': 'nutrition',
     'ingredients': [],
@@ -104,9 +106,8 @@ var MOCKCATEGORIES = [
       {
         'desc': 'Teig',
         'extras': [
-          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 }, 
-          { 'desc': 'Vollkorn', 'price_diff_abs': 2, 'price_diff_percent': 0 }, 
-          { 'desc': 'Kamut', 'price_diff_abs': 3, 'price_diff_percent': 0 },
+          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+          { 'desc': 'Vollkorn', 'price_diff_abs': 2, 'price_diff_percent': 0 },
           { 'desc': 'Glutenfrei', 'price_diff_abs': 3, 'price_diff_percent': 0 },
         ]
       },
