@@ -29,7 +29,8 @@
       <ion-item *ngFor="let variant of variantGroup.extras">
         <ion-radio></ion-radio>
         <ion-label>
-          {{variant.desc}} ({{variant.price_diff_abs}}€)
+          <span>{{variant.desc}}</span>
+          <span *ngIf="variant.price_diff_abs!=0">({{variant.price_diff_abs}}€)</span>
         </ion-label>
       </ion-item>
     </ion-list>
@@ -39,7 +40,10 @@
     <ion-card-header>{{getTranslation('OPTIONALS')}}</ion-card-header>
     <ion-list>
       <ion-item *ngFor="let optional of optionals">
-        <ion-label>{{optional.optional.desc}} ({{optional.optional.price_diff_abs}}€)</ion-label>
+        <ion-label>
+          <span>{{optional.optional.desc}}</span>
+          <span *ngIf="optional.optional.price_diff_abs!=0">({{optional.optional.price_diff_abs}}€)</span>
+        </ion-label>
         <ion-checkbox [(ngModel)]="optional.selected"></ion-checkbox>
       </ion-item>
     </ion-list>
@@ -58,9 +62,11 @@
 
 <ion-footer>
   <ion-toolbar>
-    <button outline (click)="onConfirmItem($event)">
-      <ion-icon name="checkmark"></ion-icon> 
-      {{getTranslation('CONFIRM')}}
-    </button>
+    <ion-buttons>
+      <button outline (click)="onConfirmItem($event)">
+        <ion-icon name="checkmark"></ion-icon> 
+        {{getTranslation('CONFIRM')}}
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-footer>
