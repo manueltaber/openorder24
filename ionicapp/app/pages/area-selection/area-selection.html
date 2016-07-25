@@ -27,6 +27,12 @@
 </ion-header>
 
 <ion-content>
+  <!--<ion-card>
+    <ion-card-header>
+      Hilfe
+    </ion-card-header>
+    Bitte wählen Sie einen Tisch aus um auf diesen eine Bestellung zu machen:
+  </ion-card>-->
   <ion-list>
     <button ion-item *ngFor="let area of areas" (click)="onAreaSelected($event, area)">
       <h2>{{area.nr}} - {{area.desc}}</h2>

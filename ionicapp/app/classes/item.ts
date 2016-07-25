@@ -1,5 +1,5 @@
 import {Category} from './category';
-import {Extra} from './extra';
+import {Extra, ExtraGroup} from './extra';
 
 export class Item {
   nr: number;
@@ -8,5 +8,5 @@ export class Item {
   category: Category;
   ingredients: string[] = [];
   optionals: Extra[] = [];
-  variants: Extra[][] = [];
+  variants: ExtraGroup[] = [];
 }

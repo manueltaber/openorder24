@@ -59,10 +59,27 @@ var MOCKCATEGORIES = [
   { 'nr': 5,  'desc': 'Fisch', 'icon': 'restaurant',
     'ingredients': [], 'optionals': [], 'variants': []},
 
-  { 'nr': 6,  'desc': 'Nachspeisen', 'icon': 'ice-cream',
+  { 'nr': 6,  'desc': 'Steaks', 'icon': 'restaurant',
+    'ingredients': [], 'optionals': [], 
+    'variants': [
+      {
+        'desc': 'Garstufe',
+        'extras': [
+          { 'desc': 'Rare', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+          { 'desc': 'Medium', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+          { 'desc': 'Well done', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+        ]
+      },
+    ]
+  },
+
+  { 'nr': 7,  'desc': 'Desserts', 'icon': 'ice-cream',
     'ingredients': [], 'optionals': [], 'variants': []},
 
-  { 'nr': 8,  'desc': 'Getränke', 'icon': 'beer',
+  { 'nr': 8,  'desc': 'Beilagen', 'icon': 'restaurant',
+    'ingredients': [], 'optionals': [], 'variants': []},
+
+  { 'nr': 9,  'desc': 'Getränke', 'icon': 'beer',
     'ingredients': [], 
     'optionals': [
       { 'desc': 'Eiswürfel', 'price_diff_abs': 0, 'price_diff_percent': 0 },

@@ -46,7 +46,7 @@ export class ItemOrderPage extends BasePage {
     this.pushOptionals(this.category.optionals, false);
     this.pushOptionals(this.item.optionals, false);
     this.pushVariants(this.category.variants, false);
-    //this.pushVariants(this.item.variants, false);
+    this.pushVariants(this.item.variants, false);
   }
 
   pushIngredients(ingredients: string[], selected: boolean) {
@@ -68,15 +68,9 @@ export class ItemOrderPage extends BasePage {
   }
 
   pushVariants(variantGroups: ExtraGroup[], selected: boolean) {
-    /*for (let variantGroup of variantGroups) {
-      for (let vari of variantGroup.extras) {
-        let variant = new Variant();
-        variant.variant = vari;
-        variant.selected = selected;
-        this.variants.push(variant);
-      }
-    }*/
-    this.variantGroups = variantGroups;
+    for (let variantGroup of variantGroups) {
+      this.variantGroups.push(variantGroup);
+    }
   }
 
   ingredientsAvailable(): boolean {

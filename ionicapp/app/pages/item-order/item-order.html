@@ -13,15 +13,14 @@
       <ion-item>
         <ion-label fixed>{{getTranslation('COUNT')}}</ion-label>
         <ion-input type="number" [(ngModel)]="count"></ion-input>
+        <button item-right>-</button>
+        <button item-right>+</button>
+      </ion-item>
+      <ion-item class="ng-valid">
+        <ion-label fixed>{{getTranslation('NOTE')}}</ion-label>
+        <ion-input type="text" placeholder="{{getTranslation('NOTE')}}" [(ngModel)]="note"></ion-input>
       </ion-item>
     </ion-list>
-  </ion-card>
-
-  <ion-card>
-    <ion-item>
-      <ion-label fixed>{{getTranslation('NOTE')}}</ion-label>
-      <ion-input type="text" placeholder="{{getTranslation('NOTE')}}" [(ngModel)]="note"></ion-input>
-    </ion-item>
   </ion-card>
 
   <ion-card *ngFor="let variantGroup of variantGroups">
@@ -32,7 +31,6 @@
         <ion-label>
           {{variant.desc}} ({{variant.price_diff_abs}}€)
         </ion-label>
-        
       </ion-item>
     </ion-list>
   </ion-card>

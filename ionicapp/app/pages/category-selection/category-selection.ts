@@ -1,13 +1,16 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams, Alert} from 'ionic-angular';
+
 import {Area} from '../../classes/area';
 import {Category} from '../../classes/category';
-import {CategoryService} from '../../services/category.service';
-import {OrderService} from '../../services/order.service';
-import {TranslationService} from '../../services/translation.service';
+
 import {ItemSelectionPage} from '../item-selection/item-selection';
 import {OrderOverviewPage} from '../order-overview/order-overview';
 import {OrderingFooterComponent} from '../../components/ordering-footer/ordering-footer.component';
+
+import {CategoryService} from '../../services/category.service';
+import {OrderService} from '../../services/order.service';
+import {TranslationService} from '../../services/translation.service';
 
 @Component({
   templateUrl: 'build/pages/category-selection/category-selection.html',
@@ -29,6 +32,10 @@ export class CategorySelectionPage {
     this.searching = false;
   }
 
+  onCategorySelected(event, category: Category) {
+    this.nav.push(ItemSelectionPage, {area: this.area, category: category});
+  }
+
   onShowTempOrdersOverview() {
     this.nav.push(OrderOverviewPage, {area: this.area});
   }
@@ -38,10 +45,21 @@ export class CategorySelectionPage {
   }
 
   onTempOrdersCanceled() {
-    this.nav.popToRoot();
-  }
-  
-  onCategorySelected(event, category: Category) {
-    this.nav.push(ItemSelectionPage, {area: this.area, category: category});
+    // if there are open temp orders -> ask user
+    if (this.orderService.getTempOrdersByArea(this.area).length > 0) {
+      let confirm = Alert.create({
+        title: this.translationService.getTranslation('ATTENTION'),
+        message: this.translationService.getTranslation('OPEN_TEMP_ORDERS_WARNING'),
+        buttons: [
+          { text: this.translationService.getTranslation('YES'),
+            handler: () => { this.nav.popToRoot(); }
+          },
+          { text: this.translationService.getTranslation('NO') }
+        ]
+      });
+      this.nav.present(confirm);
+    } else {
+      this.nav.popToRoot();
+    }
   }
 }
