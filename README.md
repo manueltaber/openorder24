@@ -58,3 +58,5 @@ We appreciate you taking the time to contribute! Before submitting a pull reques
 Looking for an issue to fix? Make sure to look through our issues with the [help wanted](https://github.com/manueltaber/openorder24/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) label!
 
 ## License
+
+Copyright 2016 Manuel Taber
