@@ -29,4 +29,4 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: manueltaber/openorder
+    repo: manueltaber/openorder24
