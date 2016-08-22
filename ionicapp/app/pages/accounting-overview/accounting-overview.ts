@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams, Alert} from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 
 import {Area} from '../../classes/area';
 import {Item} from '../../classes/item';
@@ -16,9 +16,8 @@ export class AccountingOverviewPage {
   area: Area;
   accountingItems: AccountingItem[] = [];
 
-  constructor(private nav: NavController, private navParams: NavParams,
-              private orderService: OrderService,
-              private translationService: TranslationService) {
+  constructor(private nav: NavController, private navParams: NavParams, private alertController: AlertController,
+              private orderService: OrderService, private translationService: TranslationService) {
     this.area = navParams.get('area');
     this.loadOpenAccountingItems();
   }
@@ -83,7 +82,7 @@ export class AccountingOverviewPage {
   }
 
   onBill(event) {
-    let confirm = Alert.create({
+    let confirm = this.alertController.create({
       title: this.getSelectedItemAmount().toString() + '€',
       message: 'Soll der Betrag abgebucht werden?',
       buttons: [
@@ -93,11 +92,11 @@ export class AccountingOverviewPage {
         { text: this.translationService.getTranslation('NO') }
       ]
     });
-    this.nav.present(confirm);
+    confirm.present();
   }
 
   onBillAll(event) {
-    let confirm = Alert.create({
+    /*let confirm = Alert.create({
       title: this.getOverallItemAmount().toString() + '€',
       message: 'Soll der Gesamtbetrag abgebucht werden?',
       buttons: [
@@ -107,7 +106,7 @@ export class AccountingOverviewPage {
         { text: this.translationService.getTranslation('NO') }
       ]
     });
-    this.nav.present(confirm);
+    this.nav.present(confirm);*/
   }
 }
 

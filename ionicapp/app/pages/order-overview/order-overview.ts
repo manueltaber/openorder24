@@ -25,8 +25,8 @@ export class OrderOverviewPage {
   }
 
   onOrderSelected($event, order) {
-    let modal = Modal.create(ItemOrderPage);
-    this.nav.present(modal);
+    // let modal = Modal.create(ItemOrderPage);
+    // this.nav.present(modal);
   }
 
   onTempOrdersConfirmed() {

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams, Alert} from 'ionic-angular';
+import {NavController, NavParams, AlertController} from 'ionic-angular';
 
 import {Area} from '../../classes/area';
 import {Category} from '../../classes/category';
@@ -25,7 +25,8 @@ export class ItemSelectionPage {
   searching: boolean;
 
   constructor(private nav: NavController, 
-              private navParams: NavParams, 
+              private navParams: NavParams,
+              private alertController: AlertController,
               private itemService: ItemService,
               private orderService: OrderService,
               private translationService: TranslationService) {
@@ -52,7 +53,7 @@ export class ItemSelectionPage {
   onTempOrdersCanceled() {
     // if there are open temp orders -> ask user
     if (this.orderService.getTempOrdersByArea(this.area).length > 0) {
-      let confirm = Alert.create({
+      let confirm = this.alertController.create({
         title: this.translationService.getTranslation('ATTENTION'),
         message: this.translationService.getTranslation('OPEN_TEMP_ORDERS_WARNING'),
         buttons: [
@@ -62,7 +63,7 @@ export class ItemSelectionPage {
           { text: this.translationService.getTranslation('NO') }
         ]
       });
-      this.nav.present(confirm);
+      confirm.present();
     } else {
       this.nav.popToRoot();
     }
