@@ -96,7 +96,7 @@ export class AccountingOverviewPage {
   }
 
   onBillAll(event) {
-    /*let confirm = Alert.create({
+    let confirm = this.alertController.create({
       title: this.getOverallItemAmount().toString() + '€',
       message: 'Soll der Gesamtbetrag abgebucht werden?',
       buttons: [
@@ -106,7 +106,7 @@ export class AccountingOverviewPage {
         { text: this.translationService.getTranslation('NO') }
       ]
     });
-    this.nav.present(confirm);*/
+    confirm.present();
   }
 }
 
