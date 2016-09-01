@@ -9,6 +9,7 @@ import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
 import {SettingsPage} from './pages/settings/settings';
 
 import {AreaService} from './services/area.service';
+import {AuthService} from './services/auth.service';
 import {CategoryService} from './services/category.service';
 import {ItemService} from './services/item.service';
 import {OrderService} from './services/order.service';
@@ -90,6 +91,6 @@ class MyApp {
 // Set any config for your app as the third argument:
 // http://ionicframework.com/docs/v2/api/config/Config/
 
-ionicBootstrap(MyApp, [AreaService, CategoryService, ItemService, OrderService, SettingService, TranslationService], {
+ionicBootstrap(MyApp, [AreaService, AuthService, CategoryService, ItemService, OrderService, SettingService, TranslationService], {
   //tabbarPlacement: 'bottom'
 });

@@ -46,4 +46,8 @@
       {{translationService.getTranslation('LIVE_MONITOR')}}
     </button>
   </ion-card>
+
+  <button class="btn btn-primary btn-margin" (click)="authService.login()" *ngIf="!authService.authenticated()">Log In</button>
+  <button class="btn btn-primary btn-margin" (click)="authService.logout()" *ngIf="authService.authenticated()">Log Out</button>
+
 </ion-content>
