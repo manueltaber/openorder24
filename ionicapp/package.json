@@ -37,6 +37,6 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [],
-  "name": "ionicapp",
-  "description": "ionicapp: An Ionic project"
+  "name": "openorder24",
+  "description": "openorder24 - simple order management"
 }

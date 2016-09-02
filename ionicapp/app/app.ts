@@ -1,11 +1,14 @@
-import {Component, ViewChild} from '@angular/core';
+import {Component, ViewChild, provide} from '@angular/core';
+import {Http} from '@angular/http';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
+import {AuthHttp, AuthConfig} from 'angular2-jwt';
 
 import {ComingSoonPage} from './pages/coming-soon/coming-soon';
 import {DashboardPage} from './pages/dashboard/dashboard';
 import {AreaSelectionPage} from './pages/area-selection/area-selection';
 import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
+import {ProfilePage} from './pages/profile/profile';
 import {SettingsPage} from './pages/settings/settings';
 
 import {AreaService} from './services/area.service';
@@ -64,6 +67,10 @@ class MyApp {
         component: SettingsPage, 
         icon: 'settings' },
       { 
+        title: 'PROFILE', 
+        component: ProfilePage, 
+        icon: 'user' },
+      { 
         title: this.translationService.getTranslation('HELP'), 
         component: ComingSoonPage, 
         icon: 'help' },
@@ -91,6 +98,20 @@ class MyApp {
 // Set any config for your app as the third argument:
 // http://ionicframework.com/docs/v2/api/config/Config/
 
-ionicBootstrap(MyApp, [AreaService, AuthService, CategoryService, ItemService, OrderService, SettingService, TranslationService], {
-  //tabbarPlacement: 'bottom'
-});
+ionicBootstrap(MyApp, [
+  AreaService,
+  provide(AuthHttp, {
+    useFactory: (http) => {
+      return new AuthHttp(new AuthConfig({noJwtError: true}), http);
+    },
+    deps: [Http]
+  }),
+  AuthService,
+  CategoryService,
+  ItemService,
+  OrderService,
+  SettingService,
+  TranslationService],
+  {//tabbarPlacement: 'bottom'
+  }
+);

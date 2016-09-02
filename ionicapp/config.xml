@@ -2,7 +2,7 @@
 <widget id="com.strichpunkt.openorder24" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>openorder24</name>
   <description>simple order management</description>
-  <author email="manuel.taber@outlook.com" href="http://ionicframework.com/">Manuel Taber</author>
+  <author email="manuel.taber@outlook.com" href="https://www.openorder24.com/">Manuel Taber</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
@@ -45,6 +45,10 @@
   <preference name="SplashScreenDelay" value="3000"/>
   <feature name="StatusBar">
     <param name="ios-package" onload="true" value="CDVStatusBar"/>
+  </feature>
+  <feature name="InAppBrowser">
+    <param name="ios-package" value="CDVInAppBrowser" />
+    <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
   </feature>
   <icon src="resources\android\icon\drawable-xhdpi-icon.png"/>
 </widget>

@@ -1,34 +1,76 @@
-import { Injectable }      from '@angular/core';
-import { tokenNotExpired } from 'angular2-jwt';
+import {Storage, LocalStorage} from 'ionic-angular';
+import {AuthHttp, JwtHelper, tokenNotExpired} from 'angular2-jwt';
+import {Injectable, NgZone} from '@angular/core';
+import {Observable} from 'rxjs/Rx';
 
 // Avoid name not found warnings
+declare var Auth0: any;
 declare var Auth0Lock: any;
 
 @Injectable()
 export class AuthService {
-  // Configure Auth0
-  lock = new Auth0Lock('KboqPYz8chpw8IKuC7t0wHXR1K3QBGUX', 'manueltaber.eu.auth0.com', {});
-
-  constructor() {
-    // Add callback for lock `authenticated` event
-    this.lock.on("authenticated", (authResult) => {
-      localStorage.setItem('id_token', authResult.idToken);
+  jwtHelper: JwtHelper = new JwtHelper();
+  auth0 = new Auth0({clientID: '0DJoFS5T0CdBHW1E6ymfkDCXfxEbKTzm', domain: 'manueltaber.eu.auth0.com'});
+  lock = new Auth0Lock('0DJoFS5T0CdBHW1E6ymfkDCXfxEbKTzm', 'manueltaber.eu.auth0.com', {
+    auth: {
+      redirect: false,
+      params: {
+        scope: 'openid offline_access',
+      }
+    }
+  });
+  local: Storage = new Storage(LocalStorage);
+  refreshSubscription: any;
+  user: Object;
+  zoneImpl: NgZone;
+  
+  constructor(private authHttp: AuthHttp, zone: NgZone) {
+    this.zoneImpl = zone;
+    // Check if there is a profile saved in local storage
+    this.local.get('profile').then(profile => {
+      this.user = JSON.parse(profile);
+    }).catch(error => {
+      console.log(error);
     });
+
+    this.lock.on('authenticated', authResult => {
+      this.local.set('id_token', authResult.idToken);
+
+      // Fetch profile information
+      this.lock.getProfile(authResult.idToken, (error, profile) => {
+        if (error) {
+          // Handle error
+          alert(error);
+          return;
+        }
+
+        profile.user_metadata = profile.user_metadata || {};
+        this.local.set('profile', JSON.stringify(profile));
+        this.user = profile;
+      });
+
+      this.lock.hide();
+
+      this.local.set('refresh_token', authResult.refreshToken);
+      this.zoneImpl.run(() => this.user = authResult.profile);
+    });
+    
   }
-
-  public login() {
-    // Call the show method to display the widget.
-    this.lock.show();
-  };
-
+  
   public authenticated() {
     // Check if there's an unexpired JWT
-    // This searches for an item in localStorage with key == 'id_token'
     return tokenNotExpired();
-  };
-
+  }
+  
+  public login() {
+    // Show the Auth0 Lock widget
+    this.lock.show();    
+  }
+  
   public logout() {
-    // Remove token from localStorage
-    localStorage.removeItem('id_token');
-  };
+    this.local.remove('profile');
+    this.local.remove('id_token');
+    this.local.remove('refresh_token');
+    this.zoneImpl.run(() => this.user = null);
+  }
 }

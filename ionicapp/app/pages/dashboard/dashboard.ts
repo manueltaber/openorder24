@@ -2,7 +2,6 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {AreaSelectionPage} from '../area-selection/area-selection';
 import {LiveMonitorPage} from '../live-monitor/live-monitor';
-import {AuthService} from '../../services/auth.service';
 import {AreaService} from '../../services/area.service';
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
@@ -16,8 +15,7 @@ export class DashboardPage {
   openAmount: number=0;
   totalAreas: number=0;
 
-  constructor(private nav: NavController, 
-              private authService: AuthService,
+  constructor(private nav: NavController,
               private areaService: AreaService,
               private orderService: OrderService, 
               private translationService: TranslationService) {
