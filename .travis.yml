@@ -19,13 +19,13 @@ before_deploy:
 - cp -r www/* zip/
 - cp config.xml zip/
 - cd zip
-- zip -r ionicapp.zip *
+- zip -r openorder24.zip *
 - cd ..
 deploy:
   provider: releases
   api_key:
     secure: hlOS+2ZjQ3e8Pi44IrsO6XNNIpkRZDnl6YseE3SWzmz/tgYVi9tXyfMboavL/INN+GwjumxdwJiK4zdbCxQtxD4sca7SskUV24LBIX8Oxoe+20oZJimkChUVfwD+/zpuehi1WWyq+BxGnF1wlHM7ioVdhNSIAaqolFFu64p9EATFkM/+62htDIQce/2o/fzdqUp7H4F+XDjBkg5s88WcsQCpJQ6Sf+4w7fkMF5V1Jtnz5pIdZAncyZQfl0odtyEuyDnk9k32S67BAbMaWCEMG66tiTV3TNBUnUtQFO2QPnwtXUeLIqgfB8Hj7GyKf/iVAEAjVQdkDujBN1dp2WK0B5nYxOjIFr2nvI+KsxdwVXlIsNo/1PdvwN/IOt3gwrUYGeTSuIIo5KNiJkV/wnByU0PCfm0gZbTyyaZqVLATobm8cI6eM8yaEHYv2XkiMuX9Lb2q8GJz4XqChfvYDqWgeJFfm56PWBZ8J8SlLkc+QgOFXAojpX/h/yeTNz8IiM7/vuRqZhkuiPrhwaIIV3eE4FCfN8/xwSGoxoyNJbbWiwcO6bf6MXRCAQcykVnPNyZBlUOfCLlk1Eu4ngxlhEQIc3Hsfv3E5HNXC+rV+ytvP3kLLnkw4fk/YzEWNZYfzLfKgggIXylgNoM+wBGoSlVZsD0Aed+sAaIUAODhtzBpIKU=
-  file: "zip/ionicapp.zip"
+  file: "zip/openorder24.zip"
   skip_cleanup: true
   on:
     tags: true
