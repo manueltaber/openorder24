@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+
 import {BasePage} from '../base';
+
+import {AuthService} from '../../services/auth.service';
 import {SettingService} from '../../services/setting.service';
 import {TranslationService} from '../../services/translation.service';
 
@@ -12,6 +15,7 @@ export class SettingsPage extends BasePage {
   settings: Setting[] = [];
 
   constructor(protected nav: NavController, 
+              protected authService: AuthService,
               protected settingService: SettingService,
               protected translationService: TranslationService) {
     super(settingService, translationService);
