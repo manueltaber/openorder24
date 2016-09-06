@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{getTranslation('MAIN_DATA')}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>  
+  <button block (click)="onEditAreas($event)">{{getTranslation('EDIT_AREAS')}}...</button>
+  <button block (click)="onEditCategories($event)">{{getTranslation('EDIT_CATEGORIES')}}...</button>
+  <button block (click)="onEditItems($event)">{{getTranslation('EDIT_ITEMS')}}...</button>
+</ion-content>

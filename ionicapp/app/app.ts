@@ -4,10 +4,11 @@ import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {AuthHttp, AuthConfig} from 'angular2-jwt';
 
+import {AreaSelectionPage} from './pages/area-selection/area-selection';
 import {ComingSoonPage} from './pages/coming-soon/coming-soon';
 import {DashboardPage} from './pages/dashboard/dashboard';
-import {AreaSelectionPage} from './pages/area-selection/area-selection';
 import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
+import {MainDataPage} from './pages/main-data/main-data';
 import {ProfilePage} from './pages/profile/profile';
 import {SettingsPage} from './pages/settings/settings';
 
@@ -53,7 +54,7 @@ class MyApp {
         icon: 'desktop' },
       { 
         title: this.translationService.getTranslation('MAIN_DATA'), 
-        component: ComingSoonPage, 
+        component: MainDataPage, 
         icon: 'create' },
       { 
         title: this.translationService.getTranslation('STATISTICS'), 

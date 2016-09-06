@@ -188,6 +188,18 @@ export var TRANSLATIONS = {
         'DEU': 'Achtung',
         'ITA': '',
         'ENG': 'Attention'},
+    'EDIT_AREAS': {
+        'DEU': 'Bereiche editieren',
+        'ITA': '',
+        'ENG': 'Edit areas'},
+    'EDIT_CATEGORIES': {
+        'DEU': 'Kategorien editieren',
+        'ITA': '',
+        'ENG': 'Edit categories'},
+    'EDIT_ITEMS': {
+        'DEU': 'Items editieren',
+        'ITA': '',
+        'ENG': 'Edit items'},
 
     // long texts
     'OPEN_TEMP_ORDERS_WARNING': {
