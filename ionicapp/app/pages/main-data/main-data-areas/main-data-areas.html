@@ -7,10 +7,7 @@
 
     <ion-buttons end>
       <button>
-        <ion-icon name="search"></ion-icon>
-      </button>
-      <button>
-        <ion-icon name="add"></ion-icon>
+        <ion-icon name="add" (click)="onAddArea($event)"></ion-icon>
       </button>
     </ion-buttons>
 
@@ -19,9 +16,9 @@
 
 <ion-content>  
   <ion-list>
-    <button ion-item *ngFor="let area of areas" (click)="onAreaSelected($event, area)">
+    <button ion-item *ngFor="let area of areas" (click)="onEditArea($event, area)">
       <h2>{{area.nr}} - {{area.desc}}</h2>
-      <ion-icon name="trash" item-right></ion-icon>
+      <ion-icon name="trash" item-right (click)="onDeleteArea($event, area)"></ion-icon>
     </button>
   </ion-list>
 </ion-content>

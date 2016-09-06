@@ -24,4 +24,16 @@ export class MainDataAreasPage extends BasePage {
     this.areas = areaService.getAreas();
   }
 
+  onAddArea(event) {
+
+  }
+
+  onEditArea(event, area) {
+
+  }
+
+  onDeleteArea(event, area) {
+    
+  }
+
 }
