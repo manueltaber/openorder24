@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+
 import {AreaSelectionPage} from '../area-selection/area-selection';
 import {LiveMonitorPage} from '../live-monitor/live-monitor';
+
 import {AreaService} from '../../services/area.service';
 import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
