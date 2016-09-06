@@ -10,8 +10,8 @@ declare var Auth0Lock: any;
 @Injectable()
 export class AuthService {
   jwtHelper: JwtHelper = new JwtHelper();
-  auth0 = new Auth0({clientID: '0DJoFS5T0CdBHW1E6ymfkDCXfxEbKTzm', domain: 'manueltaber.eu.auth0.com'});
-  lock = new Auth0Lock('0DJoFS5T0CdBHW1E6ymfkDCXfxEbKTzm', 'manueltaber.eu.auth0.com', {
+  auth0 = new Auth0({clientID: 'KboqPYz8chpw8IKuC7t0wHXR1K3QBGUX', domain: 'manueltaber.eu.auth0.com'});
+  lock = new Auth0Lock('KboqPYz8chpw8IKuC7t0wHXR1K3QBGUX', 'manueltaber.eu.auth0.com', {
     auth: {
       redirect: false,
       params: {
