@@ -5,6 +5,7 @@
 /webapp/tmp
 
 # dependencies
+/nodeapi/node_modules
 /webapp/node_modules
 /webapp/bower_components
 
