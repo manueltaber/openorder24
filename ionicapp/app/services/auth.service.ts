@@ -23,7 +23,7 @@ export class AuthService {
     },
     theme: {
       logo: 'img/logo.png',
-      primaryColor: '#3db1ff',
+      primaryColor: '#18a3fa',
     }
   });
   local: Storage = new Storage(LocalStorage);
