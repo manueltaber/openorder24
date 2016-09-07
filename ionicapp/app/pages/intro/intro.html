@@ -1,0 +1,28 @@
+<ion-slides [options]="mySlideOptions">
+ 
+  <ion-slide>
+    <img src="img/logo.png" />
+  </ion-slide>
+ 
+  <ion-slide>
+    <img src="img/slide2.png" />
+  </ion-slide>
+ 
+  <ion-slide>
+    <img src="img/slide3.png" />
+  </ion-slide>
+ 
+  <ion-slide>
+    <ion-row>
+        <ion-col>
+            <img src="img/slide4.png" />
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <button light (click)="goToHome()">Start Using My App</button>
+        </ion-col>
+    </ion-row>
+  </ion-slide>
+ 
+</ion-slides>

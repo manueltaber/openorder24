@@ -7,9 +7,9 @@ import {AuthHttp, AuthConfig} from 'angular2-jwt';
 import {AreaSelectionPage} from './pages/area-selection/area-selection';
 import {ComingSoonPage} from './pages/coming-soon/coming-soon';
 import {DashboardPage} from './pages/dashboard/dashboard';
+import {IntroPage} from './pages/intro/intro';
 import {LiveMonitorPage} from './pages/live-monitor/live-monitor';
 import {MainDataPage} from './pages/main-data/main-data';
-import {ProfilePage} from './pages/profile/profile';
 import {SettingsPage} from './pages/settings/settings';
 
 import {AreaService} from './services/area.service';
@@ -27,13 +27,14 @@ class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   // make DashboardPage the root (or first) page
-  rootPage: any = DashboardPage;
+  rootPage: any = IntroPage;
   production_pages: Array<{title: string, component: any, icon: string}>;
   general_pages: Array<{title: string, component: any, icon: string}>;
 
   constructor(
     private platform: Platform,
     private menu: MenuController,
+    private authService: AuthService,
     private translationService: TranslationService
   ) {
     this.initializeApp();
@@ -67,10 +68,6 @@ class MyApp {
         title: this.translationService.getTranslation('SETTINGS'), 
         component: SettingsPage, 
         icon: 'settings' },
-      { 
-        title: 'PROFILE', 
-        component: ProfilePage, 
-        icon: 'user' },
       { 
         title: this.translationService.getTranslation('HELP'), 
         component: ComingSoonPage, 
