@@ -28,6 +28,7 @@ class MyApp {
 
   // make DashboardPage the root (or first) page
   rootPage: any = IntroPage;
+  
   production_pages: Array<{title: string, component: any, icon: string}>;
   general_pages: Array<{title: string, component: any, icon: string}>;
 
