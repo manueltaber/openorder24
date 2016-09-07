@@ -16,7 +16,14 @@ export class AuthService {
       redirect: false,
       params: {
         scope: 'openid offline_access',
-      }
+      },
+    },
+    languageDictionary: {
+      title: "openorder24"
+    },
+    theme: {
+      logo: 'img/logo.png',
+      primaryColor: '#3db1ff',
     }
   });
   local: Storage = new Storage(LocalStorage);
