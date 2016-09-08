@@ -11,7 +11,8 @@
             <button light (click)="goToLogin()">Login</button>
         </ion-col>
     </ion-row>
-    <ion-row *ngIf="authService.authenticated()">
+    <!--<ion-row *ngIf="authService.authenticated()">-->
+    <ion-row>
         <ion-col>
             <button light (click)="goToDashboard()">Dashboard</button>
         </ion-col>
