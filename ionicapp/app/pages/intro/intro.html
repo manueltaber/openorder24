@@ -1,33 +1,33 @@
 <ion-slides [options]="mySlideOptions">
- 
-  <ion-slide>
-    <img src="img/slide1.jpg" />
-  </ion-slide>
- 
-  <ion-slide>
-    <img src="img/slide2.png" />
-  </ion-slide>
- 
-  <ion-slide>
-    <img src="img/slide3.png" />
-  </ion-slide>
- 
+
   <ion-slide>
     <ion-row>
         <ion-col>
-            <img src="img/slide4.png" />
+            <img src="img/slide1.jpg" />
         </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="!authService.authenticated()">
         <ion-col>
-            <button light (click)="goToHome()">Login</button>
+            <button light (click)="goToLogin()">Login</button>
         </ion-col>
     </ion-row>
-    <ion-row>
+    <ion-row *ngIf="authService.authenticated()">
         <ion-col>
             <button light (click)="goToDashboard()">Dashboard</button>
         </ion-col>
     </ion-row>
   </ion-slide>
- 
+
+  <ion-slide>
+    <img src="img/slide2.png" />
+  </ion-slide>
+
+  <ion-slide>
+    <img src="img/slide3.png" />
+  </ion-slide>
+
+  <ion-slide>
+    <img src="img/slide4.png" />
+  </ion-slide>
+
 </ion-slides>

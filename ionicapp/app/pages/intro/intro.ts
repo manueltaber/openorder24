@@ -18,7 +18,7 @@ export class IntroPage {
                 private authService: AuthService){
     }
  
-    goToHome(){
+    goToLogin(){
         this.authService.login();
         //this.nav.setRoot(DashboardPage);
     }
