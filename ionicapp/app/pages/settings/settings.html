@@ -21,6 +21,7 @@
     </ion-card>
     <button block (click)="authService.logout()">Logout</button>
   </div>
+  <button block (click)="onShowHttpRequestTestPage()">Http-Request-Test</button>
   <ion-list>
     <button ion-item *ngFor="let setting of settings" (click)="onEditSetting(setting)">
       <h2>{{setting.name}}</h2>

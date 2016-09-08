@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar primary>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Http-Request-Test</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-list>
+      <ion-item class="ng-valid">
+        <ion-label fixed>URL</ion-label>
+        <ion-input type="text" placeholder="URL" [(ngModel)]="url"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button item-left>Send</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>

@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 
 import {BasePage} from '../base';
+import {HttpRequestTestPage} from '../http-request-test/http-request-test';
 
 import {AuthService} from '../../services/auth.service';
 import {SettingService} from '../../services/setting.service';
@@ -35,6 +36,10 @@ export class SettingsPage extends BasePage {
 
   onEditSetting(setting: Setting) {
 
+  }
+
+  onShowHttpRequestTestPage() {
+    this.nav.push(HttpRequestTestPage);
   }
 
 }
