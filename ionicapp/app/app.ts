@@ -26,7 +26,7 @@ import {TranslationService} from './services/translation.service';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make DashboardPage the root (or first) page
+  // make IntroPage the root (or first) page
   rootPage: any = IntroPage;
   
   production_pages: Array<{title: string, component: any, icon: string}>;
@@ -81,6 +81,11 @@ class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
+      // When the app starts up, there might be a valid
+      // token in local storage. If there is, we should
+      // schedule an initial token refresh for when the
+      // token expires
+      this.authService.startupTokenRefresh();
     });
   }
 
