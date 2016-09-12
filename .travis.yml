@@ -18,6 +18,7 @@ before_deploy:
 - mkdir zip
 - cp -r www/* zip/
 - cp config.xml zip/
+- cp -r resources/* zip/resources/
 - cd zip
 - zip -r openorder24.zip *
 - cd ..
