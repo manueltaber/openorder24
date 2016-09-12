@@ -1,0 +1,13 @@
+<ion-buttons end>
+    <button (click)="onSearchbarButtonClick($event)">
+        <ion-icon name="search"></ion-icon>
+    </button>
+</ion-buttons>
+
+<ion-searchbar 
+      *ngIf="isSearchbarVisible"
+      [(ngModel)]="searchTerm"
+      placeholder=""
+      (blur)="onSearchbarBlur($event)"
+      (input)="onSearchbarInput($event)">
+</ion-searchbar>

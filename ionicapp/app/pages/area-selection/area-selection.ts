@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
+import {CustomSearchbar} from '../../components/custom-searchbar/custom-searchbar.component';
+import {SearchTermChangedEventArgs} from '../../components/custom-searchbar/custom-searchbar.classes';
 import {AreaDetailPage} from '../area-detail/area-detail';
 import {Area} from '../../classes/area';
 import {AreaService} from '../../services/area.service';
@@ -7,13 +9,12 @@ import {OrderService} from '../../services/order.service';
 import {TranslationService} from '../../services/translation.service';
 
 @Component({
-  templateUrl: 'build/pages/area-selection/area-selection.html'
+  templateUrl: 'build/pages/area-selection/area-selection.html',
+  directives: [CustomSearchbar]
 })
 export class AreaSelectionPage {
   
   areas: Area[];
-  searchbarVisible: boolean;
-  searchbarText: string='';
 
   constructor(private nav: NavController, 
               private areaService: AreaService,
@@ -21,39 +22,19 @@ export class AreaSelectionPage {
               private translationService: TranslationService) {
     //this.areas = AREAS;
     this.areas = areaService.getAreas();
-    this.searchbarVisible = false;
   }
-  
-  getAreas() {
-    /*return this.areas.filter(area => area.desc == this.searchbarText)
-    return this.areas.then(categories => categories.filter(c => c.nr === +nr)[0])*/
-  }
-  
-  showSearchbar(event) {
-    this.searchbarVisible = true;
-  }
-  
-  onSearchbarInput(event) {
-    //alert('input');
-  }
-  
-  onSearchbarBlur(event) {
-    //alert('blur');
-    if (this.searchbarText.length == 0) {
-      this.searchbarVisible = false;
-    }
-  }
-  
-  onSearchbarCancel(event) {
-    alert('cancel');
-    this.searchbarVisible = false;
-  }
-  
+    
   getOpenOrderCount(area: Area) {
     return this.orderService.getOpenOrdersByArea(area).length;
   }
 
   onAreaSelected(event, area) {
     this.nav.push(AreaDetailPage, {area: area});
+  }
+
+  onSearchTermChanged(event: SearchTermChangedEventArgs) {
+    this.areas = this.areas.filter(area => area.desc
+                                           .toUpperCase()
+                                           .indexOf(event.searchTerm.toUpperCase()) >= 0)
   }
 }
