@@ -27,6 +27,7 @@ function getMockItems(): Item[] {
       extra.desc = mockOptional['desc'];
       extra.price_diff_abs = mockOptional['price_diff_abs'];
       extra.price_diff_percent = mockOptional['price_diff_percent'];
+      extra.default = mockOptional['default'];
       item.optionals.push(extra);
     }
     // add variants
@@ -38,6 +39,7 @@ function getMockItems(): Item[] {
         extra.desc = mockVariant['desc']
         extra.price_diff_abs = mockVariant['price_diff_abs'];
         extra.price_diff_percent = mockVariant['price_diff_percent'];
+        extra.default = mockVariant['default'];
         variantGroup.extras.push(extra);
       }
       item.variants.push(variantGroup);
@@ -120,8 +122,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '180g', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '250g', 'price_diff_abs': 4, 'price_diff_percent': 0 },
+          { 'desc': '180g', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '250g', 'price_diff_abs': 4, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ]},
@@ -131,8 +133,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '180g', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '250g', 'price_diff_abs': 7, 'price_diff_percent': 0 },
+          { 'desc': '180g', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '250g', 'price_diff_abs': 7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ]},
@@ -170,9 +172,9 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.6, 'price_diff_percent': 0 },
-          { 'desc': '1.0l', 'price_diff_abs': 5.6, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.6, 'price_diff_percent': 0, 'default': false },
+          { 'desc': '1.0l', 'price_diff_abs': 5.6, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -182,9 +184,9 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0 },
-          { 'desc': '1.0l', 'price_diff_abs': 6, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0, 'default': false },
+          { 'desc': '1.0l', 'price_diff_abs': 6, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -194,8 +196,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -205,8 +207,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -216,8 +218,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -227,8 +229,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -238,7 +240,7 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+          { 'desc': '0.3l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
         ]
       },
     ] },
@@ -256,8 +258,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -267,8 +269,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1.5, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1.5, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -278,8 +280,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -289,8 +291,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -300,8 +302,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -311,8 +313,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -322,8 +324,8 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -333,9 +335,9 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1, 'price_diff_percent': 0 },
-          { 'desc': '1.0l', 'price_diff_abs': 2.7, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1, 'price_diff_percent': 0, 'default': false },
+          { 'desc': '1.0l', 'price_diff_abs': 2.7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },
@@ -345,9 +347,9 @@ var MOCKITEMS = [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': '0.5l', 'price_diff_abs': 1, 'price_diff_percent': 0 },
-          { 'desc': '1.0l', 'price_diff_abs': 2.7, 'price_diff_percent': 0 },
+          { 'desc': '0.2l', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': '0.5l', 'price_diff_abs': 1, 'price_diff_percent': 0, 'default': false },
+          { 'desc': '1.0l', 'price_diff_abs': 2.7, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ] },

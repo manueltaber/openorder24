@@ -41,33 +41,33 @@ export class ItemOrderPage extends BasePage {
     this.count = 1;
     this.note = '';
 
-    this.pushIngredients(this.category.ingredients, true);
-    this.pushIngredients(this.item.ingredients, true);
-    this.pushOptionals(this.category.optionals, false);
-    this.pushOptionals(this.item.optionals, false);
-    this.pushVariants(this.category.variants, false);
-    this.pushVariants(this.item.variants, false);
+    this.pushIngredients(this.category.ingredients);
+    this.pushIngredients(this.item.ingredients);
+    this.pushOptionals(this.category.optionals);
+    this.pushOptionals(this.item.optionals);
+    this.pushVariants(this.category.variants);
+    this.pushVariants(this.item.variants);
   }
 
-  pushIngredients(ingredients: string[], selected: boolean) {
+  pushIngredients(ingredients: string[]) {
     for (let ing of ingredients) {
       let ingredient = new Ingredient();
       ingredient.ingredient = ing;
-      ingredient.selected = selected;
+      ingredient.selected = true;
       this.ingredients.push(ingredient);
     }
   }
 
-  pushOptionals(optionals: Extra[], selected: boolean) {
+  pushOptionals(optionals: Extra[]) {
     for (let opt of optionals) {
       let optional = new Optional();
       optional.optional = opt;
-      optional.selected = selected;
+      optional.selected = opt.default;
       this.optionals.push(optional);
     }
   }
 
-  pushVariants(variantGroups: ExtraGroup[], selected: boolean) {
+  pushVariants(variantGroups: ExtraGroup[]) {
     for (let variantGroup of variantGroups) {
       this.variantGroups.push(variantGroup);
     }

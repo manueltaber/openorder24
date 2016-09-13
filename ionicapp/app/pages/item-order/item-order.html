@@ -27,7 +27,7 @@
     <ion-card-header>{{variantGroup.desc}}</ion-card-header>
     <ion-list radio-group>
       <ion-item *ngFor="let variant of variantGroup.extras">
-        <ion-radio></ion-radio>
+        <ion-radio checked></ion-radio>
         <ion-label>
           <span>{{variant.desc}}</span>
           <span *ngIf="variant.price_diff_abs!=0">({{variant.price_diff_abs}}€)</span>

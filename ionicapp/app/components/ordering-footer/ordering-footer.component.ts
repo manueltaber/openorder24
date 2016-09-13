@@ -56,7 +56,6 @@ export class OrderingFooterComponent implements OnInit {
   }
 
   onCancelTempOrders(event) {
-    this.orderService.cancelTempOrders();
     this.tempOrdersCanceled.emit("event");
   }
 
