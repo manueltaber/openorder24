@@ -8,6 +8,6 @@
       *ngIf="isSearchbarVisible"
       [(ngModel)]="searchTerm"
       placeholder=""
-      (blur)="onSearchbarBlur($event)"
-      (input)="onSearchbarInput($event)">
+      (ionBlur)="onSearchbarBlur($event)"
+      (ionInput)="onSearchbarInput($event)">
 </ion-searchbar>
