@@ -6,12 +6,18 @@ This is the Angular2 port of the "OpenOrder24" - App. Try out our hosted DEMO ve
 
 ## Getting started with the Ionic-App
 
-First of all you have to install the ionic cli:
+First of all you have to install the ionic framework and the cordova cli:
 ````
 > npm install -g ionic@beta
 ````
+````
+> npm install -g cordova
+````
 Open /ionicapp afterwards and execute these commands:
 
+````
+> npm install
+````
 ````
 > ionic serve
 ````
