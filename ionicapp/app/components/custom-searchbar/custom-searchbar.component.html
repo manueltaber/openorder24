@@ -4,10 +4,14 @@
     </button>
 </ion-buttons>
 
+<ion-title *ngIf="!isSearchbarVisible">
+      {{title}}
+</ion-title>
+
 <ion-searchbar 
       *ngIf="isSearchbarVisible"
       [(ngModel)]="searchTerm"
-      placeholder=""
+      [placeholder]="placeholder"
       (blur)="onSearchbarBlur($event)"
       (input)="onSearchbarInput($event)">
 </ion-searchbar>
