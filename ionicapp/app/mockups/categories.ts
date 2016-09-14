@@ -18,6 +18,7 @@ function getMockCategories(): Category[] {
       extra.desc = mockOptional['desc'];
       extra.price_diff_abs = mockOptional['price_diff_abs'];
       extra.price_diff_percent = mockOptional['price_diff_percent'];
+      extra.default = mockOptional['default'];
       category.optionals.push(extra);
     }
     // add variants
@@ -29,6 +30,7 @@ function getMockCategories(): Category[] {
         extra.desc = mockVariant['desc']
         extra.price_diff_abs = mockVariant['price_diff_abs'];
         extra.price_diff_percent = mockVariant['price_diff_percent'];
+        extra.default = mockVariant['default'];
         variantGroup.extras.push(extra);
       }
       category.variants.push(variantGroup);
@@ -47,8 +49,8 @@ var MOCKCATEGORIES = [
   { 'nr': 2,  'desc': 'Salate', 'icon': 'nutrition',
     'ingredients': [],
     'optionals': [
-      { 'desc': 'Essig', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-      { 'desc': 'Olivenöl', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+      { 'desc': 'Essig', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
+      { 'desc': 'Olivenöl', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
     ],
     'variants': []},
 
@@ -67,9 +69,9 @@ var MOCKCATEGORIES = [
       {
         'desc': 'Garstufe',
         'extras': [
-          { 'desc': 'Rare', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': 'Medium', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': 'Well done', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+          { 'desc': 'Rare', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
+          { 'desc': 'Medium', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': 'Well done', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ]
@@ -84,31 +86,31 @@ var MOCKCATEGORIES = [
   { 'nr': 9,  'desc': 'Getränke', 'icon': 'beer',
     'ingredients': [], 
     'optionals': [
-      { 'desc': 'Eiswürfel', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-      { 'desc': 'Zitrone', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+      { 'desc': 'Eiswürfel', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
+      { 'desc': 'Zitrone', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
     ], 
     'variants': []},
 
   { 'nr': 10, 'desc': 'Pizza', 'icon': 'pizza',
     'ingredients': [],
     'optionals': [
-      { 'desc': 'Knoblauchsauce', 'price_diff_abs': 3.5, 'price_diff_percent': 0 },
-      { 'desc': 'Scharfes Öl', 'price_diff_abs': 0, 'price_diff_percent': 0 },
+      { 'desc': 'Knoblauchsauce', 'price_diff_abs': 3.5, 'price_diff_percent': 0, 'default': false },
+      { 'desc': 'Scharfes Öl', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': false },
     ],
     'variants': [
       {
         'desc': 'Größe',
         'extras': [
-          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': 'Klein', 'price_diff_abs': -2, 'price_diff_percent': 0 },
+          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': 'Klein', 'price_diff_abs': -2, 'price_diff_percent': 0, 'default': false },
         ]
       },
       {
         'desc': 'Teig',
         'extras': [
-          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0 },
-          { 'desc': 'Vollkorn', 'price_diff_abs': 2, 'price_diff_percent': 0 },
-          { 'desc': 'Glutenfrei', 'price_diff_abs': 3, 'price_diff_percent': 0 },
+          { 'desc': 'Normal', 'price_diff_abs': 0, 'price_diff_percent': 0, 'default': true },
+          { 'desc': 'Vollkorn', 'price_diff_abs': 2, 'price_diff_percent': 0, 'default': false },
+          { 'desc': 'Glutenfrei', 'price_diff_abs': 3, 'price_diff_percent': 0, 'default': false },
         ]
       },
     ]
