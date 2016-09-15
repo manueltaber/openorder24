@@ -12,7 +12,7 @@ import 'rxjs/add/operator/map';
 export class HttpRequestTestPage {
 
   url: string;
-  
+
   message: string;
   error: string;
 
@@ -22,6 +22,7 @@ export class HttpRequestTestPage {
 
 
   sendRequest() {
+    console.log('request: ' + this.url);
       // Here we use authHttp to make an authenticated
       // request to the server. Change the endpoint up for
       // one that points to your own server.
