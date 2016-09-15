@@ -7,6 +7,8 @@ import { SearchTermChangedEventArgs } from './custom-searchbar.classes'
 })
 export class CustomSearchbar implements OnInit {
     
+  @Input() title: string = "";
+  @Input() placeholder: string = "";
   @Output() searchTermChanged = new EventEmitter<SearchTermChangedEventArgs>();
   
   private isSearchbarVisible: boolean = false;
