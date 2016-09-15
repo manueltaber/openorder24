@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams, Modal} from 'ionic-angular';
+import {NavController, NavParams, ModalController} from 'ionic-angular';
 import {Area} from '../../classes/area';
 import {Order} from '../../classes/order';
 import {OrderService} from '../../services/order.service';
@@ -18,6 +18,7 @@ export class OrderOverviewPage {
 
   constructor(private nav: NavController, 
               private navParams: NavParams,
+              private modalController: ModalController,
               private orderService: OrderService,
               private translationService: TranslationService) {
     this.area = navParams.get('area');
@@ -27,6 +28,8 @@ export class OrderOverviewPage {
   onOrderSelected($event, order) {
     // let modal = Modal.create(ItemOrderPage);
     // this.nav.present(modal);
+    let profileModal = this.modalController.create(ItemOrderPage, { userId: 8675309 });
+    profileModal.present();
   }
 
   onTempOrdersConfirmed() {
