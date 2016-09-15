@@ -4,11 +4,10 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     
-    <ion-title *ngIf="!searchbarVisible">
-      {{translationService.getTranslation('AREAS')}}
-    </ion-title>
-
-    <custom-searchbar (searchTermChanged)="onSearchTermChanged($event)"></custom-searchbar>
+    <custom-searchbar [title]="translationService.getTranslation('AREAS')" 
+                      [placeholder] = "translationService.getTranslation('AREAS')"
+                      (searchTermChanged)="onSearchTermChanged($event)">
+    </custom-searchbar>
 
   </ion-navbar>
 </ion-header>
