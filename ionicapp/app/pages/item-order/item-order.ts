@@ -26,7 +26,7 @@ export class ItemOrderPage extends BasePage {
 
   ingredients: Ingredient[] = [];
   optionals: Optional[] = [];
-  variantGroups: ExtraGroup[] = [];
+  variantGroups: VariantGroup[] = [];
 
   constructor(protected nav: NavController, protected navParams: NavParams,
               protected orderService: OrderService,
@@ -47,6 +47,8 @@ export class ItemOrderPage extends BasePage {
     this.pushOptionals(this.item.optionals);
     this.pushVariants(this.category.variants);
     this.pushVariants(this.item.variants);
+
+    console.log(this.variantGroups);
   }
 
   pushIngredients(ingredients: string[]) {
@@ -68,7 +70,17 @@ export class ItemOrderPage extends BasePage {
   }
 
   pushVariants(variantGroups: ExtraGroup[]) {
-    for (let variantGroup of variantGroups) {
+    for (let varGroup of variantGroups) {
+      let variantGroup = new VariantGroup();
+      variantGroup.variantGroup = varGroup;
+      for (let vari of varGroup.extras) {
+        let variant = new Variant();
+        variant.variant = vari;
+        if (vari.default) {
+          variantGroup.selectedVariant = variant.variant.desc;
+        }
+        variantGroup.variants.push(variant);
+      }
       this.variantGroups.push(variantGroup);
     }
   }
@@ -103,5 +115,10 @@ class Optional {
 
 class Variant {
   variant: Extra;
-  selected: boolean;
+}
+
+class VariantGroup {
+  variantGroup: ExtraGroup;
+  variants: Variant[] = [];
+  selectedVariant: string;
 }

@@ -17,18 +17,31 @@ export class BasePage {
         return this.translationService.getTranslation(name);
     }
 
+    /* Methods for saving page settings */
+
     private getPageSettingDBName(): string {
         return "oo24_" + (<any>this).constructor.name;
     }
 
-    protected savePageSetting(key: string, value: any) {
-        let storage = new Storage(SqlStorage, { name: this.getPageSettingDBName() });
+    private getPageSettingStorage(): Storage {
+        let storageOptions = { name: this.getPageSettingDBName() };
+        let storage = new Storage(SqlStorage, storageOptions);
+        return storage;
+    }
+
+    protected savePageSetting(key: string, value: string) {
+        let storage = this.getPageSettingStorage();
         storage.set(key, value);
     }
 
-    protected getPageSetting(key: string): any {
-        let storage = new Storage(SqlStorage, { name: this.getPageSettingDBName() });
-        storage.get(key).then((value) => {return value});
+    protected getPageSetting(key: string, defaultValue: string): any {
+        let storage = this.getPageSettingStorage();
+        storage.get(key).then((value) => {
+            if (value == undefined) {
+                return defaultValue;
+            }
+            return value;
+        });
     }
 
 }
