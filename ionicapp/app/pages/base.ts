@@ -19,29 +19,26 @@ export class BasePage {
 
     /* Methods for saving page settings */
 
-    private getPageSettingDBName(): string {
+    private getPageSettingPrefix(): string {
         return "oo24_" + (<any>this).constructor.name;
     }
 
-    private getPageSettingStorage(): Storage {
-        let storageOptions = { name: this.getPageSettingDBName() };
-        let storage = new Storage(SqlStorage, storageOptions);
-        return storage;
+    private getPageSettingName(key: string): string {
+        return this.getPageSettingPrefix() + '_' + key;
     }
 
-    protected savePageSetting(key: string, value: string) {
-        let storage = this.getPageSettingStorage();
-        storage.set(key, value);
+    protected savePageSetting(key: string, value: any) {
+        let k: string = this.getPageSettingPrefix() + '_' + key;
+        localStorage.setItem(k, value);
     }
 
-    protected getPageSetting(key: string, defaultValue: string): any {
-        let storage = this.getPageSettingStorage();
-        storage.get(key).then((value) => {
-            if (value == undefined) {
-                return defaultValue;
-            }
-            return value;
-        });
+    protected getPageSetting(key: string, defaultValue: any): any {
+        let k: string = this.getPageSettingPrefix() + '_' + key;
+        let v: any = localStorage.getItem(k);
+        if (v == undefined) {
+            return defaultValue;
+        }
+        return localStorage.getItem(k);
     }
 
 }

@@ -14,11 +14,11 @@
 
 <ion-content>
   <ion-list *ngIf="liveMonitorItemsAvailable()">
-    <ion-item *ngFor="let liveMonitorItem of liveMonitorItems">
+    <ion-item *ngFor="let liveMonitorItem of getLiveMonitorItems()">
       <h2>{{liveMonitorItem.item.nr}} - {{liveMonitorItem.item.desc}}</h2>
       <h3>{{liveMonitorItem.area.desc}}</h3>
       <button clear item-right (click)="itemDone($event, liveMonitorItem)">
-        <ion-icon name="checkmark"></ion-icon> 
+        <ion-icon name="checkmark"></ion-icon>
         {{getTranslation('DONE')}}
       </button>
     </ion-item>

@@ -34,28 +34,45 @@ export class LiveMonitorPage extends BasePage {
                 protected settingService: SettingService,
                 protected translationService: TranslationService) {
         super(settingService, translationService);
+        this.refreshLiveMonitorItems();
+        this.refreshCategoryFilter();
+    }
+
+    private refreshLiveMonitorItems() {
+        this.liveMonitorItems = [];
         let orders = this.orderService.getOpenOrders();
         for (let order of orders) {
             let liveMonitorItem = new LiveMonitorItem();
-            liveMonitorItem.area = areaService.getAreaByNr(order.area.nr);
-            liveMonitorItem.item = itemService.getItemByNr(order.item.nr);
+            liveMonitorItem.area = this.areaService.getAreaByNr(order.area.nr);
+            liveMonitorItem.item = this.itemService.getItemByNr(order.item.nr);
             this.liveMonitorItems.push(liveMonitorItem);
-        }
-        // a list of category numbers which will be shown
-        console.log('hallo');
-        try {
-            let filter = JSON.parse(this.getPageSetting(CATEGORY_FILTER_SETTING, '[]'));
-            console.log(filter);
-            for (let categoryNr in filter) {
-              console.log(categoryNr);
-              this.categoryFilter.push(Number(categoryNr));
-            }
-        } catch (Error) {
-
         }
     }
 
-    liveMonitorItemsAvailable(): boolean {
+    private refreshCategoryFilter() {
+        try {
+            this.categoryFilter = [];
+            let filter = JSON.parse(this.getPageSetting(CATEGORY_FILTER_SETTING, []));
+            for (let categoryNr of filter) {
+              this.categoryFilter.push(Number(categoryNr));
+            }
+        } catch (Error) {
+            this.categoryFilter = [];
+            console.log(Error);
+        }
+    }
+
+    private getLiveMonitorItems(): LiveMonitorItem[] {
+        let tempItems: LiveMonitorItem[] = [];
+        for (let tempItem of this.liveMonitorItems) {
+            if (this.isCategorySelected(tempItem.item.category)) {
+                tempItems.push(tempItem);
+            }
+        }
+        return tempItems;
+    }
+
+    private liveMonitorItemsAvailable(): boolean {
         return this.liveMonitorItems.length > 0;
     }
 
@@ -67,9 +84,7 @@ export class LiveMonitorPage extends BasePage {
     }
 
     private isCategorySelected(category: Category): boolean {
-        console.log(category);
         for (let categoryNr of this.categoryFilter) {
-            console.log(categoryNr);
             if (category.nr == Number(categoryNr)) {
                 return true;
             }
@@ -92,9 +107,8 @@ export class LiveMonitorPage extends BasePage {
         alert.addButton({
             text: this.getTranslation('CONFIRM'),
             handler: data => {
-                console.log('Checkbox data:', data);
-
                 this.savePageSetting(CATEGORY_FILTER_SETTING, JSON.stringify(data));
+                this.refreshCategoryFilter();
             }
         });
         alert.present();
@@ -104,13 +118,4 @@ export class LiveMonitorPage extends BasePage {
 class LiveMonitorItem {
     area: Area;
     item: Item;
-}
-
-class CategoryList {
-
-    categories: number[] = [];
-
-    public addCategory() {
-
-    }
 }
