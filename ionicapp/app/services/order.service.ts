@@ -18,12 +18,11 @@ export class OrderService {
     this.tempOrders = new Array<Order>();
   }
   
-  getOpenOrders() {
-    let orders: Order[] = this.openOrders;
-    return orders;
+  getOpenOrders(): Order[] {
+    return this.openOrders;
   }
   
-  getOpenOrdersByArea(area: Area) {
+  getOpenOrdersByArea(area: Area): Order[] {
     let orders: Order[] = [];
     let order: Order;
     for (order of this.openOrders) {
@@ -90,7 +89,7 @@ export class OrderService {
   
   // temp orders
   
-  getTempOrdersByArea(area: Area) {
+  getTempOrdersByArea(area: Area): Order[] {
     let orders: Order[] = [];
     for (let order of this.tempOrders) {
       if (order.area.nr == area.nr) {

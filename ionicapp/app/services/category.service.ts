@@ -15,9 +15,13 @@ export class CategoryService {
     return this.categories;
   }
   
-  getCategory(nr: number) {
-    return Promise.resolve(this.categories)
-      .then(categories => categories.filter(c => c.nr === +nr)[0]);
+  getCategoryByNr(nr: number) {
+    let category: Category;
+    for (category of this.categories) {
+      if (category.nr == nr) {
+        return category;
+      }
+    }
   }
 
 }

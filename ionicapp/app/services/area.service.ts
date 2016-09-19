@@ -5,17 +5,17 @@ import {getMockAreas} from '../mockups/areas';
 @Injectable()
 export class AreaService {
 
-  areas: Area[];
+  private areas: Area[];
 
   constructor() {
     this.areas = getMockAreas();
   }
   
-  getAreas() {
+  getAreas(): Area[] {
     return this.areas;
   }
   
-  getAreaByNr(nr: number) {
+  getAreaByNr(nr: number): Area {
     let area: Area;
     for (area of this.areas) {
       if (area.nr == nr) {
