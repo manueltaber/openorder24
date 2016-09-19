@@ -200,6 +200,10 @@ export var TRANSLATIONS = {
         'DEU': 'Items editieren',
         'ITA': '',
         'ENG': 'Edit items'},
+    'CATEGORY_FILTER': {
+        'DEU': 'Kategoriefilter',
+        'ITA': '',
+        'ENG': 'Category filter'},
 
     // long texts
     'OPEN_TEMP_ORDERS_WARNING': {

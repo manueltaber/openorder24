@@ -33,6 +33,14 @@ var MOCKORDERS = [
   { 'area_nr': 2, 'item_nr': 1, 'count': 1, 'desc': '' },
   { 'area_nr': 2, 'item_nr': 2, 'count': 1, 'desc': '' },
 
+  { 'area_nr': 2, 'item_nr': 17, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 21, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 25, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 46, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 32, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 500, 'count': 1, 'desc': '' },
+  { 'area_nr': 2, 'item_nr': 918, 'count': 1, 'desc': '' },
+
   { 'area_nr': 3, 'item_nr': 4, 'count': 1, 'desc': '' },
   { 'area_nr': 3, 'item_nr': 5, 'count': 1, 'desc': '' },
   { 'area_nr': 3, 'item_nr': 6, 'count': 1, 'desc': '' },

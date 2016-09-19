@@ -94,7 +94,7 @@ export class LiveMonitorPage extends BasePage {
 
     showCategoryFilterAlert(event) {
         let alert = this.alertController.create();
-        alert.setTitle('Kategoriefilter');
+        alert.setTitle(this.getTranslation('CATEGORY_FILTER'));
         for (let category of this.categoryService.getCategories()) {
             alert.addInput({
                 type: 'checkbox',
