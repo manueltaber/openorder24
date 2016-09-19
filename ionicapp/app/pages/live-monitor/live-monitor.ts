@@ -54,7 +54,7 @@ export class LiveMonitorPage extends BasePage {
             this.categoryFilter = [];
             let filter = JSON.parse(this.getPageSetting(CATEGORY_FILTER_SETTING, []));
             for (let categoryNr of filter) {
-              this.categoryFilter.push(Number(categoryNr));
+                this.categoryFilter.push(Number(categoryNr));
             }
         } catch (Error) {
             this.categoryFilter = [];
@@ -73,7 +73,7 @@ export class LiveMonitorPage extends BasePage {
     }
 
     private liveMonitorItemsAvailable(): boolean {
-        return this.liveMonitorItems.length > 0;
+        return this.getLiveMonitorItems().length > 0;
     }
 
     itemDone(event, liveMonitorItem: LiveMonitorItem) {
