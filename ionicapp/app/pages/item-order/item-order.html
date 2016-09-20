@@ -25,7 +25,7 @@
 
   <ion-card *ngFor="let variantGroup of variantGroups">
     <ion-card-header>{{variantGroup.variantGroup.desc}}</ion-card-header>
-    <ion-list radio-group [(ngModel)]="variantGroup.selectedNr">
+    <ion-list radio-group [(ngModel)]="variantGroup.selectedVariant">
       <ion-item *ngFor="let variant of variantGroup.variants">
         <ion-radio value="variant.variant.desc"></ion-radio>
         <ion-label>
