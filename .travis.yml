@@ -18,6 +18,8 @@ before_deploy:
 - mkdir zip
 - cp -r www/* zip/
 - cp config.xml zip/
+- cp resources/icon.png zip/
+- cp resources/splash.png zip/
 - mkdir zip/resources
 - cp -r resources/* zip/resources/
 - cd zip
